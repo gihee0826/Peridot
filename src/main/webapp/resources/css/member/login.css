@@ -1,0 +1,262 @@
+section body{
+    font-family: 'Gothic A1', sans-serif;
+    margin: 0;
+}
+section a{
+    text-decoration: none;
+    color: black;
+}
+section{
+    display: flex;
+    margin: auto;
+    width: 1200px;
+}
+section .left,
+section .right{
+    width: 400px;
+    padding: 50px 100px;
+    margin-top:50px;
+}
+section .left{
+    border-right: 1px dashed gray;
+}
+section .left1{
+    font-size: 30px;
+}
+section .left2{
+    font-size: 13px;
+}
+section .left3{
+    font-size: 13px;
+    margin-top: -10px;
+    margin-bottom: 50px;
+}
+section .left4{
+    width: 400px;
+    height: 50px;
+    border: 1px solid lightgray;
+    margin-bottom: 30px;
+}
+section .left4 input{
+    width: 380px;
+    height: 27px;
+    border: none;
+    position: relative;
+    top:16px;
+    left: 8px;
+    font-size: 14px;
+
+}
+section .left4 input:focus{
+    outline: none;
+}
+section .left4 label{
+    width: 400px;
+    height: 35px;
+    text-align: left;
+    pointer-events:none; 
+    position: relative;
+    bottom: 26px;
+    left: 10px;
+    display: inline-block;
+    color: black;
+    font-size: 13px;
+    border: none;
+}
+
+section .left4 label span{
+    position:absolute; 
+    left:-1px; 
+    bottom:5px; 
+    transition:all .3s ease; 
+    width: 100%;
+}
+/*
+section .left4 input:focus + label span { 
+    transform:translateY(-80%); 
+    font-size:12px;  
+}
+*/
+section .left5{
+    width: 400px;
+    height: 50px;
+    border: 1px solid lightgray;
+    margin-bottom: 30px;
+}
+section .left5 input{
+    width: 380px;
+    height: 27px;
+    border: none;
+    position: relative;
+    top:16px;
+    left: 8px;
+    font-size: 14px;
+
+}
+section .left5 input:focus{
+    outline: none;
+}
+section .left5 label{
+    width: 400px;
+    height: 35px;
+    text-align: left;
+    pointer-events:none; 
+    position: relative;
+    bottom: 8px;
+    left: 10px;
+    display: inline-block;
+    color: black;
+    font-size: 13px;
+    border: none;
+}
+section .left5 label span{
+    position:absolute; 
+    left:-1px; 
+    bottom:5px; 
+    transition:all .3s ease; 
+    width: 100%;
+}
+section .left5 input:valid + label span { 
+    transform:translateY(-120%); 
+    font-size:12px; 
+    color:black; 
+}
+/*
+section .left5 input:focus + label span{
+    transform:translateY(-200%); 
+    font-size:12px; 
+    color:black; 
+}
+*/
+section .left6{
+    font-size: 14px;
+    text-decoration: underline;
+    margin-bottom: 20px;
+}
+section .left7{
+    font-size: 12px;
+    margin-bottom: 100px;
+}
+section .left8_i{
+    background-color: black;
+    color: white;
+    width: 400px;
+    height: 50px;
+    font-size: 14px;
+}
+section .right1{
+    font-size: 30px;
+}
+section .right2,
+section .right3,
+section .right4{
+    display: flex;
+    align-items: center;
+}
+
+section .right2_1,
+section .right3_1,
+section .right4_1{
+    font-size: 42px;
+    margin-top: 10px;
+}
+section .right2_2{
+    font-size: 13px;
+    margin-left: 20px;
+}
+section .right4_2{
+    font-size: 13px;
+    margin-left: 22px;
+}
+section .right3_2{
+    font-size: 13px;
+    margin-left: 34px;
+}
+section .right2_3{
+    font-size: 11px;
+    margin-left: 20px;
+    margin-top: -10px;
+}
+section .right3_3{
+    font-size: 11px;
+    margin-left: 34px;
+    margin-top: -10px;
+}
+section .right4_3{
+    font-size: 11px;
+    margin-left: 22px;
+    margin-top: -10px;
+}
+section .right5_i{
+    background-color: black;
+    color: white;
+    width: 400px;
+    height: 50px;
+    font-size: 14px;
+    margin-top: 175px;
+}
+ /* 로그인 실패시 경고글 */
+section .login_warn{
+    margin-top: 30px;
+    text-align: center;
+    color : red;
+}
+
+@media screen and (max-width: 900px) {
+    section a:hover{
+        color:gray;
+
+    }
+    section{
+        flex-direction: column;
+        width: 100%;
+        margin: auto;
+    }
+    section .login_hide{
+        display: none;
+    }
+    section .join_hide{
+        display: none;
+    }
+    section .left{
+        width: auto;
+        margin: auto;
+        margin-top: 10px;
+        padding: 0 30px;
+        display: block;
+        border-bottom: 1px dashed gray;
+        border-top: 1px dashed gray;
+        border-right: none;
+    }
+    section .right{
+        width: auto;
+        margin: auto;
+        padding: 0 30px;
+        display: block;
+        border-bottom: 1px dashed gray;
+    }
+    section .left1,
+    section .right1{
+        width: 500px;
+        height: 30px;
+        margin-top: 20px;
+        margin-bottom: 20px;
+    }
+    section .login_hide.active,
+    section .join_hide.active{
+        display: inline;
+    }
+    section .left8{
+        margin-bottom: 40px;
+    }
+    section .left8_i{
+        width:100%;
+    }
+    section .right5{
+        margin-top: 50px;
+        margin-bottom: 40px;
+    }
+    section .right5_i{
+        width: 100%;
+    }
+}

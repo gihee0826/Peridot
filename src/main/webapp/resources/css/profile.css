@@ -1,0 +1,287 @@
+section body{
+    font-family: 'Gothic A1', sans-serif;
+    margin: 0;
+}
+section a{
+    color: black;
+}
+section a:hover{
+    color: gray;
+}
+section .category{
+    font-size: 15px;
+    margin-left: 40px;
+    margin-bottom: 10px;
+    color:rgb(94, 94, 94);
+}
+section .title{
+    font-size: 50px;
+    margin-left: 30px;
+    margin-bottom: 15px;
+    margin-top: 15px;
+}
+section .box{
+    margin: auto;
+    width:70%;
+    background-color: rgb(245, 245, 245);
+    height: auto;
+}
+section .box1{
+    text-align: center;
+    font-size: 24px;
+    padding-top: 15px;
+    padding-bottom: 15px;
+}
+section .box_gender1{
+    width: 450px;
+    height: 50px;
+    border: none;
+    margin: 15px auto;
+    background-color: white;
+    position: relative;
+    bottom: 15px;
+    padding-left: 5px;
+}
+section .box_gender,
+section .one{
+    width: 450px;
+    height: 50px;
+    border: 1px solid lightgray;
+    margin: 15px auto;
+    background-color: white;
+}
+section .one input{
+    width: 430px;
+    height: 27px;
+    border: none;
+    position: relative;
+    top:16px;
+    left: 8px;
+    font-size: 14px;
+    background-color: white;
+}
+section .one input:focus{
+    outline: none;
+}
+section .one label{
+    width: 450px;
+    height: 35px;
+    text-align: left;
+    pointer-events:none; 
+    position: relative;
+    bottom: 26px;
+    left: 10px;
+    display: inline-block;
+    color: black;
+    font-size: 13px;
+    border: none;
+}
+section .one label span{
+    position:absolute; 
+    left:-1px; 
+    bottom:5px; 
+    transition:all .3s ease; 
+    width: 100%;
+}
+section .one:focus + label span{
+    transform:translateY(-80%); 
+    font-size:12px;  
+}
+/*
+section .one input:focus + label span{
+    transform:translateY(-80%); 
+    font-size:12px; 
+}
+*/
+section .box_num{
+    display: flex;
+    width:450px;
+    margin:auto;
+}
+section .box_select{
+    width:80px;
+}
+section .sel{
+    width: 70px;
+    height: 50px;
+    margin:15px auto;
+}
+section .box_phone{
+    width: 370px;
+}
+section .box_phone input{
+    width: 280px;
+}
+section .agree1{
+    margin: auto;
+    width: 450px;
+    padding-top: 20px;
+}
+section .agree1_1{
+    font-size: 14px;
+}
+section .agree1_2{
+    font-size: 14px;
+}
+section .agree2{
+    margin: auto;
+    width: 450px;
+    font-size: 12px;
+    padding-top: 20px;
+}
+section .agree3{
+    margin: auto;
+    width: 450px;
+    padding-top: 20px;
+}
+section .agree3_1{
+    font-size: 14px;
+}
+section .agree3_2{
+    font-size: 14px;
+}
+section .agree4{
+    margin: auto;
+    width: 450px;
+    font-size: 12px;
+    padding-top: 20px;
+}
+section .agree5{
+    margin: auto;
+    width: 450px;
+    padding-top: 20px;
+}
+section .agree5_1{
+    font-size: 14px;
+}
+section .agree5_2{
+    font-size: 14px;
+}
+section .agree6{
+    margin: auto;
+    width: 450px;
+    font-size: 12px;
+    padding-top: 20px;
+}
+section .agree7{
+    margin: auto;
+    width: 450px;
+    font-size: 12px;
+    padding-top: 20px;
+}
+section .btn{
+    text-align: center;
+}
+section .btn1_1{
+    background-color: black;
+    color: white;
+    width: 450px;
+    height: 50px;
+    font-size: 14px;
+    margin:15px auto 0;
+}
+section .btn2_1{
+    background-color: rgb(245, 245, 245);
+    color: black;
+    width: 450px;
+    height: 50px;
+    font-size: 14px;
+    margin:10px auto;
+}
+section .delete{
+    margin: auto;
+    width: 450px;
+    font-size: 15px;
+    border-top: 1px dashed gray;
+    border-bottom: 1px dashed gray;
+    display: block;
+    padding-top: 20px;
+    padding-bottom: 20px;
+}
+section .return{
+    text-align: center;
+    font-size: 14px;
+    margin-top: 10px;
+    padding-bottom: 10px;
+}
+@media screen and (max-width:900px) {
+    section .category{
+        display: none;
+    }
+    section .title{
+        font-size: 36px;
+    }
+    section .box{
+        width: 90%;
+    }
+    section .box1{
+        font-size: 20px;
+    }
+    section .box_gender1{
+        width: 520px;
+    }
+    section .box_gender,
+    section .one{
+        width: 520px;
+    }
+    section .box_num{
+        width:520px;
+    }
+    section .box_phone{
+        width: 440px;
+    }
+    section .agree1{
+    width: 520px;
+    }
+    section .agree1_1{
+        font-size: 10px;
+    }
+    section .agree1_2{
+        font-size: 10px;
+    }
+    section .agree2{
+        width: 520px;
+        font-size: 12px;
+    }
+    section .agree3{
+        width: 520px;
+    }
+    section .agree3_1{
+        font-size: 10px;
+    }
+    section .agree3_2{
+        font-size: 10px;
+    }
+    section .agree4{
+        width: 520px;
+        font-size: 12px;
+    }
+    section .agree5{
+        width: 520px;
+    }
+    section .agree5_1{
+        font-size: 10px;
+    }
+    section .agree5_2{
+        font-size: 10px;
+    }
+    section .agree6{
+        width: 520px;
+    }
+    section .agree7{
+        width: 520px;
+    }
+    section .btn1_1{
+        width: 520px;
+    }
+    section .btn2_1{
+        width: 520px;
+    }
+    section .delete{
+        width: 520px;
+        font-size: 16px;
+    }
+    section .return{
+        font-size: 10px;
+    }
+}

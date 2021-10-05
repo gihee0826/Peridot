@@ -1,0 +1,219 @@
+footer body{
+    font-family: 'Gothic A1', sans-serif;
+    margin: 0;
+}
+footer .hr{
+    border-top: 1px dashed gray;
+    border-bottom: 1px dashed gray;
+    display: block;
+}
+footer a{
+    text-decoration: none;
+    color: black;
+}
+footer a:hover{
+    color:gray;
+}
+footer{
+    text-align: center;
+}
+footer .title{
+    font-size: 30px;
+    font-weight: 1000;
+    padding: 20px;
+}
+/*.email{
+    width: 400px;
+    margin:20px;
+    padding: 10px 30px;
+    font-size: 15px;
+    border: none;
+    border-bottom: 1px solid black;
+}
+.email:focus{
+    outline: none;
+}*/
+footer .content{
+    font-size: 12px;
+    font-weight: 10;
+}
+footer .agree{
+    margin: auto;
+    width: 450px;
+    display: none;
+}
+footer .content_email{
+     position:relative; 
+     width:500px; 
+    height:20px; 
+     margin:50px auto 0; 
+}
+footer p input{
+    box-sizing:border-box; 
+    padding:10px 30px; 
+    width:500px; 
+    height:20px; 
+    border:0 none; 
+    color:#595f63; 
+    outline:none;
+    margin:20px;
+    border-bottom:1px solid gray;   
+}
+footer p label { 
+    width:500px; 
+    height:20px; 
+    /*border-bottom:1px solid gray; */
+    text-align:center; 
+    font-size: 24px;
+    pointer-events:none; 
+    position: relative;
+    bottom: 35px;
+    display: inline-block;
+    font-weight: 600;
+    color: gray;
+}
+footer p label:after { 
+    content:""; 
+    position:absolute; 
+    left:0; 
+    bottom:-1px; 
+    width:0; 
+    height:100%; 
+    /*border-bottom:1px solid gray;*/
+    transition:all .3s ease; 
+} /* �뙆���깋 媛�濡쒖쨪 */
+footer p label span { 
+    position:absolute; 
+    left:0; 
+    bottom:5px; 
+    transition:all .3s ease; 
+    width: 100%;
+    font-family: 'Gothic A1', sans-serif;
+    font-weight: 600;
+    
+}
+/*
+footer p input:focus + label span, 
+footer p input:valid + label span { 
+    transform:translateY(-100%); 
+    font-size:24px; 
+    color:gray; 
+}
+footer p input:focus{
+    border-bottom: 1px solid darkgray;
+}
+footer p input:focus + label::after,
+footer p input:valid + label::after {
+     width:100%; 
+     transform:translateX(0); 
+} 
+*/
+
+footer .content_radio,
+footer .content_agree{
+    margin: 20px;
+    width: 400px;
+    height: 30px;
+    font-size: 13px; 
+}
+footer .content_btn{
+    margin: 20px;
+}
+footer .btn_regist{
+    background-color: black;
+    color: white;
+    width: 200px;
+    height: 50px;
+    font-size: 16px;
+}
+footer .footbar_menu0,
+footer .footbar_menu1,
+footer .footbar_menu2,
+footer .footbar_menu3,
+footer .footbar_menu4{
+    list-style: none;
+}
+footer .footbar_menu1,
+footer .footbar_menu2,
+footer .footbar_menu3,
+footer .footbar_menu4{
+    position: relative;
+    left: -40px;
+    line-height: 2.5em;
+}
+footer .footbar{
+    display:flex;
+    justify-content: space-between;
+    text-align: left;
+    font-size: 14px;
+    font-weight: bold;
+}
+footer .footbar_div4{
+    width: 350px;
+}
+footer .div4_1{
+    font-size: 30px;
+}
+footer h4{
+    margin-top:20px;
+    margin-bottom: 0px;
+}
+footer .div4_2{
+    font-size: 10px;
+}
+footer .div4_3{
+    font-size: 14px;
+    text-decoration: underline;
+}
+footer .footbar_menu0 li{
+    margin: 20px;
+}
+
+@media screen and (max-width: 900px){
+    footer .footbar{
+        flex-direction: column;
+        align-items: flex-start;
+    }
+    footer .footbar_menu0{
+        display: flex;
+        justify-content: center;
+    }
+    footer .footbar_div0{
+        margin: auto;
+        width: 100%;
+        display: block;
+        border-bottom: 1px dashed gray;
+    }
+    footer .footbar_menu1,
+    footer .footbar_menu2,
+    footer .footbar_menu3{
+        display:none;
+    }
+    footer .footbar_menu1.active,
+    footer .footbar_menu2.active,
+    footer .footbar_menu3.active{
+        display: list-item;
+    }
+    footer .footbar_div1{
+        padding-left: 30px;
+        width: 100%;
+        display: block;
+        border-bottom: 1px dashed gray;
+    }
+    footer .footbar_div2{
+        padding-left: 30px;
+        width: 100%;
+        display: block;
+        border-bottom: 1px dashed gray;
+    }
+    footer .footbar_div3{
+        padding-left: 30px;
+        width: 100%;
+        display: block;
+        border-bottom: 1px dashed gray;
+    }
+    footer .footbar_div4{
+        width: 100%;
+        padding-left: 30px;
+    }
+}

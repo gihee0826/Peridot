@@ -1,0 +1,152 @@
+section body{
+    font-family: 'Gothic A1', sans-serif;
+    margin: 0;
+}
+section a{
+    color: black;
+}
+section a:hover{
+    color: gray;
+}
+section .title{
+    font-size: 35px;
+    margin-left: 30px;
+    margin-bottom: 15px;
+    margin-top: 15px;
+}
+section .box{
+    margin: auto;
+    width:70%;
+    background-color: rgb(245, 245, 245);
+    height: auto;
+    margin-bottom: 20px;
+    padding-bottom: 50px;
+}
+section .box1{
+    text-align: center;
+    font-size: 24px;
+    padding-top: 15px;
+    padding-bottom: 15px;
+}
+section .one{
+    width: 450px;
+    height: 50px;
+    border: 1px solid lightgray;
+    margin: 15px auto;
+    background-color: white;
+}
+section .one input{
+    width: 430px;
+    height: 27px;
+    border: none;
+    position: relative;
+    top:16px;
+    left: 8px;
+    font-size: 14px;
+    background-color: white;
+}
+section .one input:focus{
+    outline: none;
+}
+section .one label{
+    width: 450px;
+    height: 35px;
+    text-align: left;
+    pointer-events:none; 
+    position: relative;
+    bottom: 26px;
+    left: 10px;
+    display: inline-block;
+    color: black;
+    font-size: 13px;
+    border: none;
+}
+section .one label span{
+    position:absolute; 
+    left:-1px; 
+    bottom:5px; 
+    transition:all .3s ease; 
+    width: 100%;
+}
+section .one:focus + label span{
+    transform:translateY(-80%); 
+    font-size:12px;  
+}
+/*
+section .one input:focus + label span{
+    transform:translateY(-80%); 
+    font-size:12px; 
+}
+*/
+section .date{
+    display: flex;
+    width:450px;
+    margin:auto;
+}
+section .month,
+section .year{
+    width: 220px;
+}
+section .month label,
+section .year label{
+    position: relative;
+    bottom: 40px;
+}
+section .sel1,
+section .sel2{
+    width: 210px;
+    height: 30px;
+    position: relative;
+    top: 19px;
+    left: 5px;
+    border: none;
+}
+section .sel1:focus,
+section .sel2:focus{
+    outline: none;
+}
+section .save{
+    text-align: center;
+}
+section .save_{
+    background-color: black;
+    color: white;
+    width: 450px;
+    height: 50px;
+    font-size: 14px;
+    margin:15px auto 15px;
+}
+section section{
+    border-bottom: 1px dashed gray;
+    display: block;
+}
+
+@media screen and (max-width:900px) {
+    section .title{
+        font-size: 28px;
+    }
+    section .box{
+        width: 90%;
+        margin-top: -30px;
+    }
+    section .box1{
+        font-size: 20px;
+    }
+    section .one{
+        width: 520px;
+    }
+    section .month,
+    section .year{
+        width:255px;
+    }
+    section .sel1,
+    section .sel2{
+        width: 240px;
+    }
+    section .date{
+        width: 520px;
+    }
+    section .save_{
+        width: 520px;
+    }
+}
