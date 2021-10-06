@@ -19,26 +19,27 @@ public class MemberVO {
 	 */
 	
 	private int userNo;
-	private String userFisrtName;
+	private String userFirstName;
 	private String userLastName;
 	private String userEmail;
 	private String userPass;
 	private String userPhone;
-	private String admin;
+	private String userAdmin;
 	private String userEmailCheck;
 	private String userPassCheck;
 	private String date;
+	
 	public int getUserNo() {
 		return userNo;
 	}
 	public void setUserNo(int userNo) {
 		this.userNo = userNo;
 	}
-	public String getUserFisrtName() {
-		return userFisrtName;
+	public String getUserFirstName() {
+		return userFirstName;
 	}
-	public void setUserFisrtName(String userFisrtName) {
-		this.userFisrtName = userFisrtName;
+	public void setUserFirstName(String userFirstName) {
+		this.userFirstName = userFirstName;
 	}
 	public String getUserLastName() {
 		return userLastName;
@@ -64,11 +65,11 @@ public class MemberVO {
 	public void setUserPhone(String userPhone) {
 		this.userPhone = userPhone;
 	}
-	public String getAdmin() {
-		return admin;
+	public String getUserAdmin() {
+		return userAdmin;
 	}
-	public void setAdmin(String admin) {
-		this.admin = admin;
+	public void setUserAdmin(String userAdmin) {
+		this.userAdmin = userAdmin;
 	}
 	public String getUserEmailCheck() {
 		return userEmailCheck;
@@ -88,6 +89,7 @@ public class MemberVO {
 	public void setDate(String date) {
 		this.date = date;
 	}
+	
 	
 	
 	

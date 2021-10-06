@@ -13,9 +13,9 @@ public class MemberServiceImpl implements MemberService{
 	MemberDAO memberdao;
 
 	@Override
-	public void memberJoin(MemberVO member) throws Exception {
+	public int memberJoin(MemberVO member) throws Exception {
 		
-		memberdao.memberJoin(member);
+		return memberdao.memberJoin(member);
 		
 	}
 
@@ -35,4 +35,12 @@ public class MemberServiceImpl implements MemberService{
         
         return memberdao.memberLogin(member);
     }
+
+
+	@Override
+	public void memberUpdate(MemberVO vo) throws Exception {
+		
+		memberdao.memberUpdate(vo);
+		
+	}
 }

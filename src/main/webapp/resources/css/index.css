@@ -1,0 +1,262 @@
+@charset "EUC-KR";
+section .v{
+        position: relative;
+    }
+section .v button{
+        position: absolute;
+        z-index: 10;
+        top: 50%;
+        transform: translateY(-50%);
+    }
+section .v button.slick-prev{
+        left: 0px;
+    }
+section .v button.slick-next{
+        right: 0px;
+    }
+section body
+	{
+		margin:0px;
+		font-family: 'Gothic A1', sans-serif;
+	}
+ section   .twoarea{
+        display: flex;
+    }
+   section .twoimg{
+        width:914px ;
+        height: 844px;
+        padding-left: 222px;
+    }
+   section .twotitle{
+            font-size: 50px;
+    font-weight: 500;
+    padding-top: 290px;
+    display: inline-block;
+    padding-left: 60px;
+    }
+   section .twotitlecont{
+        padding-left: 160px;
+        padding-right: 268px;
+        padding-top: 20px;
+        font-size: 14px;
+    }
+   section .twobt{
+        margin-top: 25px;
+        width:317px ;
+        height: 53px;
+        background-color: black;
+        color: white;
+        border: none;
+        font-size: 14px;
+        font-weight: bold;
+    }
+  section  .threetitle{
+        font-size: 42px;
+        font-weight: 400px;
+        margin-top: 100px;
+        margin-bottom: 40px;
+        margin-left: 45px;
+    }
+   section .fourimgcont{
+        display: flex;
+    }
+   section .fimgs{
+        width: 604px;
+        height: 796px;
+    }
+   section .imgf1{
+        padding-left: 339px;
+    }
+   section .imgf2{
+        padding-left: 15px;
+    }
+   section .fourbt{
+        border: none;
+        background-color: black;
+        color: white;
+        font-weight: bold;
+        width: 135px;
+        height: 55px;
+        margin-left: 242px;
+        margin-top: 20px;
+    }
+   section .line{
+      text-align: center;
+      padding-bottom: 20px;
+      margin-top: 130px;
+    }
+   section .line2{
+      text-align: center;
+      margin-top: 30px;
+    }
+   section .newcollec{
+        width: 100%;
+    }
+  section  .fivetitle{
+        text-align: center;
+        font-weight: 600;
+        font-size: 42px;
+        padding-bottom: 50px;
+    }
+   section .dna{
+        background-color: black;
+        color: white;
+        border: none;
+        font-size: 14px;
+        font-weight: bold;
+        width: 184px;
+        height: 51px;
+        margin-top: 20px;
+    }
+  section  .dnabt{
+        text-align: center;
+    }
+   section .lasttitle{
+        font-size: 54px;
+        font-weight: 400px;
+        margin-top: 100px;
+        margin-bottom: 40px;
+        margin-left: 45px;
+    }
+	section.item{
+			float:left;
+			width:323px;
+			height:700px;
+			margin:10px;
+		}
+	section .item img{
+			width:323px;
+			height:431px;
+			
+	}
+	section .sname{
+			width:236px;
+			text-align:center;
+			font-size:20px;
+			font-weight:700;
+			padding-top:10px;
+		}
+	section .price{
+			padding-left:86px;
+			padding-top:15px;
+			font-size:12px;
+			font-weight:700;
+	}
+	 section .autoParent{
+		position:relative;
+	}
+	section .tBtn,
+	section .tBtn2{
+			position: absolute;
+			z-index: 10;
+			transform: translateY(-50%);
+			
+	}
+	section .tBtn{
+			left: 0px;
+			top:146px;
+			border:none;
+			font-size:50px;
+			background-color:transparent;
+			
+	 }
+	section .tBtn2{
+			right: 0px;
+			bottom:500px;
+			border:none;
+			font-size:50px;
+			background-color:transparent;
+			
+	}
+	section .vbt,
+	section .vbt2{
+			position: absolute;
+			z-index: 10;
+			transform: translateY(-50%);
+	}
+	section .vbt{
+			left: 0px;
+			top: 45%;
+			background-color:transparent;
+			color:white;
+			font-size:50px;
+			border:none;
+	 }
+	section .vbt2{
+			right: 0px;
+			bottom: 45%;
+			background-color:transparent;
+			color:white;
+			font-size:50px;
+			border:none;
+	}
+	section .lastcenter div img{
+		width:444px;
+		height:529px;
+		margin:0;
+	}
+	section .lastone{
+		font-size:14px;
+		font-weight:bold;
+	}
+	section .lasttwo{
+		font-size:32px;
+		font-weight:bold;
+		padding-bottom:10px;
+	}
+	section .lastthree{
+		font-size:14px;
+		font-weight:bold;
+		line-height:160%;
+		padding-bottom: 20px;
+	}
+	section .lastfour{
+		font-size:12px;
+		text-decoration:underline;
+		font-weight:bold;
+	}
+	section .lshape{
+		width:444px;
+		height:200px;
+	}
+	section .lastcenter{
+		    width: 92%;
+			position: relative;
+			left: 152px;
+			height:800px;
+	}
+	section .cont1{
+		    position: absolute;
+			bottom: 200px;
+			font-size: 72px;
+			color: white;
+			font-weight: 600;
+			left: 587px;
+			text-align: center;
+	}
+	section .vvv{
+		position:relative;
+	}
+	section .vParent{
+		position:relative;
+		margin-bottom: 150px;
+	}
+	section .slick-slide img {
+		display: block;
+		width: 100%;
+	}
+	section .downn{
+		position: absolute;
+		
+	}
+	section .towi{
+		margin:0px;
+	}
+	section .autoplay{
+		margin-left:150px;
+		margin-right:150px;
+	}
+	section .item>div>img{
+		width:239px;
+		height:319px;
+	}

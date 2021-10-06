@@ -146,7 +146,7 @@
 		
 		<div class="menu">
 			<!-- 왼쪽 메뉴 -->
-			<span class="title"><b>PERIDOT</b> &nbsp; / &nbsp;
+			<span class="title"><a href="/"><b>PERIDOT</b></a> &nbsp; / &nbsp;
 			<a href="javascript:dropdownWoman();" class="cat"><b>여성</b></a>
 			<a href="javascript:dropdownMan();" class="cat"><b>남성</b></a>
 			<a href="javascript:dropdownBrand();" class="cat"><b>브랜드 스토리</b></a>
@@ -156,21 +156,21 @@
 			<span class="linkarea">
 				<a href="javascript:dropdown();" class="search1" >
 					검색..&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
-					<img src="/resources/img/검색.png" width="30px" height="30px">
+					<img src="/img/검색.png" width="30px" height="30px">
 				</a>
 
 				<a href="javascript:mypageShow()" class="mypage">
-				<img src="/resources/img/사용자계정.png" width="30px" height="30px">
+				<img src="/img/사용자계정.png" width="30px" height="30px">
 				</a>
 					
 				<a href="javascript:modal()" class="cart">
-				<img src="/resources/img/장바구니.png" width="30px" height="30px">
+				<img src="/img/장바구니.png" width="30px" height="30px">
 				</a>
 			</span>
 			<!-- 마이페이지 눌렀을 대 부여주는 영역 -->
 			<div class="mypageshow">
-				<div class="lo"><a><b>로그인</b></a></div>
-				<div class="neww"><a><b>새 계정 만들기</b></a></div>
+				<div class="lo"><a href="/member/login"><b>로그인</b></a></div>
+				<div class="neww"><a href="/member/join"><b>새 계정 만들기</b></a></div>
 			</div>
 			<!-- 검색 눌렀을 때 보여주는 영역 -->
 			<div class="searcharea">
@@ -192,6 +192,7 @@
 					<h2 class="inputb sLeft good2" >브이스타</h2>
 				</div>
 			</div>
+			
 			<!-- 여성 카테고리 -->
 			<div class="woman">
 				<div class="warea wparea">
@@ -383,13 +384,13 @@
 		</div>
 		<!--정보박스-->
 		<p class="one">
-			<input type="text" autocomplete="off" required onfocus="test3(this)" onblur="test4(this)" class="siz firstName" name="memberFristName">
+			<input type="text" autocomplete="off" required onfocus="test3(this)" onblur="test4(this)" class="siz firstName" name="userFirstName">
 			<label for="text"><span>이름*</span></label>
 		<br>
 		</p>
 		<span class="final_firstName_ck">이름을 입력해주세요.</span>
 		<p class="one">
-			<input type="text" autocomplete="off" required onfocus="test3(this)" onblur="test4(this)" class="siz lastName"  name="memberLastName">
+			<input type="text" autocomplete="off" required onfocus="test3(this)" onblur="test4(this)" class="siz lastName"  name="userLastName">
             <label for="text"><span>성*</span></label>
 		</p>
 		<span class="final_lastName_ck">성을 입력해주세요.</span>
@@ -412,14 +413,14 @@
 			</div>	
 			<div>
 				<p class="one three">
-				<input type="phone" autocomplete="off" required onfocus="test3(this)" onblur="test4(this)" class="jphone phone" name="memberPhone">
+				<input type="phone" autocomplete="off" required onfocus="test3(this)" onblur="test4(this)" class="jphone phone" name="userPhone">
                 <label for="phone"><span>전화번호*</span></label>
 				</p>
 			</div>
 		</div>
 		<span class="final_phone_ck">전화번호를 입력해주세요.</span>	
 		<p class="one">
-			<input type="email" autocomplete="off" required onfocus="test3(this)" onblur="test4(this)"class="siz email" name="memberEmail">
+			<input type="email" autocomplete="off" required onfocus="test3(this)" onblur="test4(this)"class="siz email" name="userEmail">
             <label for="email"><span>이메일*</span></label>
 		</p>
 			<span class="email_input_re_1">사용 가능한 이메일입니다.</span>
@@ -427,21 +428,21 @@
 			<span class="final_email_ck">이메일을 입력해주세요.</span>
 			<sapn class="email_input_warn"></sapn>
 		<p class="one">
-			<input type="emailCheck" autocomplete="off" required onfocus="test3(this)" onblur="test4(this)" class="siz emailOk" name="memberEmailCheck">
+			<input type="emailCheck" autocomplete="off" required onfocus="test3(this)" onblur="test4(this)" class="siz emailOk" name="userEmailCheck">
             <label for="emailCheck"><span>이메일 확인*</span></label>
 		</p>
 		<span class="final_emailOk_ck">이메일을 입력해주세요.</span>
 		<span class="emailOk_re_1">이메일이 일치합니다.</span>
         <span class="emailOk_re_2">이메일이 일치하지 않습니다.</span>
 		<p class="one">
-			<input type="pass" autocomplete="off" required onfocus="test3(this)" onblur="test4(this)" class="siz pass" name="memberPass">
+			<input type="pass" autocomplete="off" required onfocus="test3(this)" onblur="test4(this)" class="siz pass" name="userPass">
             <label for="pass"><span>비밀번호*</span></label>
 		</p>
 		<span class="final_pass_ck">비밀번호를 입력해주세요.</span>
 		<div class="paw" class="siz">비밀번호 보안</div>
 		<hr>
 		<p class="one">
-			<input type="pass" autocomplete="off" required onfocus="test3(this)" onblur="test4(this)" class="siz passOk" name="mamberPassCheck">
+			<input type="pass" autocomplete="off" required onfocus="test3(this)" onblur="test4(this)" class="siz passOk" name="userPassCheck">
             <label for="passCheck"><span>비밀번호 확인*</span></label>
 		</p>
 		<span class="final_passOk_ck">비밀번호를 입력해주세요.</span>
@@ -517,11 +518,11 @@
 		<div class="need minititle">계정을 생성함으로써 이용 약관에 동의합니다.</div>
 		
 		
-		<input type=button class="join_button" value="회원가입">
+		<input type=button class="join_button last" value="회원가입">
 	</div>
 	
 	<div class="big photo">
-		<img src="loginimg.PNG">
+		<img src="/img/loginimg.PNG">
 	</div>
 	<script>
 	/* 유효성 검사 통과유무 변수 */

@@ -1,17 +1,16 @@
 <%@ page language="java" contentType="text/html; charset=UTF-8"
     pageEncoding="UTF-8"%>
-<%@ taglib uri="http://java.sun.com/jsp/jstl/core" prefix="c" %>
 <!DOCTYPE html>
 <html lang="en">
 <head>
     <meta charset="UTF-8">
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>로그인</title>
+    <script src="https://kit.fontawesome.com/57da38e2a5.js" crossorigin="anonymous"></script>
     <link rel="preconnect" href="https://fonts.googleapis.com">
-	<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
-	<link href="https://fonts.googleapis.com/css2?family=Gothic+A1&display=swap" rel="stylesheet">
-	<script src="/resources/js/jquery-3.6.0.min.js"></script>
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Gothic+A1&display=swap" rel="stylesheet">
+    <script src="/js/jquery-3.6.0.min.js"></script>
     <script>
 		function dropdown(){
 			$(".header1 .searcharea").toggle();
@@ -31,7 +30,7 @@
 			$(".header1 .man").toggle();
 			$(".header1 .searcharea").hide();
 			$(".header1 .woman").hide();		
-			$(".header1 .brand").hide();	 
+			$(".header1 .brand").hide();	
 			$(".header1 .mypageshow").hide();
 		}
 		function dropdownKids(){
@@ -82,27 +81,11 @@
 		function dropdownclose(){
 			$(".header1 .searcharea").hide();
 		}
-		 
 	</script>
+    <script src="https://kit.fontawesome.com/57da38e2a5.js" crossorigin="anonymous"></script>
+	<link rel="stylesheet" href="/css/member/NoLoginHeader.css">
+    <title>프로필 변경하기</title>
     <script>
-        $(document).ready(function(){
-            $("#left4 input").focus(function(){
-                //$(this).css({ "background-color":"red" 
-                $(this).parent().css("box-shadow","0px 0px 0px 2px lightgray");
-            }); 
-            $("#left4 input").blur(function(){
-                $(this).parent().css("box-shadow","inherit");
-            });
-
-            $("#left5 input").focus(function(){
-                //$(this).css({ "background-color":"red" 
-                $(this).parent().css("box-shadow","0px 0px 0px 2px lightgray");
-            }); 
-            $("#left5 input").blur(function(){
-                $(this).parent().css("box-shadow","inherit");
-            });
-        });
-            
         function agreedown(item){
             var value = $(item).val();
             if(value.length >= 1){
@@ -110,8 +93,12 @@
             }else{
                 $('#agree').hide();
             }
+            
         }
-        /* 스크롤휠인데 스타일추가 */
+    </script>
+    <script src="/js/media.js" defer></script>
+    <script>
+		/* 스크롤휠인데 스타일추가 */
 		document.onwheel = function (event){
 			if(event.wheelDelta < 0){
 				$("header").addClass("fiexed");
@@ -123,24 +110,20 @@
 				$("header").removeClass("fiexed");
 			}
 		}
-    </script>
-    <script src="/resources/js/media_login.js" defer></script>
-    <link rel="stylesheet" href="/resources/css/member/login.css">
-    <script src="/resources/js/media.js" defer></script>
-    <link rel="stylesheet" href="/resources/css/member/footer.css">
+	</script>
 	<!--https://fontawesome.com/v5.15/icons/times?style=solid-->
 	<script src="https://kit.fontawesome.com/57da38e2a5.js" crossorigin="anonymous"></script>
-	<link rel="stylesheet" href="/resources/css/member/NoLoginHeader.css">
-	<style>
+	<link rel="stylesheet" href="/css/member/NoLoginHeader.css">
+    <link rel="stylesheet" href="/css/member/profile.css">
+    <link rel="stylesheet" href="/css/member/footer.css">
+    <style>
 		.fiexed{
 			position:fixed;
 			width:100%;
-			top:0px;
 		}
 	</style>
 </head>
 <body>
-<form action="/member/login" method="post">
     <header class="header1">
 		<div class="callheader">
 			<b>고객센터 : 063-111-1234</b>
@@ -158,15 +141,15 @@
 			<span class="linkarea">
 				<a href="javascript:dropdown();" class="search1" >
 					검색..&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
-					<img src="/resources/img/검색.png" width="30px" height="30px">
+					<img src="/img/검색.png" width="30px" height="30px">
 				</a>
 
 				<a href="javascript:mypageShow()" class="mypage">
-				<img src="/resources/img/사용자계정.png" width="30px" height="30px">
+				<img src="/img/사용자계정.png" width="30px" height="30px">
 				</a>
 					
 				<a href="javascript:modal()" class="cart">
-				<img src="/resources/img/장바구니.png" width="30px" height="30px">
+				<img src="/img/장바구니.png" width="30px" height="30px">
 				</a>
 			</span>
 			<!-- 마이페이지 눌렀을 대 부여주는 영역 -->
@@ -206,22 +189,22 @@
 				</div>
 				<div class="warea">
 					<a>스니커즈<br></a>
-					<img src="/resources/img/슈퍼스타이미지.png"><a>슈퍼-스타<br></a>
-					<img src="/resources/img/볼스타이미지.png" class="shoesimg"><a>볼스타<br></a>
-					<img src="/resources/img/대드스타이미지.png" class="shoesimg"><a>대드-스타<br></a>
-					<img src="/resources/img/프란시이미지.png" class="shoesimg"><a>프란시<br></a>
-					<img src="/resources/img/하이스타이미지.png" class="shoesimg"><a>하이스타<br></a>
-					<img src="/resources/img/미드스타이미지.png" class="shoesimg"><a>미드스타<br></a>
-					<img src="/resources/img/퓨어스타이미지.png" class="shoesimg"><a>퓨어스타<br></a>
-					<img src="/resources/img/런닝솔이미지.png" class="shoesimg"><a>런닝솔<br></a>
-					<img src="/resources/img/슬라이드이미지.png" class="shoesimg"><a>슬라이드<br></a>
-					<img src="/resources/img/스타단이미지.png" class="shoesimg"><a>스타단<br></a>
-					<img src="/resources/img/스타터이미지.png" class="shoesimg"><a>스타터<br></a>
-					<img src="/resources/img/브이스타이미지.png" class="shoesimg"><a>브이스타<br></a>
-					<img src="/resources/img/예이미지.png"><a>Yeah</a>
+					<img src="/img/슈퍼스타이미지.png"><a>슈퍼-스타<br></a>
+					<img src="/img/볼스타이미지.png" class="shoesimg"><a>볼스타<br></a>
+					<img src="/img/대드스타이미지.png" class="shoesimg"><a>대드-스타<br></a>
+					<img src="/img/프란시이미지.png" class="shoesimg"><a>프란시<br></a>
+					<img src="/img/하이스타이미지.png" class="shoesimg"><a>하이스타<br></a>
+					<img src="/img/미드스타이미지.png" class="shoesimg"><a>미드스타<br></a>
+					<img src="/img/퓨어스타이미지.png" class="shoesimg"><a>퓨어스타<br></a>
+					<img src="/img/런닝솔이미지.png" class="shoesimg"><a>런닝솔<br></a>
+					<img src="/img/슬라이드이미지.png" class="shoesimg"><a>슬라이드<br></a>
+					<img src="/img/스타단이미지.png" class="shoesimg"><a>스타단<br></a>
+					<img src="/img/스타터이미지.png" class="shoesimg"><a>스타터<br></a>
+					<img src="/img/브이스타이미지.png" class="shoesimg"><a>브이스타<br></a>
+					<img src="/img/예이미지.png"><a>Yeah</a>
 				</div>
 				<div class="wareas">
-					<img src="/resources/img/iphoto.jpg" class="ip">
+					<img src="/img/iphoto.jpg" class="ip">
 					<h1>JOURNET COLLECTION</h1>
 					<p>진정한 안식처, 자연을 찾아 떠나는 특별한 여정을 구현한 컬렉션</p>
 					<p class="pde">자세히 보기</p>
@@ -239,22 +222,22 @@
 				</div>
 				<div class="warea">
 					<a>스니커즈<br></a>
-					<img src="/resources/img/슈퍼스타이미지.png"><a>슈퍼-스타<br></a>
-					<img src="/resources/img/볼스타이미지.png" class="shoesimg"><a>볼스타<br></a>
-					<img src="/resources/img/대드스타이미지.png" class="shoesimg"><a>대드-스타<br></a>
-					<img src="/resources/img/프란시이미지.png" class="shoesimg"><a>프란시<br></a>
-					<img src="/resources/img/미드스타이미지.png" class="shoesimg"><a>미드스타<br></a>
-					<img src="/resources/img/퓨어스타이미지.png" class="shoesimg"><a>퓨어스타<br></a>
-					<img src="/resources/img/런닝이미지.png" class="shoesimg"><a>런닝<br></a>
-					<img src="/resources/img/런닝솔이미지.png" class="shoesimg"><a>런닝솔<br></a>
-					<img src="/resources/img/슬라이드이미지.png" class="shoesimg"><a>슬라이드<br></a>
-					<img src="/resources/img/스타단이미지.png" class="shoesimg"><a>스타단<br></a>
-					<img src="/resources/img/스타터이미지.png" class="shoesimg"><a>스타터<br></a>
-					<img src="/resources/img/브이스타이미지.png" class="shoesimg"><a>브이스타<br></a>
-					<img src="/resources/img/예이미지.png"><a>Yeah</a>
+					<img src="/img/슈퍼스타이미지.png"><a>슈퍼-스타<br></a>
+					<img src="/img/볼스타이미지.png" class="shoesimg"><a>볼스타<br></a>
+					<img src="/img/대드스타이미지.png" class="shoesimg"><a>대드-스타<br></a>
+					<img src="/img/프란시이미지.png" class="shoesimg"><a>프란시<br></a>
+					<img src="/img/미드스타이미지.png" class="shoesimg"><a>미드스타<br></a>
+					<img src="/img/퓨어스타이미지.png" class="shoesimg"><a>퓨어스타<br></a>
+					<img src="/img/런닝이미지.png" class="shoesimg"><a>런닝<br></a>
+					<img src="/img/런닝솔이미지.png" class="shoesimg"><a>런닝솔<br></a>
+					<img src="/img/슬라이드이미지.png" class="shoesimg"><a>슬라이드<br></a>
+					<img src="/img/스타단이미지.png" class="shoesimg"><a>스타단<br></a>
+					<img src="/img/스타터이미지.png" class="shoesimg"><a>스타터<br></a>
+					<img src="/img/브이스타이미지.png" class="shoesimg"><a>브이스타<br></a>
+					<img src="/img/예이미지.png"><a>Yeah</a>
 				</div>
 				<div class="wareas">
-					<img src="/resources/img/iphoto.jpg" class="ip">
+					<img src="/img/iphoto.jpg" class="ip">
 					<h1>JOURNET COLLECTION</h1>
 					<p>진정한 안식처, 자연을 찾아 떠나는 특별한 여정을 구현한 컬렉션</p>
 					<p class="pde">자세히 보기</p>
@@ -273,7 +256,7 @@
 					<a>골든 월드<br></a>
 				</div>
 				<div class="wareas">
-					<img src="/resources/img/iphoto.jpg" class="ip">
+					<img src="/img/iphoto.jpg" class="ip">
 					<h1>JOURNET COLLECTION</h1>
 					<p>진정한 안식처, 자연을 찾아 떠나는 특별한 여정을 구현한 컬렉션</p>
 					<p class="pde">자세히 보기</p>
@@ -351,111 +334,154 @@
 </header>
     <br>
     <br>
-    
-</form>    
     <section>
-    <form id="login_form" method="post">
-            <div class="left">
-                <h2 class="left1"><a href="" class="loginbtn">로그인</a></h2>
-                <div class="login_hide">
-                    <p class="left2">이미 계정이 있다면 이메일 주소와 비밀번호를 입력하여</p>
-                    <p class="left3">Peridot Family로 로그인 하세요.</p>
-                    <p class="left4" id="left4">
-                        <input type="email" autocomplete="off" onfocus="test3(this)" onblur="test4(this)" required name="userEmail">
-                        <label for="user_email"><span>이메일*</span></label>
-                    </p>
-                    <p class="left5" id="left5">
-                        <input type="password" value="" onfocus="test5(this)" onblur="test6(this)" name="userPass">
-                        <label for="user_pass"><span>비밀번호*</span></label>
-                    </p>
-                     <c:if test = "${result == 0 }"> 
-		                <div class = "login_warn">이메일 또는 비밀번호를 잘못 입력하셨습니다.</div>
-		            </c:if>
-                    <p class="left6"><b>비밀번호를 잊어버리셨나요?</b></p>
-                    <p class="left7">
-                        <input type="checkbox" name="loginIf" value="로그인정보"> 로그인 정보 기억하기
-                    </p>
-                    <div class="left8">
-                        <input type="button" class="left8_i" value="로그인" onclick="test()">
-                    </div>
+        <div class="category">
+            <p><b>카테고리</b></p>
+        </div>   
+        <div>
+            <h1 class="title"><em>프로필 변경하기</em></h1>
+        </div>
+        <div class="box">
+            <div class="box1"><b>이름 또는 이메일 주소 변경</b></div>
+            <div class="box_gender">
+                <select class="box_gender1">
+                    <option class="opt0" seleted>남성</option>
+                    <option class="opt0">여성</option>
+                    <option class="opt0">무응답</option>
+                    
+                </select>
+            </div>
+            <div class="box_name1 one">
+                <input type="text" autocomplete="off" onfocus="test1(this)" onblur="test2(this)" required value="${member.userFirstName}">
+                <label for="text"><span>이름*</span></label>
+            </div>
+            <div class="box_name2 one">
+                <input type="text" autocomplete="off" onfocus="test1(this)" onblur="test2(this)" required value="${member.userLastName}">
+                <label for="text"><span>성*</span></label>
+            </div>
+            <div class="box_user one">
+                <input type="user" autocomplete="off" onfocus="test1(this)" onblur="test2(this)" required>
+                <label for="user"><span>사용자명</span></label>
+            </div>
+            <div class="box_birth one">
+                <input type="birth" autocomplete="off" onfocus="test1(this)" onblur="test2(this)" required>
+                <label for="birth"><span>생년월일*</span></label>
+            </div>
+            <div class="box_num">
+                <div class="box_select">
+                    <select class="sel">
+                        <option class="opt">+82</option>
+                        <option class="opt">+26</option>
+                        <option class="opt">+825</option>
+                        <option class="opt">+119</option>
+                        <option class="opt">+532</option>
+                        <option class="opt">+1</option>
+                        <option class="opt">+10</option>
+                        <option class="opt">+226</option>
+                        <option class="opt">+358</option>
+                        <option class="opt">+246</option>
+                        <option class="opt">+880</option>
+                        <option class="opt">+81</option>
+                    </select name="phone">
+                </div>
+                <div class="box_phone one">
+                    <input type="phone" autocomplete="off" onfocus="test1(this)" onblur="test2(this)" required value="${member.userPhone}">
+                    <label for="phone"><span>전화번호*</span></label>
                 </div>
             </div>
-            <script>
-				/* 로그인 버튼 클릭 메서드 */
-			    $(".left8_i").click(function(){
-			    	/* 로그인 메서드 서버 요청 */
-			        $("#login_form").attr("action", "/member/login");
-			        $("#login_form").submit();
-			        
-			    });
-			</script>
-			</form>
-            <div class="right">
-                <h2 class="right1"><a href="" class="joinbtn">회원가입</a></h2>
-                <div class="join_hide">
-                    <div class="right2">
-                        <div class="right2_1">
-                            <i class="fas fa-bullhorn"></i>
-                        </div>
-                        <div>
-                            <h4 class="right2_2">새 소식 받기</h4>
-                            <p class="right2_3">페리도트 패밀리, 독점 콘텐츠, 미리보기와 새 컬렉션에 대한 소식을 받아보시게 됩니다</p>
-                        </div>
-                    </div>
-                    <div class="right3">
-                        <div class="right3_1">
-                            <i class="fas fa-clipboard-list"></i>
-                        </div>
-                        <div>
-                            <h4 class="right3_2">주문 모니터링</h4>
-                            <p class="right3_3">본인 계정에서 주문과 반품 상세 정보 및 상태를 확인하세요</p>
-                        </div>
-                    </div>
-                    <div class="right4">
-                        <div class="right4_1">
-                            <i class="far fa-credit-card"></i>
-                        </div>
-                        <div>
-                            <h4 class="right4_2">카드 정보 저장</h4>
-                            <p class="right4_3">결제 수단과 주소를 저장하세요</p>
-                        </div>
-                    </div>
-                    <div class="right5">
-                        <input type="button" onclick="location.href='/member/join'" class="right5_i"value="회원 가입">
-                    </div>
-                </div>
+            <div class="box_email one">
+                <input type="email" autocomplete="off" onfocus="test1(this)" onblur="test2(this)" required value="${member.userEmail}">
+                <label for="email"><span>이메일*</span></label>
+            </div>
+            <div class="box_emailCheck one">
+                <input type="emailCheck" autocomplete="off" onfocus="test1(this)" onblur="test2(this)" required value="${member.userEmailCheck}">
+                <label for="emailCheck"><span>이메일 확인*</span></label>
+            </div>
+            <div class="box_pass one">
+                <input type="pass" autocomplete="off" onfocus="test1(this)" onblur="test2(this)" required value="${member.userPass}">
+                <label for="pass"><span>비밀번호*</span></label>
             </div>
             <script>
-				function test3(item){
-					$item = $(item);
-					$item.next("label").find("span").css({"transform":"translateY(-80%)","font-size":"12px"} );
-				}
-				function test4(item){
-					$item = $(item);
-					var value = $item.val();
-					if(value == ""){
-						$item.next("label").find("span").css({"transform":"inherit","font-size":"inherit"} );
-					}
-				}
-
-				function test5(item){
-					$item = $(item);
-					$item.next("label").find("span").css({"transform":"translateY(-200%)","font-size":"12px"} );
-				}
-				function test6(item){
-					$item = $(item);
-					var value = $item.val();
-					if(value == ""){
-						$item.next("label").find("span").css({"transform":"translateY(-120%)","font-size":"12px"} );
-					}
-				}
-			</script>
-			
-        
+                function test1(item){
+                    $item = $(item);
+                    $item.next("label").find("span").css({"transform":"translateY(-80%)","font-size":"12px"} );
+                }
+                function test2(item){
+                    $item = $(item);
+                    var value = $item.val();
+                    if(value == ""){
+                        $item.next("label").find("span").css({"transform":"inherit","font-size":"inherit"} );
+                    }
+                }
+				
+            </script>
+            <div class="agree1">
+                <div class="agree1_1"><b>개인정보 수집 및 이용에 대한 동의(필수)</b></div>
+                <div class="agree1_2">
+                    수집되는 정보: 이름, 성별, 전화번호, 이메일, 주소, 주문 내역, IP 주소<br>
+                    수집 및 이용 목적:<br>
+                    - PDDB가 제공하는 판매 전후의 서비스(배송, 수선)를 포함한 영업 활동(결제, 주문, 배송)과 밀접하게 
+                    연관된 목적을 비롯하여 간접적으로 연관된 목적과 판매 계약으로 발생하는 기타 법적 목적(예: 회계, 세금 및 법령에 근거한 보증을 
+                    포함하는 법적 의무)<br>
+                    - 구독 및 고객 계정의 관리<br>
+                    보관 기간: 상기 목적을 위해 수집된 정보는 관련 법규에 명시된 기간 동안 GG SpA가 보관합니다.
+                </div>
+            </div>
+            <div class="agree2">
+                <input type="checkbox" name="agree1" value="동의여부1" checked><b>위의 내용을 읽고, 상기 목적을 위한
+                개인 정보의 수집과 이용에 동의합니다.</b>
+            </div>
+            
+            <div class="agree3">
+                <div class="agree3_1"><b>개인정보 수집 및 이용에 대한 동의(선택)</b></div>
+                <div class="agree3_2">
+                    수집되는 정보: 이름, 성별, 전화번호, 이메일, 주소, 주문 내역, IP주소<br>
+                    수집 및 이용 목적: <br>
+                    -마케팅 및 프로모션(우편 등의 기존 방식과 이메일, SMS 또는 인스턴스 메시징 등의 
+                    전자적인 방식을 통해 발송된 메시지, 초대, 홍보물 포함)<br>
+                    정보 처리 기간: 상기 목적을 위해 수집된 정보는 관련 법규에 명시된 기간 동안 GG SpA가 보관합니다<br>
+                    정보를 제공하지 않을 경우 초대, 정보, 상업적 제안의 수신이 불가능할 수 있으며 고객의 요구에 
+                    민감하게 대응하지 못할 수 있지만, 판매 계약 및 관련 서비스에는 영향을 미치지 않습니다.
+                </div>
+            </div> 
+            <div class="agree4">
+                <input type="checkbox" name="agree2" value="동의여부2" checked><b>위의 내용을 읽고, 본인은 성인임을 확인하며 
+                    이로써 상기 목적을 위한 개인 정보의 수집과 이용에 동의합니다.</b>
+            </div>
+            <div class="agree5">
+                <div class="agree5_1"><b>개인정보 국외 이전에 대한 동의</b></div>
+                <div class="agree5_2">
+                    PD SpA는 고객으로부터 수집한 개인 정보를 계약 및 마케팅 목적으로 이탈리아에 전송할 수 있습니다.
+                </div>
+            </div>
+            <div class="agree6">
+                <input type="checkbox" name="agree3" value="동의여부3" checked><b>위의 내용을 읽고, 본인은 성인임을 확인하며 이로써 본인 개인 정보의 
+                    국외 이전에 동의합니다.
+                </b>
+            </div>
+            <div class="agree7">
+                계정을 생성함으로써 <a href="#">이용 약관</a>에 동의합니다.
+            </div>
+            <div class="btn">
+                <div class="btn1">
+                    <input type="submit" class="btn1_1"value="저장">
+                </div>
+                <div class="btn2">
+                    <input type="button" class="btn2_1"value="취소">
+                </div>
+            </div>
+            <div class="delete">
+                <b>페리도트에서 탈퇴하여 고객님의 데이터가 삭제됩니다. 계정을 삭제하면 
+                더 이상 주문 상태 및 내역을 확인할 수 없음을 유의하시기 바랍니다. 이 작업은 
+                철회할 수 없습니다.</b>
+            </div>
+            <div class="return">
+                <a href="#">프로필로 돌아가기</a>
+            </div>
+        </div>
     </section>
     <br>
     <br>
-    
     <footer>
         <div class="hr">
         <div class="title">
@@ -467,7 +493,7 @@
         
         <form action="get" >
             <p class="content_email">
-                <input type="email" class="email" name="email" onkeyup='agreedown(this)' onfocus="test(this)" onblur="test2(this)" autocomplete="off" required>
+                <input type="email" class="email" name="email" onkeyup='agreedown(this)'autocomplete="off" onfocus="test3(this)" onblur="test4(this)"required>
                 <label for="user_email"><span><em>이메일 주소</em></span></label>
             </p>
         </form>
@@ -499,7 +525,7 @@
                 </ul>
             </div>
             <div class="footbar_div1">
-                <p><a href="" class="btn1">고객 관리</a></p>
+                <p><a href="#" class="btn1">고객 관리</a></p>
                 <ul class="footbar_menu1">    
                     <li><a href="">Exclusive Services</a></li>
                     <li><a href="">고객 관리</a></li>
@@ -508,7 +534,7 @@
                 </ul>
             </div>
             <div class="footbar_div2">
-                <p><a href="" class="btn2">COOPORATE</a></p>
+                <p><a href="#" class="btn2">COOPORATE</a></p>
                 <ul class="footbar_menu2">
                     <li><a href="">연락처</a></li>
                     <li><a href="">일반 약관</a></li>
@@ -517,7 +543,7 @@
                 </ul>
             </div>
             <div class="footbar_div3">
-                <p><a href="" class="btn3">GOLDEN WORLD</a></p>
+                <p><a href="#" class="btn3">GOLDEN WORLD</a></p>
                 <ul class="footbar_menu3">
                     <li><a href="">The brand</a></li>
                     <li><a href="">Sneaker Makers</a></li>
@@ -535,17 +561,17 @@
                     <div class="div4_3">
                         <b>Customer Care</b>
                     </div>
+                
             </div>
         </div>
         <script>
-			function test(item){
+			function test3(item){
 				var $item = $(item);
-				
 				$item.css("border-bottom", "1px solid darkgray");
 				$item.next("label").find("span").css({ "transform":"translateY(-100%)","font-size":"24px","color":"gray"});
 				$item.next("label::after").css({"width":"100%","transform":"translateX(0)"});
 			}
-			function test2(item){
+			function test4(item){
 				var value = item.value;
 				var $item = $(item);
 				if(value == ""){	
