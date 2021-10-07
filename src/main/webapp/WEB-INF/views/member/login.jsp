@@ -171,8 +171,8 @@
 			</span>
 			<!-- 마이페이지 눌렀을 대 부여주는 영역 -->
 			<div class="mypageshow">
-				<div class="lo"><a><b>로그인</b></a></div>
-				<div class="neww"><a><b>새 계정 만들기</b></a></div>
+				<div class="lo"><a href="/member/login"><b>로그인</b></a></div>
+				<div class="neww"><a href="/member/join"><b>새 계정 만들기</b></a></div>
 			</div>
 			<!-- 검색 눌렀을 때 보여주는 영역 -->
 			<div class="searcharea">

@@ -1,5 +1,6 @@
 package com.peridot.service;
 
+import com.peridot.vo.CardVO;
 import com.peridot.vo.MemberVO;
 
 public interface MemberService {
@@ -13,6 +14,13 @@ public interface MemberService {
 	/* 로그인 */
     public MemberVO memberLogin(MemberVO member) throws Exception;
     
+    /* 회원정보 보기 */
+    public MemberVO memberMypage(MemberVO user) throws Exception;
+    
     // 회원정보 수정
-    public void memberUpdate(MemberVO vo)throws Exception;
+    public int memberUpdate(MemberVO vo)throws Exception;
+    
+    //카드 추가
+    public void cardAdd(CardVO member) throws Exception;
+	
 }

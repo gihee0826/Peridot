@@ -138,24 +138,31 @@
 			</span>
 			
 			<!-- 오른쪽 메뉴 -->
+			<c:if test = "${member != null }">
 			<span class="linkarea">
 				<a href="javascript:dropdown();" class="search1" >
 					검색..&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
 					<img src="/img/검색.png" width="30px" height="30px">
 				</a>
-
-				<a href="javascript:mypageShow()" class="mypage">
-				<img src="/img/사용자계정.png" width="30px" height="30px">
-				</a>
-					
-				<a href="javascript:modal()" class="cart">
-				<img src="/img/장바구니.png" width="30px" height="30px">
-				</a>
-			</span>
+				
+				<span>
+					<a href="javascript:mypageShow()" class="mypage">
+					<img src="/img/사용자계정.png" width="30px" height="30px">
+					</a>
+			<!-- 여기 사용자정보 넣는곳 -->
+					<span class="userinfo">안녕하세요 ${member.userFirstName}</span>	
+					</span>
+					<a href="javascript:modal()" class="cart">
+					<img src="/img/장바구니.png" width="30px" height="30px">
+					</a>
+					</span>
+			
 			<!-- 마이페이지 눌렀을 대 부여주는 영역 -->
 			<div class="mypageshow">
-				<div class="lo"><a><b>로그인</b></a></div>
-				<div class="neww"><a><b>새 계정 만들기</b></a></div>
+				<div class="lo"><a href="/member/mypage"><b>대시보드</b></a></div>
+				<div class="lo"><a href="/member/profile"><b>프로필</b></a></div>
+				<div class="lo"><a><b>주문</b></a></div>
+				<div><a href="/member/logout.do"><b>로그아웃</b></a></div>
 			</div>
 			<!-- 검색 눌렀을 때 보여주는 영역 -->
 			<div class="searcharea">
@@ -177,6 +184,7 @@
 					<h2 class="inputb sLeft good2" >브이스타</h2>
 				</div>
 			</div>
+			</c:if>
 			<!-- 여성 카테고리 -->
 			<div class="woman">
 				<div class="warea wparea">
@@ -335,6 +343,7 @@
     <br>
     <br>
     <section>
+    <form action="/member/update" method="post" name="fr">
         <div class="category">
             <p><b>카테고리</b></p>
         </div>   
@@ -344,27 +353,27 @@
         <div class="box">
             <div class="box1"><b>이름 또는 이메일 주소 변경</b></div>
             <div class="box_gender">
-                <select class="box_gender1">
-                    <option class="opt0" seleted>남성</option>
-                    <option class="opt0">여성</option>
-                    <option class="opt0">무응답</option>
-                    
-                </select>
+               
+  				 	<select class="box_gender1" name="userGender" id="selectBox">
+				         <option value="m" >남성</option>
+				         <option value="f">여성</option>
+				         <option value="n">무응답</option>
+				   </select>
             </div>
             <div class="box_name1 one">
-                <input type="text" autocomplete="off" onfocus="test1(this)" onblur="test2(this)" required value="${member.userFirstName}">
+                <input type="text" autocomplete="off" onfocus="test1(this)" onblur="test2(this)" required value="${member.userFirstName}" name="userFirstName">
                 <label for="text"><span>이름*</span></label>
             </div>
             <div class="box_name2 one">
-                <input type="text" autocomplete="off" onfocus="test1(this)" onblur="test2(this)" required value="${member.userLastName}">
+                <input type="text" autocomplete="off" onfocus="test1(this)" onblur="test2(this)" required value="${member.userLastName}" name="userLastName">
                 <label for="text"><span>성*</span></label>
             </div>
             <div class="box_user one">
-                <input type="user" autocomplete="off" onfocus="test1(this)" onblur="test2(this)" required>
+                <input type="user" autocomplete="off" onfocus="test1(this)" onblur="test2(this)" required value="${member.userName}" name="userName">
                 <label for="user"><span>사용자명</span></label>
             </div>
             <div class="box_birth one">
-                <input type="birth" autocomplete="off" onfocus="test1(this)" onblur="test2(this)" required>
+                <input type="birth" autocomplete="off" onfocus="test1(this)" onblur="test2(this)" required value="${member.userBirth}" name="userBirth">
                 <label for="birth"><span>생년월일*</span></label>
             </div>
             <div class="box_num">
@@ -385,22 +394,11 @@
                     </select name="phone">
                 </div>
                 <div class="box_phone one">
-                    <input type="phone" autocomplete="off" onfocus="test1(this)" onblur="test2(this)" required value="${member.userPhone}">
+                    <input type="phone" autocomplete="off" onfocus="test1(this)" onblur="test2(this)" required value="${member.userPhone}" name="userPhone">
                     <label for="phone"><span>전화번호*</span></label>
                 </div>
             </div>
-            <div class="box_email one">
-                <input type="email" autocomplete="off" onfocus="test1(this)" onblur="test2(this)" required value="${member.userEmail}">
-                <label for="email"><span>이메일*</span></label>
-            </div>
-            <div class="box_emailCheck one">
-                <input type="emailCheck" autocomplete="off" onfocus="test1(this)" onblur="test2(this)" required value="${member.userEmailCheck}">
-                <label for="emailCheck"><span>이메일 확인*</span></label>
-            </div>
-            <div class="box_pass one">
-                <input type="pass" autocomplete="off" onfocus="test1(this)" onblur="test2(this)" required value="${member.userPass}">
-                <label for="pass"><span>비밀번호*</span></label>
-            </div>
+   			
             <script>
                 function test1(item){
                     $item = $(item);
@@ -467,7 +465,7 @@
                     <input type="submit" class="btn1_1"value="저장">
                 </div>
                 <div class="btn2">
-                    <input type="button" class="btn2_1"value="취소">
+                    <input type="button" class="btn2_1"value="취소" onclick="location.href='/'">
                 </div>
             </div>
             <div class="delete">
@@ -479,6 +477,7 @@
                 <a href="#">프로필로 돌아가기</a>
             </div>
         </div>
+        </form>
     </section>
     <br>
     <br>

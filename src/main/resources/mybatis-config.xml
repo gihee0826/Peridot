@@ -5,6 +5,9 @@
 
 	<typeAliases>
         <typeAlias type="com.peridot.vo.MemberVO" alias="memberVO"/>
+        
+         <typeAlias type="com.peridot.vo.CardVO" alias="cardVO"/>
     </typeAliases>
+   
 
 </configuration>

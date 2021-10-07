@@ -4,6 +4,7 @@ import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Service;
 
 import com.peridot.dao.MemberDAO;
+import com.peridot.vo.CardVO;
 import com.peridot.vo.MemberVO;
 
 @Service
@@ -38,9 +39,25 @@ public class MemberServiceImpl implements MemberService{
 
 
 	@Override
-	public void memberUpdate(MemberVO vo) throws Exception {
+	public int memberUpdate(MemberVO vo) throws Exception {
 		
-		memberdao.memberUpdate(vo);
+		return memberdao.memberUpdate(vo);
+		
+	}
+
+
+	@Override
+	public MemberVO memberMypage(MemberVO user) throws Exception {
+		
+		return memberdao.memberMypage(user);
+		
+	}
+
+
+	@Override
+	public void cardAdd(CardVO card) throws Exception {
+		
+		memberdao.cardAdd(card);
 		
 	}
 }

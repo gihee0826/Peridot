@@ -5,6 +5,7 @@ import org.apache.ibatis.session.SqlSession;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Repository;
 
+import com.peridot.vo.CardVO;
 import com.peridot.vo.MemberVO;
 
 @Repository
@@ -32,8 +33,17 @@ public class MemberDAO {
     	
     }
 
-	public MemberVO memberUpdate(MemberVO member) {
-		return sqlSession.selectOne(NameSpace+".memberUpdate",member);
+	public int memberUpdate(MemberVO member) {
+		return sqlSession.update(NameSpace+".memberUpdate",member);
+		
+	}
+
+	public MemberVO memberMypage(MemberVO user) {
+		return sqlSession.selectOne(NameSpace+".memberMypage",user);
+		
+	}
+	
+	public void cardAdd(CardVO card) {
 		
 	}
 	

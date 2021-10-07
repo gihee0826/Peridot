@@ -120,6 +120,26 @@ section section{
     border-bottom: 1px dashed gray;
     display: block;
 }
+section .titleck{
+	display: none;
+	font-size: 12px;
+	margin-left: 10px;
+}
+section .numck{
+	display: none;
+	font-size: 12px;
+	margin-left: 10px;
+}
+section .nameck{
+	display: none;
+	font-size: 12px;
+	margin-left: 10px;
+}
+section .scck{
+	display: none;
+	font-size: 12px;
+	margin-left: 10px;
+}
 
 @media screen and (max-width:900px) {
     section .title{

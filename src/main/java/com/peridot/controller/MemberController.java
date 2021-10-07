@@ -14,6 +14,7 @@ import org.springframework.web.bind.annotation.ResponseBody;
 import org.springframework.web.servlet.mvc.support.RedirectAttributes;
 
 import com.peridot.service.MemberService;
+import com.peridot.vo.CardVO;
 import com.peridot.vo.MemberVO;
 
 @Controller
@@ -42,7 +43,7 @@ public class MemberController {
 		// 회원가입 서비스 실행
 		memberservice.memberJoin(member);
 		
-		return "redirect:/home";
+		return "redirect:/";
 		
 	}
 
@@ -99,7 +100,7 @@ public class MemberController {
 	         
 	         session.setAttribute("member", lvo);             // 일치하는 아이디, 비밀번호 경우 (로그인 성공)
 	         
-	         return "redirect:/home";
+	         return "redirect:/";
 	    }
 	    
 	    /* 메인페이지 로그아웃 */
@@ -111,7 +112,7 @@ public class MemberController {
 	        
 	        session.invalidate();
 	        
-	        return "redirect:/home";
+	        return "redirect:/";
 	    }
 	
 	    
@@ -133,11 +134,33 @@ public class MemberController {
 		 @RequestMapping(value="/update", method = RequestMethod.POST)
 		 public String updatePost(MemberVO member, HttpSession session) throws Exception{
 			 
+			 MemberVO lvo = (MemberVO)session.getAttribute("member");
+			 
+			 member.setUserNo(lvo.getUserNo());
 			 memberservice.memberUpdate(member);
 			 
-			session.invalidate();
+			session.getAttribute("userNo");
 				
 			return "redirect:/member/mypage";
 		 }
-	
+		
+		 
+		 //카드추가 이동
+			@RequestMapping(value = "/card", method = RequestMethod.GET)
+			public void cardGET() {
+				
+				logger.info("카드추가 페이지 진입");
+						
+			}
+			
+			//카드추가
+			@RequestMapping(value="/card", method=RequestMethod.POST)
+			public String cardPOST(CardVO card) throws Exception{
+				
+				// 카드추가 서비스 실행
+				memberservice.cardAdd(card);
+				
+				return "redirect:/member/card";
+				
+			}
 }

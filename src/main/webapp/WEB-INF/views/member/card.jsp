@@ -1,130 +1,110 @@
 <%@ page language="java" contentType="text/html; charset=UTF-8"
     pageEncoding="UTF-8"%>
-<%@ taglib uri="http://java.sun.com/jsp/jstl/core" prefix="c" %>
 <!DOCTYPE html>
-
+<html lang="en">
 <head>
-	<link rel="preconnect" href="https://fonts.googleapis.com">
-	<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
-	<link href="https://fonts.googleapis.com/css2?family=Gothic+A1&display=swap" rel="stylesheet">
-	<!-- 슬릭 사용할떄 필요한것-->
-	<link rel="stylesheet" type="text/css" href="http://cdn.jsdelivr.net/npm/slick-carousel@1.8.1/slick/slick.css"/><!--슬릭cdn-->
-	<script src="/js/jquery-3.6.0.min.js"></script> <!--제이쿼리-->
-	<script type="text/javascript" src="http://cdn.jsdelivr.net/npm/slick-carousel@1.8.1/slick/slick.min.js"></script><!--슬릭cdn-->
-	<script>
-			$(document).ready(function(){
-				$('.autoplay').slick({
-					slid:'autoplay',
-					prevArrow: $('.tBtn'),
-					nextArrow: $('.tBtn2'),
-					slidesToShow: 5,
-					slidesToScroll: 1,
-					autoplay: true,
-					autoplaySpeed:5000,					
-					responsive: [
-					{
-					  breakpoint: 1024,
-					  settings: {
-						slidesToShow: 3,
-						slidesToScroll: 1
-					  }
-					},
-					{
-					  breakpoint: 600,
-					  settings: {
-						slidesToShow: 2,
-						slidesToScroll: 1
-					  }
-					},
-					{
-					  breakpoint: 480,
-					  settings: {
-						slidesToShow: 1,
-						slidesToScroll: 1
-					  }
-					}
-				  ]
-				});
-			});
-	</script>
-	<script>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <script src="https://kit.fontawesome.com/57da38e2a5.js" crossorigin="anonymous"></script>
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Gothic+A1&display=swap" rel="stylesheet">
+    <script src="/js/jquery-3.6.0.min.js"></script>
+    <script>
 		function dropdown(){
-			$(".searcharea").toggle();
-			$(".woman").hide();
-			$(".man").hide();
-			$(".kids").hide();
-			$(".brand").hide();	
-			$(".mypageshow").hide();
+			$(".header1 .searcharea").toggle();
+			$(".header1 .woman").hide();
+			$(".header1 .man").hide();
+			$(".header1 .brand").hide();	
+			$(".header1 .mypageshow").hide();
 		}
 		function dropdownWoman(){
-			$(".woman").toggle();	 
-			$(".searcharea").hide();
-			$(".man").hide();
-			$(".kids").hide();
-			$(".brand").hide();	
-			$(".mypageshow").hide();
+			$(".header1 .woman").toggle();	 
+			$(".header1 .searcharea").hide();
+			$(".header1 .man").hide();
+			$(".header1 .brand").hide();	
+			$(".header1 .mypageshow").hide();
 		}
 		function dropdownMan(){
-			$(".man").toggle();
-			$(".searcharea").hide();
-			$(".woman").hide();
-			$(".kids").hide();	 			
-			$(".brand").hide();	
-			$(".mypageshow").hide();
+			$(".header1 .man").toggle();
+			$(".header1 .searcharea").hide();
+			$(".header1 .woman").hide();		
+			$(".header1 .brand").hide();	
+			$(".header1 .mypageshow").hide();
 		}
 		function dropdownKids(){
-			$(".kids").toggle();
-			$(".searcharea").hide();
-			$(".woman").hide();	 
-			$(".man").hide();
-			$(".brand").hide();	
-			$(".mypageshow").hide();
+			$(".header1 .searcharea").hide();
+			$(".header1 .woman").hide();	 
+			$(".header1 .man").hide();
+			$(".header1 .brand").hide();	
+			$(".header1 .mypageshow").hide();
 		}
 		function dropdownBrand(){
-			$(".brand").toggle();
-			$(".searcharea").hide();
-			$(".woman").hide();	 
-			$(".man").hide();
-			$(".kids").hide();
-			$(".mypageshow").hide();					
+			$(".header1 .brand").toggle();
+			$(".header1 .searcharea").hide();
+			$(".header1 .woman").hide();	 
+			$(".header1 .man").hide();
+			$(".header1 .mypageshow").hide();					
 		}
 		function mypageShow(){
-			$(".mypageshow").toggle();
-			$(".searcharea").hide();
-			$(".woman").hide();	 
-			$(".man").hide();
-			$(".kids").hide();	
-			$(".brand").hide();				
+			$(".header1 .mypageshow").toggle();
+			$(".header1 .searcharea").hide();
+			$(".header1 .woman").hide();	 
+			$(".header1 .man").hide();
+			$(".header1 .brand").hide();				
 							
 		}
 		function modal(){
-			$(".modal").fadeIn();
-			$(".mypageshow").hide();
-			$(".searcharea").hide();
-			$(".woman").hide();	 
-			$(".man").hide();
-			$(".kids").hide();	
-			$(".brand").hide();	
+			$(".header2 .modal").fadeIn();
+			$(".header1 .mypageshow").hide();
+			$(".header1 .searcharea").hide();
+			$(".header1 .woman").hide();	 
+			$(".header1 .man").hide();
+			$(".header1 .brand").hide();	
 		}
 		function delgo(){
-			$(".delgo2").fadeIn();
-			$(".mypageshow").hide();
-			$(".searcharea").hide();
-			$(".woman").hide();	 
-			$(".man").hide();
-			$(".kids").hide();	
-			$(".brand").hide();
-			$(".modal").fadeOut();
+			$(".header2 .delgo2").fadeIn();
+			$(".header1 .mypageshow").hide();
+			$(".header1 .searcharea").hide();
+			$(".header1 .woman").hide();	 
+			$(".header1 .man").hide();
+			$(".header1 .brand").hide();
+			$(".header2 .modal").fadeOut();
 		}
 		function sideclose2(){
-			$(".delgo2").fadeOut();
+			$(".header2 .delgo2").fadeOut();
 		}
 		function sideclose(){
-			$(".modal").fadeOut();
+			$(".header2 .modal").fadeOut();
 		}
 		function dropdownclose(){
-			$(".searcharea").hide();
+			$(".header1 .searcharea").hide();
 		}
+	</script>
+    <title>카드 추가하기</title>
+    <script>
+        function agreedown(item){
+            var value = $(item).val();
+            if(value.length >= 1){
+                $('#agree').show();
+            }else{
+                $('#agree').hide();
+            }
+            /*
+            if($('#agree').css('display') == 'none'){
+                $('#agree').show();
+            }else{
+                $('#agree').hide();
+            }
+            */
+           $(document).ready(function(){
+                $()
+           });
+        }
+    </script>
+    <script src="/js/media.js" defer></script>
+    <script>
 		/* 스크롤휠인데 스타일추가 */
 		document.onwheel = function (event){
 			if(event.wheelDelta < 0){
@@ -141,20 +121,17 @@
 	<!--https://fontawesome.com/v5.15/icons/times?style=solid-->
 	<script src="https://kit.fontawesome.com/57da38e2a5.js" crossorigin="anonymous"></script>
 	<link rel="stylesheet" href="/css/NoLoginHeader.css">
-	<link rel="stylesheet" href="/css/index.css">
-	<link rel="stylesheet" href="/css/footer.css">
 	<style>
-	.fiexed{
-		position:fixed;
-		width:100%;
-		top:0px;
-	}
-		
+		.fiexed{
+			position:fixed;
+			width:100%;
+		}
 	</style>
+    <link rel="stylesheet" href="/css/card.css">
+    <link rel="stylesheet" href="/css/footer.css">
 </head>
-
 <body>
-<header class="header1">
+    <header class="header1">
 		<div class="callheader">
 			<b>고객센터 : 063-111-1234</b>
 		</div>
@@ -167,51 +144,6 @@
 			<a href="javascript:dropdownBrand();" class="cat"><b>브랜드 스토리</b></a>
 			</span>
 			
-			<!-- 로그인 X -->
-			<!-- 오른쪽 메뉴 -->
-			<c:if test = "${member == null }">
-			<span class="linkarea">
-				<a href="javascript:dropdown();" class="search1" >
-					검색..&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
-					<img src="/resources/img/검색.png" width="30px" height="30px">
-				</a>
-
-				<a href="javascript:mypageShow()" class="mypage">
-				<img src="/resources/img/사용자계정.png" width="30px" height="30px">
-				</a>
-					
-				<a href="javascript:modal()" class="cart">
-				<img src="/resources/img/장바구니.png" width="30px" height="30px">
-				</a>
-			</span>
-			<!-- 마이페이지 눌렀을 대 부여주는 영역 -->
-			<div class="mypageshow">
-				<div class="lo"><a href="/member/login"><b>로그인</b></a></div>
-				<div class="neww"><a href="/member/join"><b>새 계정 만들기</b></a></div>
-			</div>
-			<!-- 검색 눌렀을 때 보여주는 영역 -->
-			<div class="searcharea">
-				<div class="inputb sLeft">
-					<input type="search" class="sbox" placeholder="검색..">
-					<button class="sbt">검색</button>
-				</div>
-				<div class="inputb sRight">
-					<a href="javascript:dropdownclose();" class="x">
-					<i class="fas fa-times"></i>
-					</a>
-				</div>
-				<div>
-					<h3 class="inputb sLeft good" >인기 검색 항목</h3>
-				</div>
-				<div>
-					<h2 class="inputb sLeft good2" >슈퍼스타</h2>
-					<h2 class="inputb sLeft good2" >대드-스타</h2>
-					<h2 class="inputb sLeft good2" >브이스타</h2>
-				</div>
-			</div>
-			</c:if>
-			
-			<!-- 로그인 O -->
 			<!-- 오른쪽 메뉴 -->
 			<c:if test = "${member != null }">
 			<span class="linkarea">
@@ -235,7 +167,7 @@
 			<!-- 마이페이지 눌렀을 대 부여주는 영역 -->
 			<div class="mypageshow">
 				<div class="lo"><a href="/member/mypage"><b>대시보드</b></a></div>
-				<div class="lo"><a href="/member/update"><b>프로필</b></a></div>
+				<div class="lo"><a href="/member/profile"><b>프로필</b></a></div>
 				<div class="lo"><a><b>주문</b></a></div>
 				<div><a href="/member/logout.do"><b>로그아웃</b></a></div>
 			</div>
@@ -336,7 +268,7 @@
 					<a>대드-스타<br></a>
 				</div>
 				<div class="warea">
-					<a>페리도트 월드<br></a>
+					<a>골든 월드<br></a>
 				</div>
 				<div class="wareas">
 					<img src="/img/iphoto.jpg" class="ip">
@@ -415,254 +347,160 @@
 	</div>	
 </div>
 </header>
-<section>
-	<div class="vParent">
-		<button class="vbt">←</button>
-			<div class="v">
-					<div class="vvv">
-						<img src="2.png">
-						<div class="cont1">
-							EW SHAPE, NEW LOVE:<br>
-							OUR SKY-STAR
-						</div>
-					</div>
-					<div class="vvv">
-						<img src="1.png">
-						<div class="cont1">
-							STAR BAG COLLECTION
-						</div>
-					</div>
-			</div>
-		<button class="vbt2">→</button>
-	</div>
-    <div class="twoarea">
-        <img src="/img/index1.png" class="twoimg">
-        <div>
-            <span class="twotitle">THE WEEK'S DROP</span>
-            <div class="twotitlecont">
-                진정한 영혼으로 하이탑 스니커즈를 재해석한 볼스타 모델에서 영감을 받은,
-                스카이스타 스니커즈는 미국 대학 바이브와 80년대 농구 씬을 느낄 수 있습니다.<br>
-                <button class="twobt">지금 구매하세요</button>
+    <br>
+    <br>
+    <section>
+        <form id="card_form" method="post">
+            <div class="title">
+                <h1><em>신용카드</em></h1>
             </div>
-        </div>
-    </div>
-    <div class="threetitle">
-        추천 상품
-    </div>   
-	<div class="autoParent">
-		<button class="tBtn">←</button>
-			<div class="autoplay">
-				<div class="item">
-					<div><img src="/img/장바구니신발1.jpg"></div>
-					<div class="sname">블랙 스와로브스키 크리스탈 힐탭 화이트 캔버스 슈퍼스타 스니커즈</div>
-					<div class="price">￦&nbsp;948,000</div>
-				</div>
-				<div class="item">
-					<div><img src="/img/장바구니신발2.jpg"></div>
-					<div class="sname">글리터리 스타 레오파드 프린트 포니 가죽 미드스타 스니커즈</div>
-					<div class="price">￦&nbsp;818,000</div>
-				</div>
-				<div class="item">
-					<div><img src="/img/장바구니신발3.jpg"></div>
-					<div class="sname">핑크 골드 글리터 미드스타 스니커즈</div>
-					<div class="price">￦&nbsp;818,000</div>
-				</div>
-				<div class="item">
-					<div><img src="/img/장바구니신발1.jpg"></div>
-					<div class="sname">블랙 스와로브스키 크리스탈 힐탭 화이트 캔버스 슈퍼스타 스니커즈</div>
-					<div class="price">￦&nbsp;948,000</div>
-				</div>
-				<div class="item">
-					<div><img src="/img/장바구니신발2.jpg"></div>
-					<div class="sname">글리터리 스타 레오파드 프린트 포니 가죽 미드스타 스니커즈</div>
-					<div class="price">￦&nbsp;818,000</div>
-				</div>
-				<div class="item">
-					<div><img src="/img/장바구니신발3.jpg"></div>
-					<div class="sname">핑크 골드 글리터 미드스타 스니커즈</div>
-					<div class="price">￦&nbsp;818,000</div>
-				</div>
-			</div>
-		<button class="tBtn2">→</button>	
-	</div>
-    <div class="fourimg">
-        <div class="fourimgcont">
-            <div class="imgf1">
-                <img src="/img/섬세하게.png" class="fimgs">
-                <div>
-                    <button class="fourbt">섬세하게 여성적인</button>
+            <div class="box">
+                <div class="box1">
+                    <h3>ADD NEW CREDIT CARD</h3>
+                </div>
+                <div class="cardTitle one">
+                    <input type="text" class="cardTitle" autocomplete="off" onfocus="test(this)" onblur="test2(this)" required name="cardTitle">
+                    <label for="cardTitle"><span>Credit Card Title *</span></label>
+                </div>
+                <span class="titleck">카드이름을 입력해주세요.</span>
+                <script>
+                    function test(item){
+                        $item = $(item);
+                        $item.next("label").find("span").css({"transform":"translateY(-80%)","font-size":"12px"} );
+                    }
+                    function test2(item){
+                        $item = $(item);
+                        var value = $item.val();
+                        if(value == ""){
+                            $item.next("label").find("span").css({"transform":"inherit","font-size":"inherit"} );
+                        }
+                    }
+                </script>
+                <div class="cardNum one">
+                    <input type="text" class="cardNum" autocomplete="off" onfocus="test(this)" onblur="test2(this)"  required name="cardNum">
+                    <label for="cardNum"><span>카드 번호 *</span></label>
+                </div>
+                <span class="numck">카드번호를 입력해주세요.</span>
+                <div class="date">
+                    <div class="month one">
+                        <select class="sel1 cardMonth" autocomplete="off" required name="cardMonth">
+                            <option class="month" value="1">01</option>
+                            <option class="month" value="2">02</option>
+                            <option class="month" value="3">03</option>
+                            <option class="month" value="4">04</option>
+                            <option class="month" value="5">05</option>
+                            <option class="month" value="6">06</option>
+                            <option class="month" value="7">07</option>
+                            <option class="month" value="8">08</option>
+                            <option class="month" value="9">09</option>
+                            <option class="month" value="10">10</option>
+                            <option class="month" value="11">11</option>
+                            <option class="month" value="12">12</option>
+                        </select>
+                        <label for="cardMonth"><span>월 *</span></label>
+                    </div>
+                    <div class="year one">
+                        <select class="sel2 cardYear"autocomplete="off" required name="cardYear">
+                            <option class="year" value="2021">2021</option>
+                            <option class="year" value="2022">2022</option>
+                            <option class="year" value="2023">2023</option>
+                            <option class="year" value="2024">2024</option>
+                            <option class="year" value="2025">2025</option>
+                            <option class="year" value="2026">2026</option>
+                            <option class="year" value="2027">2027</option>
+                            <option class="year" value="2028">2028</option>
+                            <option class="year" value="2029">2029</option>
+                            <option class="year" value="2030">2030</option>
+                        </select>
+                        <label for="cardYear"><span>연도 *</span></label>
+                    </div>
+                </div>
+                <div class="cardName one ">
+                    <input type="text" class="cardUserName"autocomplete="off" onfocus="test(this)" onblur="test2(this)" required name="cardUserName">
+                    <label for="cardName"><span>카드 명의자 이름 *</span></label>
+                </div>
+                <span class="nameck">카드 명의자를 입력해주세요.</span>
+                <div class="cardCode one">
+                    <input type="text" class="cardSc"autocomplete="off" onfocus="test(this)" onblur="test2(this)" required name="cardSc">
+                    <label for="cardCode"><span>보안코드 *</span></label>
+                </div>
+                <span class="scck">보안코드를 입력해주세요.</span>
+                <div class="save">
+                    <input type="button" class="save_" value="저장">
                 </div>
             </div>
-            <div class="imgf2">
-                <img src="/img/과감하게.png" class="fimgs">
-                <div>
-                    <button class="fourbt">과감하게 남성적인</button>
-                </div>
-            </div>
-        </div>    
-    </div>
-    <div class="line"><img src="/img/작대기.PNG"></div>
-    <div class="fivetitle">
-        새 페릿 컬렉션
-    </div>    
-    <div>
-        <div>
-            <img src="/img/새 컬렉션.PNG" class="newcollec">
-        </div>
-    </div>
-    <div class="dnabt">
-        <button class="dna">페리도트 DNA로의 여정</button>
-    </div>
-    <div class="line2"><img src="/img/작대기.PNG"></div>
-    <div class="lasttitle">
-        페릿 세계 뉴스
-    </div> 
-    <div class="lastcenter">
-		<div>
-		<img src="/img/l1.png">
-			<div class="lshape">
-				<div class="lastone">
-					FROM VENICE TO VENICE
-				</div>
-				<div class="lasttwo">
-					OUR JOURNEY WITH CORY JUNEAU
-				</div>
-				<div class="lastthree">
-					골든구스의 길, 이야기와 뿌리의 도시들 - 이 모두를 프로 스케이트보더 Cory Juneau와 함께 다시 여행했습니다.
-					이 젊은 몽상가의 놀라운 여정에 깊에 스며들어갈 컬래버레이션으로 스케이트 보울의 정상에서 보는 것 같이 그의 시선에서 이 세상을 바라볼 수 있게 해줄 것입니다.
-				</div>
-				<div class="lastfour">
-					<a>자세히 알아보기</a>
-				</div>
-			</div>
-		</div>
-		<div>
-			<img src="/img/l2.png">
-			<div class="lshape">
-				<div class="lastone">
-					NEW OPENING
-				</div>
-				<div class="lasttwo">
-					THE GOLDEN TV
-				</div>
-				<div class="lastthree">
-					피지컬이 디지털을 만나는 공간, 나만의 이야기가 스포트라이트를 받고 경험이 내 주위를 감싸는 공간이 펼쳐집니다. 
-					밀라노 Via Verri의 골든구스 새 스토어를 방문해 보세요. 기억에 남을 몰입형 여정을 떠날 시간입니다.
-				</div>
-				<div class="lastfour">
-					<a>매장 가는 법</a>
-				</div>
-			</div>
-			</div>
-		<div>
-			<img src="/img/l3.png">
-			<div class="lshape">
-				<div class="lastone">
-					EXCLUSIVE SERVICES
-				</div>
-				<div class="lasttwo">
-					PICK UP IN STORE
-				</div>
-				<div class="lastthree">
-					매장에서 수령 서비스를 이용하시면 골든구스 웹사이트상의 폭넓고, 완벽히 구비된 제품 중에서 원하시는 제품을 골라 원하시는 매장으로 배송할 수 있습니다. 고객님에게 특별한 도움을 제공하기 위해 판매 전문가가 기다리고 있습니다.
-				</div>
-				<div class="lastfour">
-					<a>더 읽어보기</a>
-				</div>
-			</div>
-		</div>
-		<div>
-			<img src="/img/l4.png">
-			<div class="lshape">
-				<div class="lastone">
-					CO-CREATION
-				</div>
-				<div class="lasttwo">
-					스니커즈메이커
-				</div>
-				<div class="lastthree">
-					창의성은 공유하는 과정입니다. 참여해보세요. 스니커즈메이커는 여러분의 기분을 유니크한 제품으로 해석해 여러분만의 것으로 만들어드립니다.
-				</div>
-				<div class="lastfour">
-					<a>페리도트와 함께 만들어요</a>
-				</div>
-			</div>
-			</div>
-		<div>
-			<img src="/img/l5.png">
-			<div class="lshape">
-				<div class="lastone">
-							RESTYLING
-					</div>
-				<div class="lasttwo">
-					FORTE DEI MARMI 매장
-				</div>
-				<div class="lastthree">
-					Bagno Golden에서 Edicola Golden까지: Forte dei Marmi에 있는 당사 매장이 이탈리아 전통에 맞춰 새롭게 단장하였습니다.오셔서 최신 Forte dei Marmi 매장의 컨셉을 확인해 보십시오.
-				</div>
-				<div class="lastfour">
-					<a>매장 가는 법</a>
-				</div>
-			</div>
-			</div>
-		<div>
-			<img src="/img/l6.png">
-			<div class="lshape">
-				<div class="lastone">
-					NEW OPENING
-				</div>
-				<div class="lasttwo">
-					RODEO DRIVE STORE
-				</div>
-				<div class="lastthree">
-					로스엔젤레스 로데오 드라이브에 문을 연 새 스토어에서 아메리칸 스타일과 산업 디자인이 만났습니다. 골든구스 로데오 드라이브 스토어에서 유니크한 분위기를 만끽해 보세요.
-				</div>
-				<div class="lastfour">
-					<a>HOW DO I GET THERE?</a>
-				</div>
-			</div>
-		</div>
-	</div>
-    <!--도큐먼트레디가 없어서 위에 올려놓으면 화면이 그려지기 전이라서 실행 안됨-->
-    <script>
-       $('.v').slick({
-		  slidesToShow: 1,
-		  slidesToScroll: 1,
-		  autoplay: true,
-		  autoplaySpeed: 3000,
-		  prevArrow: $('.vbt'),
-		  nextArrow: $('.vbt2')
+            <script>
+	/* 유효성 검사 통과유무 변수 */
+	 var cardTitleCheck = false;            
+	 var cardNumCheck = false;            
+	 var cardMonthCheck = false;            
+	 var cardYearCheck = false;			
+	 var cardUserNameCheck = false;			
+	 var cardScCheck = false;            
+	 
+	$(document).ready(function(){
+		//카드추가 버튼(카드추가 기능 작동)
+		$(".save_").click(function(){
+			/* 입력값 변수 */
+	        var ctitle = $('.cardTitle').val();                 
+	        var cnum= $('.cardNum').val();                
+	        var cmonth = $('.cardMonth').val();            
+	        var cyear = $('.cardYear').val();           
+	        var cname = $('.cardUserName').val();            
+	        var csc = $('.cardSc').val();        
+	        
+	        
+	        if(ctitle == ""){
+	            $('.titleck').css('display','block');
+	            cardTitleCheck = false;
+	        }else{
+	            $('.titleck').css('display', 'none');
+	            cardTitleCheck = true;
+	        }
+	        
+	        /* 성 유효성 검사 */
+	        if(cnum == ""){
+	            $('.numck').css('display','block');
+	            cardNumCheck = false;
+	        }else{
+	            $('.numck').css('display', 'none');
+	            cardNumCheck = true;
+	        }
+	        
+	        /* 전화번호 유효성 검사 */
+	        if(cname == ""){
+	            $('.nameck').css('display','block');
+	            cardUserNameCheck = false;
+	        }else{
+	            $('.nameck').css('display', 'none');
+	            cardUserNameCheck = true;
+	        }
+	        
+	        /* 이메일 유효성 검사 */
+	        if(csc == ""){
+	            $('.scck').css('display','block');
+	            cardScCheck = false;
+	        }else{
+	            $('.scck').css('display', 'none');
+	            cardScCheck = true;
+	        }
+	        
+	            
+	        
+	        /* 최종 유효성 검사 */
+	        if(cardTitleCheck&&cardNumCheck&&cardUserNameCheck&&cardScCheck){
+	        	$("#card_form").attr("action", "/member/card");
+	            $("#card_form").submit(); 
+	        }
+	        
+	        return false;
 		});
-		
-		
-		$('.lastcenter').slick({
-		  centerMode: true,
-		  centerPadding: '60px',
-		  slidesToShow: 3,
-		  responsive: [
-			{
-			  breakpoint: 768,
-			  settings: {
-				arrows: false,
-				centerMode: true,
-				centerPadding: '40px',
-				slidesToShow: 3
-			  }
-			},
-			{
-			  breakpoint: 480,
-			  settings: {
-				arrows: false,
-				centerMode: true,
-				centerPadding: '40px',
-				slidesToShow: 1
-			  }
-			}
-		  ]
-});
-    </script>
-	</section>
-	 <footer>
+	});
+	</form>   
+    </section>
+    <br>
+    <br>
+    <footer>
         <div class="hr">
         <div class="title">
             <i>PERIDOT</i> NEWSLETTER
@@ -673,7 +511,7 @@
         
         <form action="get" >
             <p class="content_email">
-                <input type="email" class="email" name="email" onkeyup='agreedown(this)' onfocus="test(this)" onblur="test2(this)" autocomplete="off" required>
+                <input type="email" class="email" name="email" onkeyup='agreedown(this)'autocomplete="off" onfocus="test3(this)" onblur="test4(this)"required>
                 <label for="user_email"><span><em>이메일 주소</em></span></label>
             </p>
         </form>
@@ -744,14 +582,18 @@
             </div>
         </div>
         <script>
-			function test(item){
+			function test3(item){
 				var $item = $(item);
-				
+				/*
+				$("footer p input:focus + label span,footer p input:valid + label span").css({ "transform":"translateY(-100%)","font-size":"24px","color":"gray"});
+				$("footer p input:focus").css("border-bottom", "1px solid darkgray");
+				$("footer p input:focus + label::after,footer p input:valid + label::after").css({"width":"100%","transform":"translateX(0)"});
+				*/
 				$item.css("border-bottom", "1px solid darkgray");
 				$item.next("label").find("span").css({ "transform":"translateY(-100%)","font-size":"24px","color":"gray"});
 				$item.next("label::after").css({"width":"100%","transform":"translateX(0)"});
 			}
-			function test2(item){
+			function test4(item){
 				var value = item.value;
 				var $item = $(item);
 				if(value == ""){	
@@ -762,6 +604,4 @@
 		</script>
     </footer>
 </body>
-
-
 </html>

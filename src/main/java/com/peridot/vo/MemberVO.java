@@ -24,11 +24,13 @@ public class MemberVO {
 	private String userEmail;
 	private String userPass;
 	private String userPhone;
+	private String userGender;
+	private String userName;
+	private String userBirth;
 	private String userAdmin;
 	private String userEmailCheck;
 	private String userPassCheck;
 	private String date;
-	
 	public int getUserNo() {
 		return userNo;
 	}
@@ -65,6 +67,24 @@ public class MemberVO {
 	public void setUserPhone(String userPhone) {
 		this.userPhone = userPhone;
 	}
+	public String getUserGender() {
+		return userGender;
+	}
+	public void setUserGender(String userGender) {
+		this.userGender = userGender;
+	}
+	public String getUserName() {
+		return userName;
+	}
+	public void setUserName(String userName) {
+		this.userName = userName;
+	}
+	public String getUserBirth() {
+		return userBirth;
+	}
+	public void setUserBirth(String userBirth) {
+		this.userBirth = userBirth;
+	}
 	public String getUserAdmin() {
 		return userAdmin;
 	}
@@ -89,6 +109,8 @@ public class MemberVO {
 	public void setDate(String date) {
 		this.date = date;
 	}
+	
+	
 	
 	
 	

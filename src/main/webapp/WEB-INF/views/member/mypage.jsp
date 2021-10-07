@@ -1,5 +1,6 @@
 <%@ page language="java" contentType="text/html; charset=UTF-8"
     pageEncoding="UTF-8"%>
+<%@ taglib uri="http://java.sun.com/jsp/jstl/core" prefix="c" %>
 <!DOCTYPE html>
 <html lang="en">
 <head>
@@ -144,18 +145,18 @@
 			<span class="linkarea">
 				<a href="javascript:dropdown();" class="search1" >
 					검색..&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
-					<img src="검색.png" width="30px" height="30px">
+					<img src="/css/검색.png" width="30px" height="30px">
 				</a>
 				
 				<span>
 					<a href="javascript:mypageShow()" class="mypage">
-					<img src="사용자계정.png" width="30px" height="30px">
+					<img src="/css/사용자계정.png" width="30px" height="30px">
 					</a>
 			<!-- 여기 사용자정보 넣는곳 -->
-					<span class="userinfo">안녕하세요 "${member.userFirstName}"</span>	
+					<span class="userinfo">안녕하세요 ${member.userFirstName}</span>	
 					</span>
 					<a href="javascript:modal()" class="cart">
-					<img src="장바구니.png" width="30px" height="30px">
+					<img src="/css/장바구니.png" width="30px" height="30px">
 					</a>
 					</span>
 			
@@ -429,7 +430,7 @@
                         <h2 class="card_2">결제</h2>
                         <p class="card_3">결제할 카드를 미리 등록하세요</p>
                     </div>
-                    <p class="card_4"><a href="/card/card"><b>새로 추가</b></a></p>
+                    <p class="card_4"><a href="/member/card"><b>새로 추가</b></a></p>
                 </div>
             </div>
         </div>
