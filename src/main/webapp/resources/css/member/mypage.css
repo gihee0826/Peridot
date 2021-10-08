@@ -29,7 +29,7 @@ section .logout{
 section .logout_1{
     font-size: 20px;
     margin-right: 5px;
-    margin-top: -5px;
+    margin-top: 1px;
 }
 section .logout_2{
     text-decoration: underline;

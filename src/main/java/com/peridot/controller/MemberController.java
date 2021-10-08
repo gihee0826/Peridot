@@ -23,16 +23,16 @@ public class MemberController {
 
 	private static final Logger logger = LoggerFactory.getLogger(MemberController.class);
 	
-	//memberservice.java가 membercontroller에 자동으로 주입되게 한다.
+	//memberservice가 membercontroller에 자동으로 주입되게 한다.
 	@Autowired
 	private MemberService memberservice;
 	
 	
 	//회원가입 페이지 이동
 	@RequestMapping(value = "/join", method = RequestMethod.GET)
-	public void joinGET() {
+	public String joinGET() {
 		
-		logger.info("회원가입 페이지 진입");
+		return "member/join";
 				
 	}
 	
@@ -53,11 +53,11 @@ public class MemberController {
 		@ResponseBody
 		public String memberEmailChkPOST(String memberEmail) throws Exception{
 			
-			logger.info("memberEmailChk() 진입");
+			
 			
 			int result = memberservice.emailCheck(memberEmail);
 			
-			logger.info("결과값 = " + result);
+			
 			
 			if(result != 0) {	
 				
@@ -75,7 +75,7 @@ public class MemberController {
 		@RequestMapping(value = "/login", method = RequestMethod.GET)
 		public void loginGET() {
 			
-			logger.info("로그인 페이지 진입");
+			
 			
 		}
 		
@@ -84,11 +84,8 @@ public class MemberController {
 	    public String loginPOST(HttpServletRequest request, MemberVO member, RedirectAttributes rttr) throws Exception{
 	       
 	    	HttpSession session = request.getSession();
+	    	//service를 호출하는 부분
 	    	MemberVO lvo = memberservice.memberLogin(member);
-	    	System.out.println(member.getUserEmail());
-	    	System.out.println(member.getUserPass());
-	    	
-	    	System.out.println(lvo);
 	    	
 	    	 if(lvo == null) {                                // 일치하지 않는 아이디, 비밀번호 입력 경우
 	             
@@ -104,9 +101,9 @@ public class MemberController {
 	    }
 	    
 	    /* 메인페이지 로그아웃 */
-	    @RequestMapping(value="lotout.do", method=RequestMethod.GET)
+	    @RequestMapping(value="logout.do", method=RequestMethod.GET)
 	    public String logoutMainGET(HttpServletRequest request) throws Exception{
-	    	logger.info("logoutMainGET메서드 진입");
+	    	
 	        
 	        HttpSession session = request.getSession();
 	        
@@ -127,19 +124,25 @@ public class MemberController {
 		 
 		 /* 회원정보수정 */
 		 @RequestMapping(value="/update", method = RequestMethod.GET)
-		 public void updateGet() {
-			 
+		 public String updateGet() {
+			 return "member/update";
 		 }
 		 
 		 @RequestMapping(value="/update", method = RequestMethod.POST)
 		 public String updatePost(MemberVO member, HttpSession session) throws Exception{
 			 
+			 //위에 로그인 할때 저장해놓은 session을 조회하기위해 쓴 코드 (session의 member를 조회해 온다)
 			 MemberVO lvo = (MemberVO)session.getAttribute("member");
 			 
+			 //member에 새롭게 정보를 저장한다.
 			 member.setUserNo(lvo.getUserNo());
-			 memberservice.memberUpdate(member);
 			 
-			session.getAttribute("userNo");
+			 //업데이트를 한다
+			 memberservice.memberUpdate(member);
+			 //업데이트된 service를 호출한다
+			MemberVO lvo2 = memberservice.memberMypage(lvo.getUserNo());
+			//session을 조회한다.
+			session.setAttribute("member", lvo2);
 				
 			return "redirect:/member/mypage";
 		 }
@@ -147,9 +150,9 @@ public class MemberController {
 		 
 		 //카드추가 이동
 			@RequestMapping(value = "/card", method = RequestMethod.GET)
-			public void cardGET() {
+			public String cardGET() {
 				
-				logger.info("카드추가 페이지 진입");
+				return "member/card";
 						
 			}
 			
@@ -163,4 +166,27 @@ public class MemberController {
 				return "redirect:/member/card";
 				
 			}
+		
+		
+		//비밀번호 변경
+		@RequestMapping(value="/pass", method = RequestMethod.GET)	
+		public String passGET() {
+			
+			return "member/pass";
+			
+		}
+		
+		@RequestMapping(value="/pass", method = RequestMethod.POST)
+		public String passPOST(MemberVO member, HttpSession session) throws Exception{
+			//session에 저장된 로그인 정보를 조회한다
+			MemberVO lvo = (MemberVO)session.getAttribute("member");
+			//비밀번호를 새로 저장한다
+			member.setUserPass(lvo.getUserPass());
+			//비밀번호확인을 새로 저장한다
+			member.setUserPassCheck(lvo.getUserPassCheck());
+			
+			memberservice.passChange(member);
+			
+			return "member/mypage";
+		}
 }

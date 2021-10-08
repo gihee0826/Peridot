@@ -1,6 +1,7 @@
 <%@ page language="java" contentType="text/html; charset=UTF-8"
     pageEncoding="UTF-8"%>
 <%@ taglib uri="http://java.sun.com/jsp/jstl/core" prefix="c" %>
+
 <!DOCTYPE html>
 <html lang="en">
 <head>
@@ -145,18 +146,18 @@
 			<span class="linkarea">
 				<a href="javascript:dropdown();" class="search1" >
 					검색..&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
-					<img src="/css/검색.png" width="30px" height="30px">
+					<img src="/img/검색.png" width="30px" height="30px">
 				</a>
 				
 				<span>
 					<a href="javascript:mypageShow()" class="mypage">
-					<img src="/css/사용자계정.png" width="30px" height="30px">
+					<img src="/img/사용자계정.png" width="30px" height="30px">
 					</a>
 			<!-- 여기 사용자정보 넣는곳 -->
 					<span class="userinfo">안녕하세요 ${member.userFirstName}</span>	
 					</span>
 					<a href="javascript:modal()" class="cart">
-					<img src="/css/장바구니.png" width="30px" height="30px">
+					<img src="/img/장바구니.png" width="30px" height="30px">
 					</a>
 					</span>
 			
@@ -373,7 +374,7 @@
                         <p class="pass_2">비밀번호</p>
                         <p class="pass_3">내 비밀번호 표시 또는 업데이트</p>                
                     </div>
-                    <p class="pass_5"><a href=""><b>비밀번호 변경</b></a></p>
+                    <p class="pass_5"><a href="/member/pass"><b>비밀번호 변경</b></a></p>
                 </div>
             </div>
             <div class="no2">

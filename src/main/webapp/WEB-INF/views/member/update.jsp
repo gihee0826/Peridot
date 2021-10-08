@@ -462,7 +462,7 @@
             </div>
             <div class="btn">
                 <div class="btn1">
-                    <input type="submit" class="btn1_1"value="저장">
+                    <input type="submit" class="btn1_1"value="저장" >
                 </div>
                 <div class="btn2">
                     <input type="button" class="btn2_1"value="취소" onclick="location.href='/'">

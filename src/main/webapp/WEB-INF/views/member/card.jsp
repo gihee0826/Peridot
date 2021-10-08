@@ -496,6 +496,7 @@
 	        return false;
 		});
 	});
+	</script>
 	</form>   
     </section>
     <br>

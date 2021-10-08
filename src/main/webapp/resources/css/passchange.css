@@ -1,0 +1,201 @@
+@charset "EUC-KR";
+section input{
+			margin:10px 0px 10px 0px;
+		}
+		section .big{
+			width:457px;
+			height:90%;
+			display:inline-block;
+			margin-left:330px;
+			
+		}
+		section .title{
+			font-size:32px;
+		}
+		section .title1{
+			font-size:12px;
+			margin-top:20px;
+			margin-bottom:20px;
+			font-weight: 400;
+		}
+		section .add{
+			font-size:11px;
+		}
+		section h4{
+			margin-top:0px;
+			margin-bottom:4px;
+		}
+		section .high>div{
+			margin-bottom:30px;
+			height:50px;
+		}
+		section .paw{
+			margin-top:15px;
+			margin-bottom:15px;
+			font-weight:1000;
+		}
+		section hr{
+			height:5px;
+			background-color:silver;
+			border-top-left-radius : 5px;
+			border-top-right-radius:5px;
+			border-bottom-left-radius:5px;
+			border-bottom-right-radius:5px;
+			
+		}
+		section .need{
+			margin:15px 0px 15px 0px; 
+			font-size:14px;
+			line-height:145%;
+		}
+		section .minititle{
+			font-weight:1000;
+			margin:10px 0px 10px 0px;
+		}
+		section .checkb{
+			font-size:12px;
+		}
+		section .last{
+		    width: 451px;
+			height: 55px;
+			background-color: black;
+			color: white;
+			border: none;
+			font-weight: 1000;
+			margin-top: 40px;
+			margin-bottom: 25px;
+			
+		}
+		section .last9{
+			width: 451px;
+    		height: 51px;
+			background-color: white;
+			border: 1px solid black;
+			font-weight: 1000;
+			
+		}
+		section a{
+			display:inline-block;
+			height:50px;
+		}
+		section i{
+			font-size:30px;
+			margin-right:10px;
+		}
+		section .aa{
+			padding-right:10px;
+		}
+		section .dd{
+			display:flex;
+			width: 360;
+		}
+		
+		section .one{
+            width: 442px;
+            height: 45px;
+            border: 1px solid lightgray;
+            margin: 15px auto;
+            background-color: white;
+        }
+        section .one input{
+            width: 340px;
+            height: 35px;
+            border: none;
+            position: relative;
+            left: 8px;
+			bottom: 2px;
+            font-size: 14px;
+            background-color: white;
+        }
+       section  .one input:focus{
+            outline: none;
+        }
+       section  .one label{
+            width: 360px;
+            height: 10px;
+            text-align: left;
+            pointer-events:none; 
+            position: relative;
+            bottom: 35px;
+            left: 10px;
+            display: inline-block;
+            color: black;
+            font-size: 13px;
+            border: none;
+        }
+        section .one label span{
+            position:absolute; 
+            left:-1px; 
+            bottom:7px; 
+            transition:all .3s ease; 
+            width: 100%;
+        }
+      section  .one:focus + label span{
+            transform:translateY(-80%); 
+            font-size:12px;  
+        }
+       section  .one input:focus + label span{
+            transform:translateY(-80%); 
+            font-size:12px; 
+        }
+		section .three{
+			width: 250px;
+		}
+		section .three input{
+			width:200px;
+		}
+		section .jphone{
+			height:45px;
+			width:100px;
+		}
+		section .sel{
+			height:51px;
+			width:94px;
+			margin:10px 15px 10px 0px;	
+		}
+		section .up{
+			margin-top:40px;
+		}
+		section .incheck{
+			margin-bottom:20px;
+		}
+		section .detail{
+			margin-left:10px;
+		}
+		section p{
+		margin:0px;
+		}
+		section .two{
+			display: flex;
+		}
+		section .help9{
+		    position: relative;
+    		top: 71px;
+
+		}
+		section .help99{
+			text-align: center;
+			padding-top: 5px;
+		}
+		section .needhelp{
+			font-size: 14px;
+			font-weight: bold;
+			padding-bottom: 15px;
+		}
+		section .needhelp1{
+			font-size: 14px;
+			font-weight: bold;
+			padding-bottom: 15px;
+		}
+		section .ques{
+			font-size: 11px;
+			padding-bottom: 15px;
+		}
+		section .ques1{
+			font-size: 11px;
+
+		}
+		section{
+			    padding-bottom: 70px;
+			
+		}

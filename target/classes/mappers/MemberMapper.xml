@@ -7,10 +7,27 @@
   		<!-- 회원가입 -->
 		<insert id="memberJoin" parameterType="memberVO">
 	  		 <![CDATA[
-					insert into user_
-					(userNo,userFirstName,userLastName,userEmail,userPass,userPhone,userAdmin,EmailCheck,PassCheck,userDate) 
-					values
-					(seq_user_no.nextval, #{userFirstName}, #{userLastName}, #{userEmail}, #{userPass}, #{userPhone},'n', #{userEmailCheck}, #{userPassCheck},sysdate )
+					insert into user_(
+						  userNo
+						, userFirstName
+						, userLastName
+						, userEmail
+						, userPass
+						, userPhone
+						, userAdmin
+						, EmailCheck
+						, PassCheck
+						, userDate
+					)values(
+						  seq_user_no.nextval
+						, #{userFirstName}
+						, #{userLastName}
+						, #{userEmail}
+						, #{userPass}
+						, #{userPhone}
+						,'n'
+						, #{userEmailCheck}
+						, #{userPassCheck},sysdate )
 			]]>
 			<selectKey resultType="integer" keyProperty="userNo" order="AFTER">
 		        SELECT MAX(userNo) FROM user_   
@@ -21,10 +38,40 @@
 	  	<select id="idCheck" resultType="int">
 	  		select count(*) from user_ where userEmail = #{userEmail}
 	  	</select>
+	  	
+	  	
 	  	<!-- 로그인 -->
       	<select id="memberLogin" resultType="memberVO" parameterType="memberVO">
-      		select userNo, userFirstName, userLastName, userAdmin, userEmail, userPhone,userDate from user_ where userEmail = #{userEmail} and userPass=#{userPass}
+      		select 
+      			  userNo
+      			, userFirstName
+      			, userLastName
+      			, userAdmin
+      			, userEmail
+      			, userPhone
+      			, userName
+      			, userBirth
+      			, userDate 
+      		from user_ 
+      			where userEmail = #{userEmail} and userPass=#{userPass}
       	</select>
+      	
+      	<!-- 회원정보보기 -->
+      	<select id="memberMypage" resultType="memberVO" parameterType="int">
+      		select 
+      			  userNo
+      			, userFirstName
+      			, userLastName
+      			, userAdmin
+      			, userEmail
+      			, userPhone
+      			, userName
+      			, userBirth
+      			, userDate 
+      		from user_ 
+      			where userNo = #{userNo}
+      	</select>
+      	
       	
       	<!-- 회원정보 수정 -->
 	  	<update id="memberUpdate" parameterType="memberVO">
@@ -40,9 +87,27 @@
 		
 		<!-- 카드추가 -->
 		<insert id="cardAdd" parameterType="cardVO">
-					insert into card values(#{userNo},seq_card_no.nextval, #{cardTitle}, #{cardNum}, #{cardMonth}, #{cardYear}, #{cardUser}, #{cardUserName}, #{cardSc} )
+					insert into card 
+					values(
+						  #{userNo}
+						  , seq_card_no.nextval
+						  , #{cardTitle}
+						  , #{cardNum}
+						  , #{cardMonth}
+						  , #{cardYear}
+						  , #{cardUser}
+						  , #{cardUserName}
+						  , #{cardSc} )
 			
 	  	</insert>
+	  	
+	  	<!--비밀번호 변경-->
+	  	<update id="passChange" parameterType="memberVO">
+	  		update user_ set
+	  			  userPass = #{userPass}
+	  			, userDate = sysdate
+	  		where userNo = #{userNo}
+	  	</update>
   </mapper>
   
   
