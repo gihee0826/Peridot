@@ -76,8 +76,7 @@
       	<!-- 회원정보 수정 -->
 	  	<update id="memberUpdate" parameterType="memberVO">
 			update user_ set 
-				 userGender    = #{userGender}
-               , userFirstName = #{userFirstName }
+				 userFirstName = #{userFirstName }
                , userLastName  = #{userLastName}
                , userName      = #{userName}
                , userBirth     = #{userBirth}
@@ -89,7 +88,7 @@
 		<insert id="cardAdd" parameterType="cardVO">
 					insert into card 
 					values(
-						  #{userNo}
+						    #{userNo}
 						  , seq_card_no.nextval
 						  , #{cardTitle}
 						  , #{cardNum}
@@ -105,6 +104,7 @@
 	  	<update id="passChange" parameterType="memberVO">
 	  		update user_ set
 	  			  userPass = #{userPass}
+	  			, passCheck = #{userPassCheck}
 	  			, userDate = sysdate
 	  		where userNo = #{userNo}
 	  	</update>

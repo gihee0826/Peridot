@@ -123,22 +123,22 @@ section section{
 section .titleck{
 	display: none;
 	font-size: 12px;
-	margin-left: 10px;
+	margin-left: 300px;
 }
 section .numck{
 	display: none;
 	font-size: 12px;
-	margin-left: 10px;
+	margin-left: 300px;
 }
 section .nameck{
 	display: none;
 	font-size: 12px;
-	margin-left: 10px;
+	margin-left: 300px;
 }
 section .scck{
 	display: none;
 	font-size: 12px;
-	margin-left: 10px;
+	margin-left: 300px;
 }
 
 @media screen and (max-width:900px) {

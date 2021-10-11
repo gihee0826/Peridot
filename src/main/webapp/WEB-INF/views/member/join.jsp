@@ -125,9 +125,9 @@
 	<!--https://fontawesome.com/v5.15/icons/times?style=solid-->
 	<script src="https://kit.fontawesome.com/57da38e2a5.js" crossorigin="anon
 	ymous"></script>
-	<link rel="stylesheet" href="/resources/css/member/NoLoginHeader.css">
-	<link rel="stylesheet" href="/resources/css/member/join.css">
-	<link rel="stylesheet" href="/resources/css/member/footer.css">
+	<link rel="stylesheet" href="/css/NoLoginHeader.css">
+	<link rel="stylesheet" href="/css/join.css">
+	<link rel="stylesheet" href="/css/footer.css">
 	<style>
 	.fiexed{
 		position:fixed;

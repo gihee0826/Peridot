@@ -356,7 +356,7 @@
 </div>
 </header>
 <section>
-<form action="/member/update" method="post" name="fr">
+<form action="/member/pass" method="post" name="fr">
 	<div class="big change9">
 		<div>
 			<div class="title"><b><i>변경</i> 비밀번호</b></div>
@@ -365,17 +365,17 @@
 			</div>
 
 			<p class="one">
-				<input type="pass" autocomplete="off" required class="siz">
+				<input type="pass" autocomplete="off" required onfocus="test3(this)" onblur="test4(this)" class="siz">
 				<label for="pass"><span>현재 비밀번호*</span></label>
 			</p>
 			
 			<p class="one">
-				<input type="pass" autocomplete="off" required class="siz" name="userPass">
+				<input type="pass" autocomplete="off" required class="siz" onfocus="test3(this)" onblur="test4(this)" name="userPass">
 				<label for="pass"><span>새 비밀번호*</span></label>
 			</p>
 			<hr>
 			<p class="one">
-				<input type="pass" autocomplete="off" required class="siz" name="userPassCheck">
+				<input type="pass" autocomplete="off" required class="siz" onfocus="test3(this)" onblur="test4(this)" name="userPassCheck">
 				<label for="passCheck"><span>새 비밀번호 확인*</span></label>
 			</p>
 			
@@ -398,6 +398,20 @@
 			<div class="ques">운영 시간은 월~금, 오전 9시~오후 6시입니다</div>
 		</div>
 	</div>
+	<script>
+                function test3(item){
+                    $item = $(item);
+                    $item.next("label").find("span").css({"transform":"translateY(-80%)","font-size":"12px"} );
+                }
+                function test4(item){
+                    $item = $(item);
+                    var value = $item.val();
+                    if(value == ""){
+                        $item.next("label").find("span").css({"transform":"inherit","font-size":"inherit"} );
+                    }
+                }
+				
+            </script>
 </section>
 <footer>
         <div class="hr">
@@ -410,7 +424,7 @@
         
         <form action="get" >
             <p class="content_email">
-                <input type="email" class="email" name="email" onkeyup='agreedown(this)'autocomplete="off" required>
+                <input type="email" class="email" name="email" onkeyup='agreedown(this)' onfocus="test(this)" onblur="test2(this)" autocomplete="off" required>
                 <label for="user_email"><span><em>이메일 주소</em></span></label>
             </p>
         </form>
@@ -480,6 +494,23 @@
                     </div>
             </div>
         </div>
+        <script>
+			function test(item){
+				var $item = $(item);
+				
+				$item.css("border-bottom", "1px solid darkgray");
+				$item.next("label").find("span").css({ "transform":"translateY(-100%)","font-size":"24px","color":"gray"});
+				$item.next("label::after").css({"width":"100%","transform":"translateX(0)"});
+			}
+			function test2(item){
+				var value = item.value;
+				var $item = $(item);
+				if(value == ""){	
+					$item.next("label").find("span").css({ "transform":"inherit","font-size":"inherit","color":"inherit"});
+					$item.next("label::after").css({"width":"inherit","transform":"inherit"});
+				}
+			}
+		</script>
     </footer>
 </body>
 

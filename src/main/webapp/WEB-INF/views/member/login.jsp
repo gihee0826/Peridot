@@ -125,12 +125,12 @@
 		}
     </script>
     <script src="/resources/js/media_login.js" defer></script>
-    <link rel="stylesheet" href="/resources/css/member/login.css">
+    <link rel="stylesheet" href="/css/login.css">
     <script src="/resources/js/media.js" defer></script>
-    <link rel="stylesheet" href="/resources/css/member/footer.css">
+    <link rel="stylesheet" href="/css/footer.css">
 	<!--https://fontawesome.com/v5.15/icons/times?style=solid-->
 	<script src="https://kit.fontawesome.com/57da38e2a5.js" crossorigin="anonymous"></script>
-	<link rel="stylesheet" href="/resources/css/member/NoLoginHeader.css">
+	<link rel="stylesheet" href="/css/NoLoginHeader.css">
 	<style>
 		.fiexed{
 			position:fixed;

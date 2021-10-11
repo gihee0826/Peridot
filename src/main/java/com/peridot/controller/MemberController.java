@@ -158,12 +158,15 @@ public class MemberController {
 			
 			//카드추가
 			@RequestMapping(value="/card", method=RequestMethod.POST)
-			public String cardPOST(CardVO card) throws Exception{
-				
+			public String cardPOST(CardVO card, HttpSession session) throws Exception{
+				//userNo가져오기
+				MemberVO lvo = (MemberVO)session.getAttribute("member"); 
+				//userNo세팅하기
+				card.setUserNo(lvo.getUserNo());
 				// 카드추가 서비스 실행
 				memberservice.cardAdd(card);
 				
-				return "redirect:/member/card";
+				return "redirect:/member/mypage";
 				
 			}
 		
@@ -178,15 +181,18 @@ public class MemberController {
 		
 		@RequestMapping(value="/pass", method = RequestMethod.POST)
 		public String passPOST(MemberVO member, HttpSession session) throws Exception{
-			//session에 저장된 로그인 정보를 조회한다
+			//session에 저장된 로그인 정보를 조회한다 (userNo 가져오기)
 			MemberVO lvo = (MemberVO)session.getAttribute("member");
+			//userNo세팅하기
+			member.setUserNo(lvo.getUserNo());
 			//비밀번호를 새로 저장한다
-			member.setUserPass(lvo.getUserPass());
+			member.setUserPass(member.getUserPass());
 			//비밀번호확인을 새로 저장한다
-			member.setUserPassCheck(lvo.getUserPassCheck());
-			
+			member.setUserPassCheck(member.getUserPassCheck());
+			//업데이트된 서비스를 호출한다.
 			memberservice.passChange(member);
 			
-			return "member/mypage";
+			
+			return "redirect:/member/mypage";
 		}
 }

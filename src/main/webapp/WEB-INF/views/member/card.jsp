@@ -432,9 +432,7 @@
             <script>
 	/* 유효성 검사 통과유무 변수 */
 	 var cardTitleCheck = false;            
-	 var cardNumCheck = false;            
-	 var cardMonthCheck = false;            
-	 var cardYearCheck = false;			
+	 var cardNumCheck = false;	
 	 var cardUserNameCheck = false;			
 	 var cardScCheck = false;            
 	 
@@ -443,9 +441,7 @@
 		$(".save_").click(function(){
 			/* 입력값 변수 */
 	        var ctitle = $('.cardTitle').val();                 
-	        var cnum= $('.cardNum').val();                
-	        var cmonth = $('.cardMonth').val();            
-	        var cyear = $('.cardYear').val();           
+	        var cnum= $('.cardNum').val();      
 	        var cname = $('.cardUserName').val();            
 	        var csc = $('.cardSc').val();        
 	        

@@ -113,9 +113,9 @@
 	</script>
 	<!--https://fontawesome.com/v5.15/icons/times?style=solid-->
 	<script src="https://kit.fontawesome.com/57da38e2a5.js" crossorigin="anonymous"></script>
-	<link rel="stylesheet" href="/css/member/NoLoginHeader.css">
-    <link rel="stylesheet" href="/css/member/profile.css">
-    <link rel="stylesheet" href="/css/member/footer.css">
+	<link rel="stylesheet" href="/css/NoLoginHeader.css">
+    <link rel="stylesheet" href="/css/profile.css">
+    <link rel="stylesheet" href="/css/footer.css">
     <style>
 		.fiexed{
 			position:fixed;
