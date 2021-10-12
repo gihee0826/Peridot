@@ -1,0 +1,249 @@
+@charset "EUC-KR";
+body{
+			margin:0;
+			font-family: 'Gothic A1', sans-serif;
+		}
+		section .mright {
+			width: 680px;
+			height: 1500px;
+			float: left;
+			position: relative;
+			margin-right: 30px;
+			margin-left: 204px;
+		}
+		section .mleft{
+			width:918px;
+			height: 2287px;
+			float:left;
+			position:relative;
+			margin-left:70px;
+			border-left:1px solid black ;
+		}
+		section .big{
+			display:inline-block;
+		}
+		section .rorder{
+			font-size:32px;
+			padding-bottom:10px;
+		}
+		section .last1{
+			display:flex;
+		}
+		section .last2{
+			font-size:14px;
+		}
+		section .last3{
+			font-size:12px;
+		}
+		section .loww{
+			padding-right:40px;
+		}
+		section .listdelinner2{
+			background-color: white;
+			position: fixed;
+			top: 45px;
+			right: 708px;
+			opacity: 1.0;
+			height: 240px;
+			width: 430px;
+			padding: 30px;
+			border:1px solid black;
+		}
+		section .xxxx{
+			display:flex;
+		}
+		section .listdelone{
+			font-size:32px;
+			padding-bottom:15px;
+			padding-right: 53px;
+		}
+		section .listdelx9{
+			padding-top:9px;
+			color:black;
+		}
+		section .listdelgo2{
+			width:100%;
+			height:100vh;
+			position: fixed;
+			top: 0px;
+			left: 0px;
+			background-color: rgba(0, 0, 0,0.45);
+			z-index: 9999;
+			display:none;
+		}
+		section .listdeltwo{
+			font-size:12px;
+			margin-bottom:16px;
+		}
+		section .listdelthreebt{
+			background-color: black;
+			color: white;
+			width: 188px;
+			height: 50px;
+			margin-top: 72px;
+			margin-left: 122px;
+			font-size: 15px;
+			border:none;
+		}
+		section .listdelfour{
+			    font-size: 12px;
+				text-decoration: underline;
+				margin-top: 16px;
+				margin-left: 146px;
+		}
+		section .gogogogo{
+			background-color:black;
+			border:none;
+			color:white;
+		}
+		section .predottitle{
+				width: 100%;
+				height: 20px;
+				font-size: 16px;
+				border-bottom: 1px solid black;
+				padding-left: 20px;
+			    padding-top: 15px;
+				padding-bottom: 15px;
+		}
+		section .checkthelist{
+			font-size: 14px;
+			border-bottom:1px solid black;
+			padding-bottom: 20px;
+		}
+		section .lastprice2,
+		section .lastprice1{
+			font-size: 14px;
+			color:#666666;
+		}
+		section .lastprice11,
+		section .lastprice22,
+		section .lastprice33{
+			font-size: 14px;
+			position:absolute;
+			right:0px;
+		}
+		section .lastprice33,
+		section .lastprice3{
+			font-size: 18px;
+		}
+		section .mright div{	
+			margin-bottom:15px;
+		}
+		section .lastthree{
+			border-bottom:1px dashed black;
+			padding-bottom: 15px;
+		}
+		section .needhelpcall{
+			border-bottom:1px dashed black;
+			padding-bottom: 10px;
+		}
+		section .gowww{
+			color:black;
+			text-decoration: none;
+		}
+		section .callnumber{
+			text-decoration: underline;
+		}
+		section .deliveryone{
+			background-color: #f7f7f7;
+		}
+		section .delititle{
+			font-size: 42px;
+		}
+		section .deliaddr{
+			font-size: 24px;
+			padding-left:15px;
+			padding-top: 15px;
+		}
+		section .deliinfo{
+			font-size: 14px;
+			padding-left:15px;
+			padding-top: 15px;
+		}
+		section .deliveryone p input{
+			width: 800px;
+			height: 50px;
+			margin-left: 23px;
+			margin-top: 10px;
+			border: 0.5px solid lightgray;
+			margin-bottom: 20px;
+
+		}
+		section .mleftmargin{
+			padding: 30px;
+		}
+		section .checkpay{
+			font-size:24px;
+			    padding: 15px;
+		}
+		section .checKpay2{
+			font-size:14px;
+			    padding: 15px;
+		}
+		section .checkbt{
+			width: 859px;
+			height: 60px;
+			border: none;
+			color: white;
+			background-color: black;
+			font-size: 14px;
+			font-weight: bold;
+		}
+		section .payaddr{
+		padding:15px;
+		
+		}
+		section .payimg{
+			padding-left:15px;
+		}
+		section .lastaddr{
+			background-color:white;
+			border:0.5px solid black;
+			width: 400px;
+			padding-left:15px;
+			margin-left:24px;
+		}
+		section .one{
+            width: 360px;
+            height: 45px;
+            border: 1px solid lightgray;
+            margin: 15px auto;
+            background-color: white;
+        }
+        section .one input{
+            width: 340px;
+            height: 35px;
+            border: none;
+            position: relative;
+            left: 8px;
+			bottom: 2px;
+            font-size: 14px;
+            background-color: white;
+        }
+       section  .one input:focus{
+            outline: none;
+        }
+       section  .one label{
+            width: 360px;
+            height: 10px;
+            text-align: left;
+            pointer-events:none; 
+            position: relative;
+            bottom: 35px;
+            left: 10px;
+            display: inline-block;
+            color: black;
+            font-size: 13px;
+            border: none;
+        }
+        section .one label span{
+            position:absolute; 
+            left:-1px; 
+            bottom:7px; 
+            transition:all .3s ease; 
+            width: 100%;
+        }
+       section  .one:focus + label span{
+            transform:translateY(-80%); 
+            font-size:12px;  
+        }

@@ -359,7 +359,7 @@
                     <h3>ADD NEW CREDIT CARD</h3>
                 </div>
                 <div class="cardTitle one">
-                    <input type="text" class="cardTitle" autocomplete="off" onfocus="test(this)" onblur="test2(this)" required name="cardTitle">
+                    <input type="text" class="cardTitle" id="cardTitle" autocomplete="off" onfocus="test(this)" onblur="test2(this)" required name="cardTitle">
                     <label for="cardTitle"><span>Credit Card Title *</span></label>
                 </div>
                 <span class="titleck">카드이름을 입력해주세요.</span>
@@ -377,7 +377,7 @@
                     }
                 </script>
                 <div class="cardNum one">
-                    <input type="text" class="cardNum" autocomplete="off" onfocus="test(this)" onblur="test2(this)"  required name="cardNum">
+                    <input type="text" class="cardNum" id="cardNum"autocomplete="off" onfocus="test(this)" onblur="test2(this)"  required name="cardNum">
                     <label for="cardNum"><span>카드 번호 *</span></label>
                 </div>
                 <span class="numck">카드번호를 입력해주세요.</span>
@@ -440,13 +440,14 @@
 		//카드추가 버튼(카드추가 기능 작동)
 		$(".save_").click(function(){
 			/* 입력값 변수 */
-	        var ctitle = $('.cardTitle').val();                 
-	        var cnum= $('.cardNum').val();      
+	        var ctitle = $('#cardTitle').val();                 
+	        var cnum= $('#cardNum').val();      
 	        var cname = $('.cardUserName').val();            
 	        var csc = $('.cardSc').val();        
 	        
 	        
 	        if(ctitle == ""){
+	        	alert(ctitle);
 	            $('.titleck').css('display','block');
 	            cardTitleCheck = false;
 	        }else{

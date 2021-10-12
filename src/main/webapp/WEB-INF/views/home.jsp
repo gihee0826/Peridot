@@ -214,6 +214,9 @@
 			<!-- 로그인 O -->
 			<!-- 오른쪽 메뉴 -->
 			<c:if test = "${member != null }">
+				<c:if test="${member.userAdmin == 'y'}">
+					<a href="/admin/main">관리자 페이지</a>
+				</c:if>
 			<span class="linkarea">
 				<a href="javascript:dropdown();" class="search1" >
 					검색..&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
@@ -260,6 +263,9 @@
 				</div>
 			</div>
 			</c:if>
+			
+                  
+                    
 			<!-- 여성 카테고리 -->
 			<div class="woman">
 				<div class="warea wparea">

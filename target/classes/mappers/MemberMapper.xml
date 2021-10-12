@@ -94,7 +94,6 @@
 						  , #{cardNum}
 						  , #{cardMonth}
 						  , #{cardYear}
-						  , #{cardUser}
 						  , #{cardUserName}
 						  , #{cardSc} )
 			
