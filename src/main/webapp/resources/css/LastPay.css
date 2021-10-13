@@ -10,17 +10,18 @@ body{
 			position: relative;
 			margin-right: 30px;
 			margin-left: 204px;
+			margin-top:30px;
 		}
 		section .mleft{
 			width:918px;
-			height: 2287px;
+			height: 1500px;
 			float:left;
 			position:relative;
 			margin-left:70px;
 			border-left:1px solid black ;
 		}
 		section .big{
-			display:inline-block;
+			display:flex;
 		}
 		section .rorder{
 			font-size:32px;
@@ -146,6 +147,11 @@ body{
 		}
 		section .deliveryone{
 			background-color: #f7f7f7;
+			height:540px;
+		}
+		section .deliverytwo{
+			background-color: #f7f7f7;
+			height:630px;
 		}
 		section .delititle{
 			font-size: 42px;
@@ -216,7 +222,7 @@ body{
             border: none;
             position: relative;
             left: 8px;
-			bottom: 2px;
+			bottom: -8px;
             font-size: 14px;
             background-color: white;
         }
@@ -229,7 +235,7 @@ body{
             text-align: left;
             pointer-events:none; 
             position: relative;
-            bottom: 35px;
+            bottom: 14px;
             left: 10px;
             display: inline-block;
             color: black;
@@ -245,5 +251,16 @@ body{
         }
        section  .one:focus + label span{
             transform:translateY(-80%); 
-            font-size:12px;  
+            font-size:11px;  
+        }
+       section .two{
+            width: 120px;
+            height: 40px;
+            border: 1px solid lightgray;
+            margin: 15px 248px;
+            background-color: white;
+        }
+        section .three{
+        	font-size:14px;
+        	text-align: center;
         }

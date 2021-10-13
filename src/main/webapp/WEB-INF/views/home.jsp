@@ -391,7 +391,7 @@
 			<span class="c_all2">￦&nbsp;0</span></b>
 		</div>
 		<div>
-			<button class="checkout">체크아웃하기</button><br>
+			<button class="checkout" onclick="location.href='/cart/pay'">체크아웃하기</button><br>
 			<a class="shopview"><b><i>→내</i> 쇼핑백 보기</b></a>
 		</div>
 	</div>
