@@ -1,0 +1,113 @@
+section body{
+    font-family: 'Gothic A1', sans-serif;
+    margin: 0;
+}
+section a{
+    color:black;
+}
+section a:hover{
+    color:rgb(190, 188, 188);
+}
+section .detail{
+    display: flex;
+    justify-content: space-between;
+    margin: auto;
+    width: 1450px;
+}
+section .left{
+    width: 240px;
+    height: 2000px;
+    background-color: white;
+    position: fixed;
+    left: 10px;
+}
+section .left_1{
+    font-size: 14px;
+    color: rgb(94, 94, 94);
+    margin-left: 15px;
+    margin-top: 20px;
+}
+section .left_2{
+    font-size: 32px;
+    margin-top: 10px;
+    margin-left: 10px;
+    margin-bottom: 10px;
+}
+section .left_3{
+    font-size: 16px;
+    padding-left: 10px;
+    display: block;
+    border-bottom: 1px dashed gray;
+    padding-bottom: 10px;
+}
+section .left_4{
+    font-size: 12px;
+    text-decoration: underline;
+    padding-left: 10px;
+    display: block;
+    border-bottom: 1px dashed gray;
+    padding-top: 20px;
+    padding-bottom: 20px;
+}
+section .left_5{
+    font-size: 12px;
+    text-decoration: underline;
+    padding-left: 10px;
+    display: block;
+    border-bottom: 1px dashed gray;
+    padding-top: 20px;
+    padding-bottom: 20px;
+}
+section .main{
+    width: 1200px;
+    height: 2000px;
+    margin: auto;
+    background-color: white;
+}
+section .content{
+    width: 1000px;
+    height:2000px;
+    margin: auto;
+    display: block;
+    justify-content: center;
+    background-color: white;
+}
+section .right{
+    width: 240px;
+    height: 2000px;
+    background-color: white;
+    position: fixed;
+    right: 10px;
+}
+section .right_1{
+    margin-top: 50px;
+    display: block;
+    border-bottom: 1px dashed gray;
+    border-top: 1px dashed gray;
+    padding-left: 10px;
+    height: 100px;
+}
+section .right_1 p{
+    margin-bottom: 20px;
+}
+section .right_2{
+    margin-top: 30px;
+}
+section .right_btn{
+    background-color: black;
+    color: white;
+    width: 240px;
+    height: 50px;
+    font-size: 14px;
+}
+section .num{
+    display: flex;
+    justify-content: space-between;
+    padding-left: 10px;
+    padding-right: 10px;
+}
+section .img{
+    width: 20px;
+    height: 20px;
+    text-decoration: none;
+}

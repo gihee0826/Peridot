@@ -6,6 +6,9 @@
 	<typeAliases>
         <typeAlias type="com.peridot.vo.MemberVO" alias="memberVO"/>
          <typeAlias type="com.peridot.vo.CardVO" alias="cardVO"/>
+         <typeAlias type="com.peridot.vo.ProductVO" alias="productVO"/>
+         <typeAlias type="com.peridot.vo.CartVO" alias="cartVO"/>
+         <typeAlias type="com.peridot.vo.CriteriaVO" alias="criteriaVO"/>
     </typeAliases>
    
 

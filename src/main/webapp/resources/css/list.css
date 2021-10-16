@@ -1,0 +1,121 @@
+section .bodyy{
+		padding-right:30px;
+		padding-left:30px;
+		font-family: 'Gothic A1', sans-serif;
+		margin:0px;
+		}
+        section .middle{
+            border-bottom: 1px black dashed;
+			clear:both;
+			padding:0px 0px 15px 20px;
+			font-size:12px;
+			font-weight:bold;
+			display: flex;
+        }
+		section .middle a{
+			padding-right:10px;
+		}
+        section .logo{
+            border-bottom: 1px black dashed;
+			padding-top:50px;
+			    padding-left: 820px;
+        }
+		section .img1{
+			float:left;
+		}
+		section .onee{
+			display:flex;
+			margin-bottom:50px;
+		}
+		section .header11{
+			padding-top:78px;
+			margin-left:158px;
+		}
+		section .title1{
+			font-size:43px;
+			font-weight:700;
+		}
+		section .up{
+			padding-left: 83px;
+			font-size: 12px;
+			padding-top: 25px;
+			padding-right: 167px;
+		}
+		section .mainn{
+			display:table;
+			width:100%;
+			margin-top:20px;
+			display:flex;
+		}
+		section .roww{
+			display:table-row;
+		}
+		section .calumee{
+			display: table-cell;
+		}
+		section .last1{
+			font-size:32px;
+			font-weight:700;
+			padding-left: 400px;
+			padding-right: 400px;
+			padding-top: 150px;
+		}
+		section .c2{
+			height:50px;
+		}
+		section .checksize{
+			display: flex;
+			padding-top: 25px;
+		}
+		section .size1{
+			padding-left: 61px;
+			padding-right: 260px;
+		}
+		section .size11{
+			padding-right: 260px;
+		}
+		section .info1{
+			padding-left: 61px;
+			padding-top: 10px;
+			font-size: 14px;
+			color:#212529;
+		}
+		section input{
+
+			margin-bottom: 20px;
+		}
+		section .mbt{
+			border: none;
+			background-color: white;
+			font-size: 12px;
+			font-weight: bold;
+			color:black;
+			text-decoration: none;
+			
+		}
+		section .middle>div{
+			float:left;
+		}
+		section .sbt{
+			display: none;
+			position:absolute;
+			right:20px;
+			height:300px;
+			width:100%;
+			background-color:white;
+			 border-bottom: 1px black dashed;
+		}
+		section .ctg{
+			display: none;
+		}
+		
+		/*
+		section .i1 img:last-child{display:none} 
+		section .i1:hover img:first-child{display:none} 
+		section .i1:hover img:last-child{display:inline-block}
+		*/
+		section .imgsize{
+			width: 500px;
+			height: 770px;	
+		}
+		

@@ -1,0 +1,170 @@
+@charset "EUC-KR";
+body{
+			margin:0;
+			font-family: 'Gothic A1', sans-serif;
+		}
+		section .mright{
+			    width: 436px;
+				height: 900px;
+				float: left;
+				position: relative;
+				margin-left: 197px;
+				margin-right:30px;
+			
+		}
+		section .mleft{
+			width:1160px;
+			height:900px;
+			float:left;
+			position:relative;
+			
+			margin-left:30px;
+		}
+		section .cartheader{
+		    margin-left: 30px;
+			width:100%;
+			height:45px
+		}
+		section .cartheader a{
+			color:gray;
+		}
+		section .big{
+			display:inline-block;
+		}
+		section .item{
+			float:left;
+			width:323px;
+			height:700px;
+		}
+		section .item img{
+			width:323px;
+			height:431px;
+			
+		}
+		section .shoppingbag{
+			font-size:42px;
+			margin-bottom:50px;
+		}
+		section .rorder{
+			font-size:42px;
+			
+			border-bottom:1px dashed black;
+			padding-bottom:10px;
+		}
+		section .shoppingbagempty{
+			margin-bottom:16px;
+			font-size:13px;
+		}
+		section .shpstart{
+			display:block;
+			width:70px;
+			height:21px;
+			background-color:black;
+			color:white;
+			text-align:center;
+			padding:16px 48px 16px 48px;
+			margin:24px 0px 24px 0px;
+			text-decoration:none;
+			font-size:14px;
+		}
+		section .cc{
+			font-size:42px;
+			font-weight:800;
+			margin-bottom: 20px;
+		}
+		section .sname{
+			width:323px;
+			text-align:center;
+			font-size:20px;
+			font-weight:700;
+			padding-top:10px;
+		}
+		section .price{
+			padding-left:121px;
+			padding-top:10px;
+			font-size:12px;
+			font-weight:700;
+		}
+		section .price1{
+			border-bottom:1px dashed black;
+			padding-top:25px;
+			padding-bottom:25px;
+			font-size:12px;
+		}
+		section .all{
+			padding-right:398px;
+		}
+		section .info1{
+			font-size:14px;
+			padding-bottom:6px;
+			font-weight:600;
+		}
+		section .more1{
+			margin-top:50px;
+		}
+		section .num{
+			text-decoration:underline;
+		}
+		section .time1{
+			color:gray;
+			border-bottom:1px dashed black;
+			padding-bottom:90px;
+		}
+		section .last1{
+			display:flex;
+			padding-top:15px;
+		}
+		section .lastp1{
+			padding-right:20px;
+		}
+		section .last2{
+			font-size:14px;
+			padding:10px;
+		}
+		section .last3{
+			font-size:12px;
+			padding:10px;
+		}
+		section .back{
+			padding-right: 8px;
+			padding-left:2px
+		}
+		section .gow{
+			text-decoration:underline;
+			color:black;
+		}
+		section .loww{
+			padding-right:40px;
+		}
+		.slick-slider {
+			display:flex;
+			height:600px;
+		}
+		.slick-prev{
+			margin-right:40px;
+		}
+		.slick-next{
+			width:51px;
+		}
+		section .tBtn,
+		section .tBtn2{
+			position: absolute;
+			z-index: 10;
+			top: 50%;
+			transform: translateY(-50%);
+		}
+		section .tBtn{
+			left: 0;
+			border:none;
+			font-size:50px;
+			background-color:transparent;
+		}
+		section .tBtn2{
+			right: -30px;
+			border:none;
+			font-size:50px;
+			background-color:transparent;
+		}
+		section .autoplay{
+			margin-left:70px;
+		}

@@ -1,0 +1,58 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE mapper
+  PUBLIC "-//mybatis.org//DTD Mapper 3.0//EN"
+  "http://mybatis.org/dtd/mybatis-3-mapper.dtd">
+  <mapper namespace="com.peridot.mapper.ProductMapper">
+  	
+  		<!-- 리스트 -->
+  		<select id="productList" resultType="productVO">
+ 	 		select 
+ 	 			category
+ 	 			, productNo
+ 	 			, productName
+ 	 			, productContent1
+ 	 			, productContent2
+ 	 			, productContent3
+ 	 			, productImg1
+ 	 			, producrImg2
+ 	 			, productPrice
+ 	 		from product
+  		</select>
+  		
+  		<!-- 상세보기 -->
+  		<select id="detail" resultType="productVO">
+  			select
+  				category
+ 	 			, productNo
+ 	 			, productName
+ 	 			, productContent1
+ 	 			, productContent2
+ 	 			, productContent3
+ 	 			, productImg1
+ 	 			, productPrice
+ 	 		from product
+ 	 		where productNo = #{productNo}
+  		</select>
+  		
+  		<!-- Oracle -->
+    <!-- 게시물 목록(페이징) -->
+    <!-- 게시물 목록(페이징) -->
+    <select id="getListPaging" resultType="productVO">
+    
+    <![CDATA[
+        
+        select 
+        	productNo
+        	, productName
+        	, productPrice from(
+        
+                select /*+INDEX_DESC(vam_product pk_product) */ rownum  as rn, productNo, productName, productPrice
+                  
+                from vam_product where rownum <= #{pageNum} * #{amount}) 
+                
+        where rn > (#{pageNum} -1) * #{amount}
+    
+    ]]>
+    
+    </select>
+  </mapper>
