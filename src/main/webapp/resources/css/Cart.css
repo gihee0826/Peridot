@@ -29,7 +29,7 @@ body{
 			color:gray;
 		}
 		section .big{
-			display:inline-block;
+			display:flex;
 		}
 		section .item{
 			float:left;

@@ -6,6 +6,7 @@ import org.apache.ibatis.session.SqlSession;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Repository;
 
+import com.peridot.vo.Criteria;
 import com.peridot.vo.ProductVO;
 
 @Repository
@@ -27,5 +28,8 @@ public class ProductDAO {
 		return sqlSession.selectOne(NameSpace+".detail",productNo);
 	}
 	
-	//
+	//상품검색
+	public List<ProductVO> searchList(Criteria cri){
+		return sqlSession.selectList(NameSpace+".search",cri);
+	}
 }

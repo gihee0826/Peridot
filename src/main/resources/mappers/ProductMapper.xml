@@ -34,25 +34,7 @@
  	 		where productNo = #{productNo}
   		</select>
   		
-  		<!-- Oracle -->
-    <!-- 게시물 목록(페이징) -->
-    <!-- 게시물 목록(페이징) -->
-    <select id="getListPaging" resultType="productVO">
+  	
     
-    <![CDATA[
-        
-        select 
-        	productNo
-        	, productName
-        	, productPrice from(
-        
-                select /*+INDEX_DESC(vam_product pk_product) */ rownum  as rn, productNo, productName, productPrice
-                  
-                from vam_product where rownum <= #{pageNum} * #{amount}) 
-                
-        where rn > (#{pageNum} -1) * #{amount}
-    
-    ]]>
-    
-    </select>
+   
   </mapper>

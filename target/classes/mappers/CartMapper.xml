@@ -19,4 +19,16 @@
   				, #{productCount}
   				, #{productSize})
   		</insert>
+  		
+  		<!-- 카트 리스트 -->
+		<select id="cartList" resultType="cartListVO">
+		 select
+		     row_number() over(order by c.cartNo desc) as num,
+		     c.cartNo, c.userNo, c.productNo, c.productCount,
+		     p.productName, p.productPrice, p.productImg1
+		 from cart c
+		     inner join product p
+		         on c.productNo = p.productNo   
+		     where c.userNo = #{userNo}
+		</select>
   </mapper>

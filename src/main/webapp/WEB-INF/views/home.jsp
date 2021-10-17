@@ -400,7 +400,7 @@
 		</div>
 		<div>
 			<button class="checkout" onclick="location.href='/cart/pay'">체크아웃하기</button><br>
-			<a class="shopview"><b><i>→내</i> 쇼핑백 보기</b></a>
+			<a class="shopview" href="/cart/cart"><b><i>→내</i> 쇼핑백 보기</b></a>
 		</div>
 	</div>
 </div>
