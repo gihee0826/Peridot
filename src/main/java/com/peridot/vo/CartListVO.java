@@ -12,6 +12,8 @@ public class CartListVO {
 	private String productName;
 	private String productPrice;
 	private String productImg1;
+	private String totalPrice;
+	
 	public int getCartNo() {
 		return cartNo;
 	}
@@ -65,6 +67,12 @@ public class CartListVO {
 	}
 	public void setProductImg1(String productImg1) {
 		this.productImg1 = productImg1;
+	}
+	public String getTotalPrice() {
+		return totalPrice;
+	}
+	public void setTotalPrice(String totalPrice) {
+		this.totalPrice = totalPrice;
 	}
 	
 	

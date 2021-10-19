@@ -1,19 +1,6 @@
 package com.peridot.vo;
 
-public class OrderVO {
-	
-	/*
-	 * orderNo number NOT NULL,
-	userNo number NOT NULL,
-	orderDate date NOT NULL,
-	postnum varchar2(20) NOT NULL,
-	address1 varchar2(100) NOT NULL,
-	address2 varchar2(100) NOT NULL,
-	receiverFirstName varchar2(100) NOT NULL,
-    receiverLastName varchar2(100) NOT NULL,
-	receiverPhone varchar2(50) NOT NULL,
-	productNo number NOT NULL,
-	 */
+public class OrderListVO {
 	
 	private int orderNo;
 	private int userNo;
@@ -24,6 +11,15 @@ public class OrderVO {
 	private String reFirstName;
 	private String reLastName;
 	private String rePhone;
+	
+	private int orderDetailNo;
+	private int productCount;
+	private String status;
+	
+	private String productName;
+	private String productPrice;
+	private String productImg1;
+	private String totalPrice;
 	
 	public int getOrderNo() {
 		return orderNo;
@@ -79,6 +75,46 @@ public class OrderVO {
 	public void setRePhone(String rePhone) {
 		this.rePhone = rePhone;
 	}
-	
-	
+	public int getOrderDetailNo() {
+		return orderDetailNo;
+	}
+	public void setOrderDetailNo(int orderDetailNo) {
+		this.orderDetailNo = orderDetailNo;
+	}
+	public int getProductCount() {
+		return productCount;
+	}
+	public void setProductCount(int productCount) {
+		this.productCount = productCount;
+	}
+	public String getStatus() {
+		return status;
+	}
+	public void setStatus(String status) {
+		this.status = status;
+	}
+	public String getProductName() {
+		return productName;
+	}
+	public void setProductName(String productName) {
+		this.productName = productName;
+	}
+	public String getProductPrice() {
+		return productPrice;
+	}
+	public void setProductPrice(String productPrice) {
+		this.productPrice = productPrice;
+	}
+	public String getProductImg1() {
+		return productImg1;
+	}
+	public void setProductImg1(String productImg1) {
+		this.productImg1 = productImg1;
+	}
+	public String getTotalPrice() {
+		return totalPrice;
+	}
+	public void setTotalPrice(String totalPrice) {
+		this.totalPrice = totalPrice;
+	}
 }

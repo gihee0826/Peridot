@@ -9,6 +9,9 @@
          <typeAlias type="com.peridot.vo.ProductVO" alias="productVO"/>
          <typeAlias type="com.peridot.vo.CartVO" alias="cartVO"/>
          <typeAlias type="com.peridot.vo.CartListVO" alias="cartListVO"/>
+         <typeAlias type="com.peridot.vo.OrderVO" alias="orderVO"/>
+         <typeAlias type="com.peridot.vo.OrderDetailVO" alias="orderDetailVO"/>
+         <typeAlias type="com.peridot.vo.OrderListVO" alias="orderListVO"/>
     </typeAliases>
    
 

@@ -2,11 +2,6 @@
     pageEncoding="UTF-8"%>
 <%@ taglib uri="http://java.sun.com/jsp/jstl/core" prefix="c" %>
 <%@ taglib prefix="fmt" uri="http://java.sun.com/jsp/jstl/fmt" %>
-<%@ page import="com.peridot.vo.*" %>
-<%@ page import="java.util.List" %>
-<%
-	List<CartListVO> cartList = (List<CartListVO>)request.getAttribute("cartList"); 
-%>   
 <!DOCTYPE html>
 
 <head>
@@ -155,6 +150,7 @@
 		position:fixed;
 		width:100%;
 		top:0px;
+		z-index:10;
 	}
 		
 	</style>
@@ -168,89 +164,31 @@
 		
 		<div class="menu">
 			<!-- 왼쪽 메뉴 -->
-			<span class="title"><b>PERIDOT</b> &nbsp; / &nbsp;
+			<span class="title"><b><a href="/">PERIDOT</a></b> &nbsp; / &nbsp;
 			<a href="javascript:dropdownWoman();" class="cat"><b>여성</b></a>
 			<a href="javascript:dropdownMan();" class="cat"><b>남성</b></a>
 			<a href="javascript:dropdownBrand();" class="cat"><b>브랜드 스토리</b></a>
 			</span>
 			
-			<!-- 로그인 X -->
 			<!-- 오른쪽 메뉴 -->
-			<c:if test = "${member == null }">
-			<span class="linkarea">
-				<a href="javascript:dropdown();" class="search1" >
-					검색..&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
-					<img src="/resources/img/검색.png" width="30px" height="30px">
-				</a>
-
-				<a href="javascript:mypageShow()" class="mypage">
-				<img src="/resources/img/사용자계정.png" width="30px" height="30px">
-				</a>
-					
-				<a href="javascript:modal()" class="cart">
-				<img src="/resources/img/장바구니.png" width="30px" height="30px">
-				</a>
-			</span>
-			<!-- 마이페이지 눌렀을 대 부여주는 영역 -->
-			<div class="mypageshow">
-				<div class="lo"><a href="/member/login"><b>로그인</b></a></div>
-				<div class="neww"><a href="/member/join"><b>새 계정 만들기</b></a></div>
-			</div>
-			<!-- 검색 눌렀을 때 보여주는 영역 -->
-			
-			<div class="searcharea">
-			<form action="List/List" method="post">
-				<div class="inputb sLeft">
-					<input type="search" class="sbox" placeholder="검색..">
-					<button class="sbt" type="submit">검색</button>
-				</div>
-				</form>
-				<div class="inputb sRight">
-					<a href="javascript:dropdownclose();" class="x">
-					<i class="fas fa-times"></i>
-					</a>
-				</div>
-				<div>
-					<h3 class="inputb sLeft good" >인기 검색 항목</h3>
-				</div>
-				<div>
-					<h2 class="inputb sLeft good2" >슈퍼스타</h2>
-					<h2 class="inputb sLeft good2" >대드-스타</h2>
-					<h2 class="inputb sLeft good2" >브이스타</h2>
-				</div>
-			</div>
-			</c:if>
-			
-			<!-- 로그인 O -->
-			<!-- 오른쪽 메뉴 -->
-			<c:if test = "${member != null }">
-				<c:if test="${member.userAdmin == 'y'}">
-					<a href="/admin/main">관리자 페이지</a>
-				</c:if>
 			<span class="linkarea">
 				<a href="javascript:dropdown();" class="search1" >
 					검색..&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
 					<img src="/img/검색.png" width="30px" height="30px">
 				</a>
-				
-				<span>
-					<a href="javascript:mypageShow()" class="mypage">
-					<img src="/img/사용자계정.png" width="30px" height="30px">
-					</a>
-			<!-- 여기 사용자정보 넣는곳 -->
-					<span class="userinfo">안녕하세요 ${member.userFirstName}</span>	
-					</span>
-					<a href="javascript:modal()" class="cart">
-					<img src="/img/장바구니.png" width="30px" height="30px">
-					</a>
-					</span>
-			
+
+				<a href="javascript:mypageShow()" class="mypage">
+				<img src="/img/사용자계정.png" width="30px" height="30px">
+				</a>
+					
+				<a href="javascript:modal()" class="cart">
+				<img src="/img/장바구니.png" width="30px" height="30px">
+				</a>
+			</span>
 			<!-- 마이페이지 눌렀을 대 부여주는 영역 -->
 			<div class="mypageshow">
-				<div class="lo"><a href="/member/mypage"><b>대시보드</b></a></div>
-				<div class="lo"><a href="/member/update"><b>프로필</b></a></div>
-				<div class="lo"><a><b>주문</b></a></div>
-				<div><a href="/member/logout.do"><b>로그아웃</b></a></div>
+				<div class="lo"><a><b>로그인</b></a></div>
+				<div class="neww"><a><b>새 계정 만들기</b></a></div>
 			</div>
 			<!-- 검색 눌렀을 때 보여주는 영역 -->
 			<div class="searcharea">
@@ -272,7 +210,6 @@
 					<h2 class="inputb sLeft good2" >브이스타</h2>
 				</div>
 			</div>
-			</c:if>
 			<!-- 여성 카테고리 -->
 			<div class="woman">
 				<div class="warea wparea">
@@ -300,7 +237,7 @@
 					<img src="/img/예이미지.png"><a>Yeah</a>
 				</div>
 				<div class="wareas">
-					<img src="iphoto.jpg" class="ip">
+					<img src="/img/iphoto.jpg" class="ip">
 					<h1>JOURNET COLLECTION</h1>
 					<p>진정한 안식처, 자연을 찾아 떠나는 특별한 여정을 구현한 컬렉션</p>
 					<p class="pde">자세히 보기</p>
@@ -428,138 +365,38 @@
 	</div>	
 </div>
 </header>
-<section>
-<form action="/cart/pay" method="post">
-	<div class="cartheader">
-		<a href="#">쇼핑하기</a>
-	</div>	
-	<div class="big">	
-	<!-- 비로그인 -->
-		<div class="mleft">
-			<div class="shoppingbag">
-				<b><i>내</i> 쇼핑백</b>
-			</div>
-			<ul>
-			  <c:forEach items="${cartList}" var="cartList">
-			  <li>
-			   <div class="thumb">
-			    <img src="/img/${cartList.productImg1}" />
-			   </div>
-			   <div class="gdsInfo">
-			    <p>
-			     <span>상품명 : </span>${cartList.productName}<br />
-			     <span>개당 가격 : </span><fmt:formatNumber pattern="###,###,###" value="${cartList.productPrice}" /><br />
-			     <span>구입 수량 : </span>${cartList.productCount}<br />
-			     <span>최종 가격 : </span><fmt:formatNumber pattern="###,###,###" value="${cartList.productPrice * cartList.productCount}" />
-			    </p>    
-			   </div>
-			   
-			   
-			  </li>
-			  </c:forEach>
-			 </ul>
-			     
-			<a href="#" class="shpstart"><b>쇼핑 시작</b></a>
-			<div class="cc">
-				추천 상품
-			</div>
-			<button class="tBtn">←</button>
-			<div class="autoplay">
-				<div class="item">
-					<div><img src="/img/장바구니신발1.jpg"></div>
-					<div class="sname">블랙 스와로브스키 크리스탈 힐탭 화이트 캔버스 슈퍼스타 스니커즈</div>
-					<div class="price">￦&nbsp;948,000</div>
-				</div>
-				<div class="item">
-					<div><img src="/img/장바구니신발2.jpg"></div>
-					<div class="sname">글리터리 스타 레오파드 프린트 포니 가죽 미드스타 스니커즈</div>
-					<div class="price">￦&nbsp;818,000</div>
-				</div>
-				<div class="item">
-					<div><img src="/img/장바구니신발3.jpg"></div>
-					<div class="sname">핑크 골드 글리터 미드스타 스니커즈</div>
-					<div class="price">￦&nbsp;818,000</div>
-				</div>
-				<div class="item">
-					<div><img src="/img/장바구니신발1.jpg"></div>
-					<div class="sname">블랙 스와로브스키 크리스탈 힐탭 화이트 캔버스 슈퍼스타 스니커즈</div>
-					<div class="price">￦&nbsp;948,000</div>
-				</div>
-				<div class="item">
-					<div><img src="/img/장바구니신발2.jpg"></div>
-					<div class="sname">글리터리 스타 레오파드 프린트 포니 가죽 미드스타 스니커즈</div>
-					<div class="price">￦&nbsp;818,000</div>
-				</div>
-				<div class="item">
-					<div><img src="/img/장바구니신발3.jpg"></div>
-					<div class="sname">핑크 골드 글리터 미드스타 스니커즈</div>
-					<div class="price">￦&nbsp;818,000</div>
-				</div>
-			</div>
-			<button class="tBtn2">→</button>
-		</div>
-		<div class="mright">
-			<div>
-				<div class="rorder"><b><i>주문</i> 요약</b></div>
-				<div>
-					<div class="price1"><b><span class="all">총</span> ￦&nbsp;<fmt:formatNumber pattern="###,###,###" value="${cartTotal.totalPrice}" /></b></div>
-						<div class="info1 more1">
-							<button type="submit">결제하기</button>
-						</div>
-						</form>
-						<div >
-							<!-- 카드사진넣는곳 -->
-							<img src="">
-							<img src="">
-							<img src="">
-						</div>
-						<div class="info1">
-							<p>당사 고객 서비스팀에 전화해 지원을 요청하세요</p>
-						</div>
-						<div class="info1 num">
-							<p>02-0000-0000</p>
-						</div>
-						<div class="info1 time1">
-							<p>운영 시간은 월~금 오전 9시~오후 6시입니다</p>
-						</div>
-					</div>
-				</div>
-				
-				<div class="loww">
-					<div class="last1">
-						<div class="lastp1">
-							<img src="/img/return.png" class="back">
-						</div>
-						<div>
-							<div class="last2">
-								<b>배송과 반품</b> 
-							</div>
-							<div class="last3">
-								영업일 기준 1~2일 특급 배송 및 배송 후 14일 이내 반품<br>
-								<a href="#" class="gow"><b>자세히 알아보기</b></a>
-							</div>
-						</div>
-					</div>
-					<div class="last1">
-						<div class="lastp1">
-							<img src="/img/packge.png">
-						</div>
-						<div>
-							<div class="last2">
-								<b>선물 포장</b>
-							</div>
-							<div class="last3">
-								정성이 가득한 선물 포장을 통해 골든구스만의 특별한<br> 
-								경험을 선물하세요<br>
-								<a href="#" class="gow"><b>자세히 알아보기</b></a>
-							</div>
-						</div>
-					</div>
-				</div>
-			</div>
-		</div>
-	</div>
-</section>		
+<section id="content">
+
+ <div class="orderInfo">
+  <c:forEach items="${orderView}" var="orderView" varStatus="status">
+   
+   <c:if test="${status.first}">
+    <p><span>이름</span>${orderView.reFirstName}</p>
+    <p><span>성</span>${orderView.reLastName}</p>
+    <p><span>주소</span>(${orderView.postNum}) ${orderView.addr1} ${orderView.addr2}</p>
+    <p><span>가격</span><fmt:formatNumber pattern="###,###,###" value="${orderView.totalPrice}" /> 원</p>
+   </c:if>
+   
+  </c:forEach>
+ </div>
+ 
+ <ul class="orderView">
+  <c:forEach items="${orderView}" var="orderView">     
+  <li>
+   <div class="thumb">
+    <img src="${orderView.productImg1}" />
+   </div>
+   <div class="gdsInfo">
+    <p>
+     <span>상품명</span>${orderView.productName}<br />
+     <span>개당 가격</span><fmt:formatNumber pattern="###,###,###" value="${orderView.productPrice}" /> 원<br />
+     <span>최종 가격</span><fmt:formatNumber pattern="###,###,###" value="${orderView.totalPrice}" /> 원                  
+    </p>
+   </div>
+  </li>     
+  </c:forEach>
+ </ul>
+</section>
  <footer>
         <div class="hr">
         <div class="title">

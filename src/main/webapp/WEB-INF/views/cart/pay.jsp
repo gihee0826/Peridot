@@ -1,5 +1,7 @@
 <%@ page language="java" contentType="text/html; charset=UTF-8"
     pageEncoding="UTF-8"%>
+<%@ taglib uri="http://java.sun.com/jsp/jstl/core" prefix="c" %>
+<%@ taglib prefix="fmt" uri="http://java.sun.com/jsp/jstl/fmt" %>
 <!DOCTYPE html>
 <head>
 	<link rel="preconnect" href="https://fonts.googleapis.com">
@@ -62,6 +64,7 @@
 </head>
 <body>	
 <section>
+<form action="/cart/order" method="post">
 	<div class="predottitle"><b>PERIDOT</b></div>
 	<div class="big">	
 		<div class="mleft">
@@ -83,7 +86,7 @@
 						<span class="three">주소찾기</span>
 				</div>
 				<div class="one">
-					<input type="text" autocomplete="off" required onfocus="test3(this)" onblur="test4(this)" name="postnum" class="address_input_post"> 
+					<input type="text" autocomplete="off" required onfocus="test3(this)" onblur="test4(this)" name="postNum" class="address_input_post"> 
 					<label for="text"><span>우편번호*</span></label>
 				</div>
 				
@@ -96,7 +99,7 @@
 					<label for="text"><span>상세주소*</span></label>
 				</div>
 				<div class="one">
-					<input type="text" autocomplete="off" required onfocus="test3(this)" onblur="test4(this)" name="rephone">
+					<input type="text" autocomplete="off" required onfocus="test3(this)" onblur="test4(this)" name="rePhone">
 					<label for="text"><span>전화번호*</span></label>
 				</div>
 				<script src="https://t1.daumcdn.net/mapjsapi/bundle/postcode/prod/postcode.v2.js"></script>
@@ -188,22 +191,23 @@
 				<div class="payimg"><img src="/img/페이코.PNG"><input type="radio" name="1" value="" >페이코</div>
 			</div>
 			
-			<button class="checkbt">다음 : 결제하기</button>
+			<button class="checkbt" type="submit">다음 : 결제하기</button>
 			</div>
 		</div>
+		</form>
 		<div class="mright">
 			<div>
 				<div class="rorder"><b>주문 요약</b></div>
 				<div class="checkthelist"><b>쇼핑백에 있는 항목을 확인하십시오</b></div>
 				<div>
 					<div>
-						<b><span class="lastprice1">소계</span> <span class="lastprice11">￦&nbsp;0</b></span>
+						<b><span class="lastprice1">소계</span> <span class="lastprice11">￦&nbsp;<fmt:formatNumber pattern="###,###,###" value="${cartTotal.totalPrice}" /></b></span>
 					</div>
 					<div>
 						<b><span class="lastprice2">배송비</span><span class="lastprice22">￦&nbsp;0</b></span>
 					</div>
 					<div class="lastthree">
-						<b><span class="lastprice3">총계</span> <span class="lastprice33">￦&nbsp;0</b></span>
+						<b><span class="lastprice3">총계</span> <span class="lastprice33">￦&nbsp;<fmt:formatNumber pattern="###,###,###" value="${cartTotal.totalPrice}" /></b></span>
 					</div>
 				</div>
 			</div>	

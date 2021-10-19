@@ -10,12 +10,16 @@ import org.springframework.stereotype.Controller;
 import org.springframework.ui.Model;
 import org.springframework.web.bind.annotation.RequestMapping;
 import org.springframework.web.bind.annotation.RequestMethod;
+import org.springframework.web.bind.annotation.RequestParam;
 import org.springframework.web.bind.annotation.ResponseBody;
 
 import com.peridot.service.CartService;
 import com.peridot.vo.CartListVO;
 import com.peridot.vo.CartVO;
 import com.peridot.vo.MemberVO;
+import com.peridot.vo.OrderDetailVO;
+import com.peridot.vo.OrderListVO;
+import com.peridot.vo.OrderVO;
 
 @RequestMapping(value="/cart")
 @Controller
@@ -24,9 +28,15 @@ public class CartController {
 	@Autowired
 	private CartService cartService;
 	
-	@RequestMapping(value="/pay")
-	public String payGET() {
-		
+	@RequestMapping(value="/pay", method = RequestMethod.POST)
+	public String payPOST(HttpSession session, Model model) throws Exception{
+		MemberVO member = (MemberVO)session.getAttribute("member");
+		 int userNo = member.getUserNo();
+		 
+		 CartListVO total = cartService.cartTotal(userNo);
+		 
+		 model.addAttribute("cartTotal",total);
+		 
 		return "/cart/pay";
 	}
 	
@@ -64,9 +74,48 @@ public class CartController {
 	 int userNo = member.getUserNo();
 	 
 	 List<CartListVO> cartList = cartService.cartList(userNo);
+	 CartListVO total = cartService.cartTotal(userNo);
+	 
 	 
 	 model.addAttribute("cartList", cartList);
+	 model.addAttribute("cartTotal",total);
 	 
 	 return "cart/cart";
 	}
+	
+	@RequestMapping(value="/order", method = RequestMethod.POST)
+	public String orderPOST(HttpSession session, OrderVO order, OrderDetailVO detail) throws Exception {
+		MemberVO member = (MemberVO)session.getAttribute("member");
+		int userNo = member.getUserNo();
+		
+		order.setUserNo(userNo);
+		
+		cartService.order(order);
+		
+		
+		//detail.setOrderNo(orderNo);
+		
+		cartService.orderDetail(detail);
+		
+		
+		return "member/mypage";
+	}
+	
+	// 주문 상세 목록
+	@RequestMapping(value = "/orderView", method = RequestMethod.GET)
+	public String getOrderList(HttpSession session, @RequestParam("1") int orderNo,OrderVO order, Model model) throws Exception {
+	 
+	 MemberVO member = (MemberVO)session.getAttribute("member");
+	 int userNo = member.getUserNo();
+	 
+	 order.setUserNo(userNo);
+	 order.setOrderNo(orderNo);
+	 
+	 List<OrderListVO> orderView = cartService.orderView(order);
+	 
+	 model.addAttribute("orderView", orderView);
+	 return "cart/orderlist";
+	}
+	
 }
+

@@ -495,7 +495,7 @@
             </div>
             <input type="hidden" id="productNo" name="productNo" value="<%=vo.getProductNo()%>">
             <div class="right_2">
-                <input class="right_btn" type="submit" value="장바구니 추가">
+                <input class="right_btn" type="button" value="장바구니 추가">
                 <script>
 				 $(".right_btn").click(function(){
 				  var productNo = $("#productNo").val();
@@ -511,20 +511,20 @@
 				   type : "post",
 				   data : data,
 				   success : function(result){
-				    
+				    alert("aaaa")
 				    if(result == 1) {
 				     alert("카트 담기 성공");
-				     $("#productCount").val("1");
+				    // $("#productCount").val("1");
 				    } else {
 				     alert("회원만 사용할 수 있습니다.")
-				     $("#productCount").val("1");
+				    // $("#productCount").val("1");
 				    }
 				   },
 				   error : function(){
 				    alert("카트 담기 실패");
 				   }
 				  });
-				 })
+				 });
 				</script>
             </div>
         </div>

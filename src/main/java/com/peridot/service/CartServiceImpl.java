@@ -8,6 +8,9 @@ import org.springframework.stereotype.Service;
 import com.peridot.dao.CartDAO;
 import com.peridot.vo.CartListVO;
 import com.peridot.vo.CartVO;
+import com.peridot.vo.OrderDetailVO;
+import com.peridot.vo.OrderListVO;
+import com.peridot.vo.OrderVO;
 
 @Service
 public class CartServiceImpl implements CartService{
@@ -26,6 +29,36 @@ public class CartServiceImpl implements CartService{
 	public List<CartListVO> cartList(int userNo) throws Exception {
 		
 		return cartDao.cartList(userNo);
+	}
+	//금액합산
+	@Override
+	public CartListVO cartTotal(int userNo) throws Exception {
+		
+		return cartDao.cartTotal(userNo);
+	}
+	//주문정보
+	@Override
+	public int order(OrderVO order) throws Exception {
+		
+		return cartDao.order(order);
+	}
+	//주문상세보기
+	@Override
+	public int orderDetail(OrderDetailVO detail) throws Exception {
+		
+		return cartDao.orderDetail(detail);
+	}
+	//주문보기
+	@Override
+	public List<OrderVO> orderList(OrderVO order) throws Exception {
+		
+		return cartDao.orderList(order);
+	}
+	//주문보기!!!
+	@Override
+	public List<OrderListVO> orderView(OrderVO order) throws Exception {
+		
+		return cartDao.orderView(order);
 	}
 
 }

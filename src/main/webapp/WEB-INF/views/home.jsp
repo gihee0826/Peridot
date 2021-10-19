@@ -1,6 +1,7 @@
 <%@ page language="java" contentType="text/html; charset=UTF-8"
     pageEncoding="UTF-8"%>
 <%@ taglib uri="http://java.sun.com/jsp/jstl/core" prefix="c" %>
+<%@ taglib prefix="fmt" uri="http://java.sun.com/jsp/jstl/fmt" %>
 <%@ page import="com.peridot.vo.*" %>
 <%@ page import="java.util.List" %>
 <%
@@ -379,20 +380,25 @@
 			쇼핑백에 있는 항목을 확인하십시오
 		</div>
 		<div class="shopshow">
-			<div class="inin">
-<!-- 장바구니에 넣으면 이미지 뜨게 하기 db에서 가져와 사이즈 정해놓기 오버플로어 오토 -->
-			</div>
-			<div class="carea">
-				<div>
-					<span class="content"><b>어쩌구저저구  페이드인페이드아웃 js</b></span><br>
-					<span class="cprice"><b>￦&nbsp;0</b></span> <br>
-					<span class="csize ccc">사이즈: </span>
-					<span class="csize">수량: </span>
-					<br>
-					<br>
-					<a href="javascript:delgo()" class="cdel" ><b>삭제</b></a>
-				</div>
-			</div>
+			<ul>
+			  <c:forEach items="${cartList}" var="cartList">
+			  <li>
+			   <div class="thumb">
+			    <img src="/img/${cartList.productImg1}" />
+			   </div>
+			   <div class="gdsInfo">
+			    <p>
+			     <span>상품명 : </span>${cartList.productName}<br />
+			     <span>개당 가격 : </span><fmt:formatNumber pattern="###,###,###" value="${cartList.productPrice}" /><br />
+			     <span>구입 수량 : </span>${cartList.productCount}<br />
+			     <span>최종 가격 : </span><fmt:formatNumber pattern="###,###,###" value="${cartList.productPrice * cartList.productCount}" />
+			    </p>    
+			   </div>
+			   
+			   
+			  </li>
+			  </c:forEach>
+			 </ul>
 		</div>
 		<div class="c_all">
 			<b><span class="c_all1">소계</span>
@@ -400,7 +406,7 @@
 		</div>
 		<div>
 			<button class="checkout" onclick="location.href='/cart/pay'">체크아웃하기</button><br>
-			<a class="shopview" href="/cart/cart"><b><i>→내</i> 쇼핑백 보기</b></a>
+			<a class="shopview" href="/cart/cartList"><b><i>→내</i> 쇼핑백 보기</b></a>
 		</div>
 	</div>
 </div>

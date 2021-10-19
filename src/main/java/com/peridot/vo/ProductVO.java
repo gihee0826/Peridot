@@ -23,7 +23,14 @@ public class ProductVO {
 	private String productImg1;
 	private String producrImg2;
 	private String productPrice;
+	private int totalPrice;
 	
+	public int getTotalPrice() {
+		return totalPrice;
+	}
+	public void setTotalPrice(int totalPrice) {
+		this.totalPrice = totalPrice;
+	}
 	public String getCategory() {
 		return category;
 	}

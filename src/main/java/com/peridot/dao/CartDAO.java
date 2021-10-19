@@ -8,6 +8,9 @@ import org.springframework.stereotype.Repository;
 
 import com.peridot.vo.CartListVO;
 import com.peridot.vo.CartVO;
+import com.peridot.vo.OrderDetailVO;
+import com.peridot.vo.OrderListVO;
+import com.peridot.vo.OrderVO;
 
 @Repository
 public class CartDAO {
@@ -24,5 +27,27 @@ public class CartDAO {
 	//카트리스트
 	public List<CartListVO> cartList(int userNo) {
 		return sqlSession.selectList(NameSpace+".cartList",userNo);
+	}
+	
+	//카트 금액합산
+	public CartListVO cartTotal(int userNo) {
+		return sqlSession.selectOne(NameSpace+".cartTotal",userNo);
+	}
+	
+	//주문정보
+	public int order(OrderVO order) {
+		return sqlSession.insert(NameSpace+".order",order);
+	}
+	//주문상세보기
+	public int orderDetail(OrderDetailVO detail ) {
+		return sqlSession.insert(NameSpace+".orderDetail",detail);
+	}
+	//주문보기
+	public List<OrderVO>orderList(OrderVO order) {
+		return sqlSession.selectList(NameSpace+".orderList",order);
+	}
+	//주문보기!!!
+	public List<OrderListVO>orderView(OrderVO order) {
+		return sqlSession.selectList(NameSpace+".orderList",order);
 	}
 }

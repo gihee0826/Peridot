@@ -31,4 +31,85 @@
 		         on c.productNo = p.productNo   
 		     where c.userNo = #{userNo}
 		</select>
+		
+		<!-- 금액 합산 -->
+		<select id="cartTotal" resultType="cartListVO">
+		 select
+		     sum( p.productPrice) as totalprice
+		 from cart c
+		     inner join product p
+		         on c.productNo = p.productNo   
+		     where c.userNo = #{userNo}
+		 </select>
+		 
+		 <!-- 주문 정보 -->
+		 <insert id="order" parameterType="orderVO">
+		 	insert into user_order(
+		 		orderNo
+		 		, userNo
+		 		, orderDate
+		 		, postnum
+		 		, address1
+		 		, address2
+		 		, receiverFirstName
+		 		, receiverLastName
+		 		, receiverPhone
+		 	)values(
+		 		seq_order_no.nextval
+		 		, #{userNo}
+		 		, sysdate
+		 		, #{postNum}
+		 		, #{addr1}
+		 		, #{addr2}
+		 		, #{reFirstName}
+		 		, #{reLastName}
+		 		, #{rePhone})
+		 </insert>
+		 
+		 <!-- 주문 상세 정보 --> 
+		<insert id="orderDetail" parameterType="orderDetailVO">
+		 insert into UserOrder_detail(
+		 	orderDetailno
+		 	, orderNo
+		 	, productNo
+		 	, productPrice
+		 )select 
+		 	seq_order_detailno.nextval
+		 	, #{orderNo}
+		 	, productNo
+		 	, productPrice
+		 from product
+		</insert> 
+		
+		<!-- 주문정보 리스트 -->
+		<!-- 특정 유저의 주문 목록 -->
+		<select id="orderList" resultType="orderVO">
+		 select
+		     orderNo
+		     , userNo
+		     , orderDate
+		     , postnum
+		     , address1
+		     , address2
+		     , receiverFirstName
+		     , receiverLastName
+		     , receiverPhone
+		 from user_order 
+		     where userNo = #{userNo}
+		</select>
+		
+		<!-- 주문보기!!! -->
+		<select id="orderView" resultType="orderListVO">
+		 select
+		     o.orderNo, o.userNo, o.orderDate, o.postnum, o.address1, o.address2, o.receiverFirstName, o.receiverLastName, o.receiverPhone,
+		     d.orderDetailno, d.productNo,
+		     p.productName, p.productImg1, p.productPrice
+		 from user_order o
+		         inner join userorder_detail d
+		             on o.orderNo = d.orderNo
+		         inner join product p
+		             on d.productNo = p.productName
+		     where o.userNo = #{userNo}
+		         and o.orderNo = #{orderNo}
+		</select>
   </mapper>
