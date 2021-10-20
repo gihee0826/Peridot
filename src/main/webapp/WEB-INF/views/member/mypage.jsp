@@ -421,7 +421,7 @@
                     <div class="hr">
                         <div class="order_1"><i class="fas fa-clipboard-list"></i></div>
                         <h2 class="order_2">주문</h2>
-                        <p class="order_3"><a href="/cart/orderView">내 주문 상태 확인 또는 지난 주문 보기</a></p>
+                        <p class="order_3"><a href="/cart/orderList">내 주문 상태 확인 또는 지난 주문 보기</a></p>
                     </div>
                     <p class="order_5"><a href="/"><b>쇼핑하기</b></a></p>
                 </div>

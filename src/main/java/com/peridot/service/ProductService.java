@@ -6,7 +6,7 @@ import com.peridot.vo.ProductVO;
 
 public interface ProductService {
 	
-	List<ProductVO> list() throws Exception;
+	List<ProductVO> list(int categoryCode) throws Exception;
 	
 	ProductVO detail(int productNo) throws Exception;
 }

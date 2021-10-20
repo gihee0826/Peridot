@@ -19,8 +19,8 @@ public class ProductDAO {
 	private static final String NameSpace ="com.peridot.mapper.ProductMapper";
 	
 	//리스트
-	public List<ProductVO> list() {
-		return sqlSession.selectList(NameSpace+".productList");
+	public List<ProductVO> list(int categoryCode) {
+		return sqlSession.selectList(NameSpace+".productList",categoryCode);
 	}
 	
 	//상세보기

@@ -23,5 +23,7 @@ public interface CartService {
 	//주문보기
 	public List<OrderVO>orderList(OrderVO order) throws Exception;
 	//주문보기!!!
-	public List<OrderListVO>orderView(OrderVO order) throws Exception;
+	public List<OrderListVO>orderView(OrderListVO order) throws Exception;
+	//카트삭제
+	public int deleteCart(CartVO cart) throws Exception;
 }

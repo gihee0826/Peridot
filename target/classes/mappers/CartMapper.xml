@@ -44,6 +44,7 @@
 		 
 		 <!-- 주문 정보 -->
 		 <insert id="order" parameterType="orderVO">
+		  <![CDATA[
 		 	insert into user_order(
 		 		orderNo
 		 		, userNo
@@ -64,6 +65,10 @@
 		 		, #{reFirstName}
 		 		, #{reLastName}
 		 		, #{rePhone})
+		 		 ]]>	
+		    <selectKey resultType="integer" keyProperty="orderNo" order="AFTER">
+		        SELECT MAX(orderNo) FROM user_order        
+		    </selectKey>
 		 </insert>
 		 
 		 <!-- 주문 상세 정보 --> 
@@ -72,13 +77,18 @@
 		 	orderDetailno
 		 	, orderNo
 		 	, productNo
+		 	, productCount
 		 	, productPrice
 		 )select 
 		 	seq_order_detailno.nextval
 		 	, #{orderNo}
-		 	, productNo
+		 	, c.productNo
+		 	, productCount
 		 	, productPrice
-		 from product
+		 from cart c
+		 inner join product p
+		             on c.productNo = p.productNo
+		        
 		</insert> 
 		
 		<!-- 주문정보 리스트 -->
@@ -108,8 +118,15 @@
 		         inner join userorder_detail d
 		             on o.orderNo = d.orderNo
 		         inner join product p
-		             on d.productNo = p.productName
+		             on d.productNo = p.productNo
 		     where o.userNo = #{userNo}
 		         and o.orderNo = #{orderNo}
 		</select>
+		
+		<!-- 장바구니 삭제 -->
+		<delete id="deleteCart">
+		 delete cart
+		     where cartNo = #{cartNo}
+		         and userNo = #{userNo}
+		</delete>
   </mapper>

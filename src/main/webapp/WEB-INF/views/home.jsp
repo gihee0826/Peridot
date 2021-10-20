@@ -5,7 +5,8 @@
 <%@ page import="com.peridot.vo.*" %>
 <%@ page import="java.util.List" %>
 <%
-	List<ProductVO> list = (List<ProductVO>)request.getAttribute("list"); 
+	List<CategoryVO> clist = (List<CategoryVO>)request.getAttribute("clist"); 
+	List<CategoryVO> cglist = (List<CategoryVO>)request.getAttribute("cglist"); 
 %> 
 <!DOCTYPE html>
 
@@ -223,9 +224,7 @@
 			<!-- 로그인 O -->
 			<!-- 오른쪽 메뉴 -->
 			<c:if test = "${member != null }">
-				<c:if test="${member.userAdmin == 'y'}">
-					<a href="/admin/main">관리자 페이지</a>
-				</c:if>
+				
 			<span class="linkarea">
 				<a href="javascript:dropdown();" class="search1" >
 					검색..&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
@@ -248,7 +247,7 @@
 			<div class="mypageshow">
 				<div class="lo"><a href="/member/mypage"><b>대시보드</b></a></div>
 				<div class="lo"><a href="/member/update"><b>프로필</b></a></div>
-				<div class="lo"><a><b>주문</b></a></div>
+				<div class="lo"><a href="/cart/orderList"><b>주문</b></a></div>
 				<div><a href="/member/logout.do"><b>로그아웃</b></a></div>
 			</div>
 			<!-- 검색 눌렀을 때 보여주는 영역 -->
@@ -287,19 +286,68 @@
 				</div>
 				<div class="warea">
 					<a>스니커즈<br></a>
-					<img src="/img/슈퍼스타이미지.png"><a href="List/List">슈퍼-스타<br></a>
-					<img src="/img/볼스타이미지.png" class="shoesimg"><a>볼스타<br></a>
-					<img src="/img/대드스타이미지.png" class="shoesimg"><a>대드-스타<br></a>
-					<img src="/img/프란시이미지.png" class="shoesimg"><a>프란시<br></a>
-					<img src="/img/하이스타이미지.png" class="shoesimg"><a>하이스타<br></a>
-					<img src="/img/미드스타이미지.png" class="shoesimg"><a>미드스타<br></a>
-					<img src="/img/퓨어스타이미지.png" class="shoesimg"><a>퓨어스타<br></a>
-					<img src="/img/런닝솔이미지.png" class="shoesimg"><a>런닝솔<br></a>
-					<img src="/img/슬라이드이미지.png" class="shoesimg"><a>슬라이드<br></a>
-					<img src="/img/스타단이미지.png" class="shoesimg"><a>스타단<br></a>
-					<img src="/img/스타터이미지.png" class="shoesimg"><a>스타터<br></a>
-					<img src="/img/브이스타이미지.png" class="shoesimg"><a>브이스타<br></a>
-					<img src="/img/예이미지.png"><a>Yeah</a>
+					<%
+
+						for(CategoryVO vo : clist){
+							
+							if(vo.getCategoryCode() == 1 && vo.getCategoryGen() == 1){
+								//out.print(1);
+					%>
+					<img src="/img/슈퍼스타이미지.png"><a href="List/SuperstarList?categoryCode=<%= vo.getCategoryCode() %>&categoryGen=<%=vo.getCategoryGen()%>&category=">슈퍼스타<br></a>
+					<%
+							}else if(vo.getCategoryCode() == 2 && vo.getCategoryGen() == 1){
+								
+					%>
+					<img src="/img/볼스타이미지.png" class="shoesimg"><a href="List/SuperstarList?categoryCode=<%= vo.getCategoryCode() %>&categoryGen=<%=vo.getCategoryGen()%>">볼스타<br></a>
+					<%
+							}else if(vo.getCategoryCode() == 3 && vo.getCategoryGen() == 1){
+								
+					%>
+					<img src="/img/대드스타이미지.png" class="shoesimg"><a href="List/SuperstarList?categoryCode=<%= vo.getCategoryCode() %>&categoryGen=<%=vo.getCategoryGen()%>">대드-스타<br></a>
+					<%
+							}else if(vo.getCategoryCode() == 4 && vo.getCategoryGen() == 1){
+					%>
+					<img src="/img/프란시이미지.png" class="shoesimg"><a href="List/SuperstarList?categoryCode=<%= vo.getCategoryCode() %>&categoryGen=<%=vo.getCategoryGen()%>">프란시<br></a>
+					<%
+							}else if(vo.getCategoryCode() == 5 && vo.getCategoryGen() == 1){
+					%>
+					<img src="/img/하이스타이미지.png" class="shoesimg"><a href="List/SuperstarList?categoryCode=<%= vo.getCategoryCode() %>&categoryGen=<%=vo.getCategoryGen()%>">하이스타<br></a>
+					<%
+							}else if(vo.getCategoryCode() == 6 && vo.getCategoryGen() == 1){
+					%>
+					<img src="/img/미드스타이미지.png" class="shoesimg"><a href="List/SuperstarList?categoryCode=<%= vo.getCategoryCode() %>&categoryGen=<%=vo.getCategoryGen()%>">미드스타<br></a>
+					<%
+							}else if(vo.getCategoryCode() == 7 && vo.getCategoryGen() == 1){
+					%>
+					<img src="/img/퓨어스타이미지.png" class="shoesimg"><a href="List/SuperstarList?categoryCode=<%= vo.getCategoryCode() %>&categoryGen=<%=vo.getCategoryGen()%>">퓨어스타<br></a>
+					<%
+							}else if(vo.getCategoryCode() == 8 && vo.getCategoryGen() == 1){
+					%>
+					<img src="/img/런닝솔이미지.png" class="shoesimg"><a href="List/SuperstarList?categoryCode=<%= vo.getCategoryCode() %>&categoryGen=<%=vo.getCategoryGen()%>">런닝솔<br></a>
+					<%
+							}else if(vo.getCategoryCode() == 9 && vo.getCategoryGen() == 1){
+					%>
+					<img src="/img/슬라이드이미지.png" class="shoesimg"><a href="List/SuperstarList?categoryCode=<%= vo.getCategoryCode() %>&categoryGen=<%=vo.getCategoryGen()%>">슬라이드<br></a>
+					<%
+							}else if(vo.getCategoryCode() == 10 && vo.getCategoryGen() == 1){
+					%>
+					<img src="/img/스타단이미지.png" class="shoesimg"><a href="List/SuperstarList?categoryCode=<%= vo.getCategoryCode() %>&categoryGen=<%=vo.getCategoryGen()%>">스타단<br></a>
+					<%
+							}else if(vo.getCategoryCode() == 111 && vo.getCategoryGen() == 1){
+					%>
+					<img src="/img/스타터이미지.png" class="shoesimg"><a href="List/SuperstarList?categoryCode=<%= vo.getCategoryCode() %>&categoryGen=<%=vo.getCategoryGen()%>">스타터<br></a>
+					<%
+							}else if(vo.getCategoryCode() == 12 && vo.getCategoryGen() == 1){
+					%>
+					<img src="/img/브이스타이미지.png" class="shoesimg"><a href="List/SuperstarList?categoryCode=<%= vo.getCategoryCode() %>&categoryGen=<%=vo.getCategoryGen()%>">브이스타<br></a>
+					<%
+							}else if(vo.getCategoryCode() == 13 && vo.getCategoryGen() == 1){
+					%>
+					<img src="/img/예이미지.png"><a href="List/SuperstarList?categoryCode=<%= vo.getCategoryCode() %>&categoryGen=<%=vo.getCategoryGen()%>">Yeah</a>
+					<%
+							}
+							}
+					%>
 				</div>
 				<div class="wareas">
 					<img src="/img/iphoto.jpg" class="ip">
@@ -320,19 +368,63 @@
 				</div>
 				<div class="warea">
 					<a>스니커즈<br></a>
-					<img src="/img/슈퍼스타이미지.png"><a>슈퍼-스타<br></a>
-					<img src="/img/볼스타이미지.png" class="shoesimg"><a>볼스타<br></a>
-					<img src="/img/대드스타이미지.png" class="shoesimg"><a>대드-스타<br></a>
-					<img src="/img/프란시이미지.png" class="shoesimg"><a>프란시<br></a>
-					<img src="/img/미드스타이미지.png" class="shoesimg"><a>미드스타<br></a>
-					<img src="/img/퓨어스타이미지.png" class="shoesimg"><a>퓨어스타<br></a>
-					<img src="/img/런닝이미지.png" class="shoesimg"><a>런닝<br></a>
-					<img src="/img/런닝솔이미지.png" class="shoesimg"><a>런닝솔<br></a>
-					<img src="/img/슬라이드이미지.png" class="shoesimg"><a>슬라이드<br></a>
-					<img src="/img/스타단이미지.png" class="shoesimg"><a>스타단<br></a>
-					<img src="/img/스타터이미지.png" class="shoesimg"><a>스타터<br></a>
-					<img src="/img/브이스타이미지.png" class="shoesimg"><a>브이스타<br></a>
-					<img src="/img/예이미지.png"><a>Yeah</a>
+					<%
+
+						for(CategoryVO vo : clist){
+							if(vo.getCategoryCode() == 11 && vo.getCategoryGen() == 2){
+					%>
+					<img src="/img/슈퍼스타이미지.png"><a href="List/SuperstarList?categoryCode=<%= vo.getCategoryCode() %>&categoryGen=<%=vo.getCategoryGen()%>&categoryGen=<%=vo.getCategoryGen()%>">슈퍼스타<br></a>
+					<%
+							}else if(vo.getCategoryCode() == 22 && vo.getCategoryGen() == 2){
+					%>
+					<img src="/img/볼스타이미지.png" class="shoesimg"><a href="List/SuperstarList?categoryCode=<%= vo.getCategoryCode() %>&categoryGen=<%=vo.getCategoryGen()%>">볼스타<br></a>
+					<%
+							}else if(vo.getCategoryCode() == 33 && vo.getCategoryGen() == 2){
+					%>
+					<img src="/img/대드스타이미지.png" class="shoesimg"><a href="List/SuperstarList?categoryCode=<%= vo.getCategoryCode() %>&categoryGen=<%=vo.getCategoryGen()%>">대드-스타<br></a>
+					<%
+							}else if(vo.getCategoryCode() == 44 && vo.getCategoryGen() == 2){
+					%>
+					<img src="/img/프란시이미지.png" class="shoesimg"><a href="List/SuperstarList?categoryCode=<%= vo.getCategoryCode() %>&categoryGen=<%=vo.getCategoryGen()%>">프란시<br></a>
+					<%
+							}else if(vo.getCategoryCode() == 55 && vo.getCategoryGen() == 2){
+					%>
+					<img src="/img/하이스타이미지.png" class="shoesimg"><a href="List/SuperstarList?categoryCode=<%= vo.getCategoryCode() %>&categoryGen=<%=vo.getCategoryGen()%>">하이스타<br></a>
+					<%
+							}else if(vo.getCategoryCode() == 66 && vo.getCategoryGen() == 2){
+					%>
+					<img src="/img/미드스타이미지.png" class="shoesimg"><a href="List/SuperstarList?categoryCode=<%= vo.getCategoryCode() %>&categoryGen=<%=vo.getCategoryGen()%>">미드스타<br></a>
+					<%
+							}else if(vo.getCategoryCode() == 77 && vo.getCategoryGen() == 2){
+					%>
+					<img src="/img/퓨어스타이미지.png" class="shoesimg"><a href="List/SuperstarList?categoryCode=<%= vo.getCategoryCode() %>&categoryGen=<%=vo.getCategoryGen()%>">퓨어스타<br></a>
+					<%
+							}else if(vo.getCategoryCode() == 88 && vo.getCategoryGen() == 2){
+					%>
+					<img src="/img/런닝솔이미지.png" class="shoesimg"><a href="List/SuperstarList?categoryCode=<%= vo.getCategoryCode() %>&categoryGen=<%=vo.getCategoryGen()%>">런닝솔<br></a>
+					<%
+							}else if(vo.getCategoryCode() == 99 && vo.getCategoryGen() == 2){
+					%>
+					<img src="/img/슬라이드이미지.png" class="shoesimg"><a href="List/SuperstarList?categoryCode=<%= vo.getCategoryCode() %>&categoryGen=<%=vo.getCategoryGen()%>">슬라이드<br></a>
+					<%
+							}else if(vo.getCategoryCode() == 1010 && vo.getCategoryGen() == 2){
+					%>
+					<img src="/img/스타단이미지.png" class="shoesimg"><a href="List/SuperstarList?categoryCode=<%= vo.getCategoryCode() %>&categoryGen=<%=vo.getCategoryGen()%>">스타단<br></a>
+					<%
+							}else if(vo.getCategoryCode() == 1111 && vo.getCategoryGen() == 2){
+					%>
+					<img src="/img/스타터이미지.png" class="shoesimg"><a href="List/SuperstarList?categoryCode=<%= vo.getCategoryCode() %>&categoryGen=<%=vo.getCategoryGen()%>">스타터<br></a>
+					<%
+							}else if(vo.getCategoryCode() == 1212 && vo.getCategoryGen() == 2){
+					%>
+					<img src="/img/브이스타이미지.png" class="shoesimg"><a href="List/SuperstarList?categoryCode=<%= vo.getCategoryCode() %>&categoryGen=<%=vo.getCategoryGen()%>">브이스타<br></a>
+					<%
+							}else if(vo.getCategoryCode() == 1313 && vo.getCategoryGen() == 2){
+					%>
+					<img src="/img/예이미지.png"><a href="List/SuperstarList?categoryCode=<%= vo.getCategoryCode() %>">Yeah</a>
+					<%	}
+							}
+							%>
 				</div>
 				<div class="wareas">
 					<img src="/img/iphoto.jpg" class="ip">
@@ -384,9 +476,9 @@
 			  <c:forEach items="${cartList}" var="cartList">
 			  <li>
 			   <div class="thumb">
-			    <img src="/img/${cartList.productImg1}" />
+			    <img class="inin" src="/img/${cartList.productImg1}" />
 			   </div>
-			   <div class="gdsInfo">
+			   <div class="gdsInfo" >
 			    <p>
 			     <span>상품명 : </span>${cartList.productName}<br />
 			     <span>개당 가격 : </span><fmt:formatNumber pattern="###,###,###" value="${cartList.productPrice}" /><br />
@@ -402,7 +494,7 @@
 		</div>
 		<div class="c_all">
 			<b><span class="c_all1">소계</span>
-			<span class="c_all2">￦&nbsp;0</span></b>
+			<span class="c_all2">￦&nbsp;${cartTotal.totalPrice}</span></b>
 		</div>
 		<div>
 			<button class="checkout" onclick="location.href='/cart/pay'">체크아웃하기</button><br>

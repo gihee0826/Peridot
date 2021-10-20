@@ -17,9 +17,9 @@ public class ProductServiceImpl implements ProductService{
 	
 	//리스트
 	@Override
-	public List<ProductVO> list() throws Exception {
+	public List<ProductVO> list(int categoryCode) throws Exception {
 		
-		return productDao.list();
+		return productDao.list(categoryCode);
 	
 	}
 

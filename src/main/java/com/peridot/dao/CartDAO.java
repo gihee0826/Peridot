@@ -47,7 +47,12 @@ public class CartDAO {
 		return sqlSession.selectList(NameSpace+".orderList",order);
 	}
 	//주문보기!!!
-	public List<OrderListVO>orderView(OrderVO order) {
-		return sqlSession.selectList(NameSpace+".orderList",order);
+	public List<OrderListVO>orderView(OrderListVO order) {
+		return sqlSession.selectList(NameSpace+".orderView",order);
+	}
+	
+	//카트삭제
+	public int deleteCart(CartVO cart) {
+		return sqlSession.delete(NameSpace+".deleteCart",cart);
 	}
 }

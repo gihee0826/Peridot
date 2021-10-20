@@ -12,6 +12,7 @@
          <typeAlias type="com.peridot.vo.OrderVO" alias="orderVO"/>
          <typeAlias type="com.peridot.vo.OrderDetailVO" alias="orderDetailVO"/>
          <typeAlias type="com.peridot.vo.OrderListVO" alias="orderListVO"/>
+         <typeAlias type="com.peridot.vo.CategoryVO" alias="CategoryVO"/>
     </typeAliases>
    
 

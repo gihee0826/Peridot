@@ -92,8 +92,9 @@ public class CartController {
 		
 		cartService.order(order);
 		
+		int orderNo = order.getOrderNo();
 		
-		//detail.setOrderNo(orderNo);
+		detail.setOrderNo(orderNo);
 		
 		cartService.orderDetail(detail);
 		
@@ -101,9 +102,30 @@ public class CartController {
 		return "member/mypage";
 	}
 	
+	
+	// 주문 목록
+	@RequestMapping(value = "/orderList", method = RequestMethod.GET)
+	public String getOrderList(HttpSession session, OrderVO order, Model model) throws Exception {
+	 
+	 
+	 MemberVO member = (MemberVO)session.getAttribute("member");
+	 int userNo = member.getUserNo();
+	 
+	 order.setUserNo(userNo);
+	 
+	 List<OrderVO> orderList = cartService.orderList(order);
+	 
+	 model.addAttribute("orderList", orderList);
+	 
+	 return "cart/orderList";
+	}
+	
 	// 주문 상세 목록
 	@RequestMapping(value = "/orderView", method = RequestMethod.GET)
-	public String getOrderList(HttpSession session, @RequestParam("1") int orderNo,OrderVO order, Model model) throws Exception {
+	public String getOrderList(HttpSession session,
+	      @RequestParam("n") int orderNo,
+	      OrderListVO order, Model model) throws Exception {
+	 
 	 
 	 MemberVO member = (MemberVO)session.getAttribute("member");
 	 int userNo = member.getUserNo();
@@ -112,9 +134,36 @@ public class CartController {
 	 order.setOrderNo(orderNo);
 	 
 	 List<OrderListVO> orderView = cartService.orderView(order);
-	 
 	 model.addAttribute("orderView", orderView);
-	 return "cart/orderlist";
+	 
+	 return "cart/orderView";
+	}
+	
+	// 카트 삭제
+	@ResponseBody
+	@RequestMapping(value = "/deleteCart", method = RequestMethod.POST)
+	public int deleteCart(HttpSession session,
+	     @RequestParam(value = "chbox[]") List<String> chArr, CartVO cart) throws Exception {
+	 
+	 
+	 MemberVO member = (MemberVO)session.getAttribute("member");
+	 int userNo = member.getUserNo();
+	 
+	 int result = 0;
+	 int cartNo = 0;
+	 
+	 
+	 if(member != null) {
+	  cart.setUserNo(userNo);
+	  
+	  for(String i : chArr) {   
+	   cartNo = Integer.parseInt(i);
+	   cart.setCartNo(cartNo);
+	   cartService.deleteCart(cart);
+	  }   
+	  result = 1;
+	 }  
+	 return result;  
 	}
 	
 }

@@ -56,9 +56,15 @@ public class CartServiceImpl implements CartService{
 	}
 	//주문보기!!!
 	@Override
-	public List<OrderListVO> orderView(OrderVO order) throws Exception {
+	public List<OrderListVO> orderView(OrderListVO order) throws Exception {
 		
 		return cartDao.orderView(order);
+	}
+	//카트삭제
+	@Override
+	public int deleteCart(CartVO cart) throws Exception {
+		
+		return cartDao.deleteCart(cart);
 	}
 
 }

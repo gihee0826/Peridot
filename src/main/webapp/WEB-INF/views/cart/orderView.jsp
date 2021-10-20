@@ -15,6 +15,24 @@
 	<script type="text/javascript" src="http://code.jquery.com/jquery-migrate-1.2.1.min.js"></script>
   
 	<script type="text/javascript" src="/js/slick.min.js"></script>
+	<style>
+	/*
+	 section#content ul li { display:inline-block; margin:10px; }
+	 section#content div.goodsThumb img { width:200px; height:200px; }
+	 section#content div.goodsName { padding:10px 0; text-align:center; }
+	 section#content div.goodsName a { color:#000; }
+	*/
+	 .orderInfo { border:5px solid #eee; padding:10px 20px; margin:20px 0;}
+	 .orderInfo span { font-size:20px; font-weight:bold; display:inline-block; width:90px; }
+	 
+	 .orderView li { margin-bottom:20px; padding-bottom:20px; border-bottom:1px solid #999; }
+	 .orderView li::after { content:""; display:block; clear:both; }
+	 
+	 .thumb { float:left; width:200px; }
+	 .thumb img { width:200px; height:200px; }
+	 .gdsInfo { float:right; width:calc(100% - 220px); line-height:2; }
+	 .gdsInfo span { font-size:20px; font-weight:bold; display:inline-block; width:100px; margin-right:10px; }
+	</style>
 	<script>
 		function dropdown(){
 			$(".searcharea").toggle();
@@ -368,29 +386,30 @@
 <section id="content">
 
  <div class="orderInfo">
-  <c:forEach items="${orderView}" var="orderView" varStatus="status">
+  <c:forEach items="${orderView}" var="orderView1" varStatus="status">
    
    <c:if test="${status.first}">
-    <p><span>이름</span>${orderView.reFirstName}</p>
-    <p><span>성</span>${orderView.reLastName}</p>
-    <p><span>주소</span>(${orderView.postNum}) ${orderView.addr1} ${orderView.addr2}</p>
-    <p><span>가격</span><fmt:formatNumber pattern="###,###,###" value="${orderView.totalPrice}" /> 원</p>
+    <p><span>이름</span>${orderView1.reFirstName}</p>
+    <p><span>성</span>${orderView1.reLastName}</p>
+    <p><span>주소</span>(${orderView1.postNum}) ${orderView1.addr1} ${orderView1.addr2}</p>
+    
    </c:if>
    
   </c:forEach>
  </div>
  
  <ul class="orderView">
-  <c:forEach items="${orderView}" var="orderView">     
+  <c:forEach items="${orderView}" var="orderView2">     
   <li>
    <div class="thumb">
-    <img src="${orderView.productImg1}" />
+    <img src="/img/${orderView2.productImg1}" />
    </div>
    <div class="gdsInfo">
     <p>
-     <span>상품명</span>${orderView.productName}<br />
-     <span>개당 가격</span><fmt:formatNumber pattern="###,###,###" value="${orderView.productPrice}" /> 원<br />
-     <span>최종 가격</span><fmt:formatNumber pattern="###,###,###" value="${orderView.totalPrice}" /> 원                  
+     <span>상품명</span>${orderView2.productName}<br />
+     <span>개당 가격</span><fmt:formatNumber pattern="###,###,###" value="${orderView2.productPrice}" /> 원<br />
+     <span>구입 수량</span>${orderView2.productCount} 개<br />
+     <span>최종 가격</span><fmt:formatNumber pattern="###,###,###" value="${orderView2.productPrice * orderView2.productCount}" /> 원                  
     </p>
    </div>
   </li>     
