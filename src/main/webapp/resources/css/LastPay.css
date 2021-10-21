@@ -253,13 +253,7 @@ body{
             transform:translateY(-80%); 
             font-size:11px;  
         }
-       section .two{
-            width: 120px;
-            height: 40px;
-            border: 1px solid lightgray;
-            margin: 15px 248px;
-            background-color: gray;
-        }
+       
         section .three{
         	font-size:14px;
         	text-align: center;

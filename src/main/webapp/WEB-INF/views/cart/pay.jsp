@@ -59,13 +59,23 @@
 			$(".listdelgo2").fadeOut();
 		}
 	</script>
+	<style>
+		.three{
+			background-color: black;
+		    color: white;
+		    width: 360px;
+		    height: 50px;
+		    font-size: 14px;
+		    margin: 0px 248px;
+		}
+	</style>
 	<script src="https://kit.fontawesome.com/57da38e2a5.js" crossorigin="anonymous"></script>	
 	<link rel="stylesheet" href="/css/LastPay.css">
 </head>
 <body>	
 <section>
 <form action="/cart/order" method="post">
-	<div class="predottitle"><b>PERIDOT</b></div>
+	<div class="predottitle"><a href="/"><b>PERIDOT</b></a></div>
 	<div class="big">	
 		<div class="mleft">
 			<div class="mleftmargin"> 
@@ -82,8 +92,8 @@
 					<input type="text" autocomplete="off" required onfocus="test3(this)" onblur="test4(this)" name="reLastName">
 					<label for="text"><span>성*</span></label>
 				</div>
-				<div class="address_button two" onclick="execution_daum_address()">
-						<span class="three">주소찾기</span>
+				<div class="address_button two">
+						<button class="three" onclick="execution_daum_address()">주소찾기</button>
 				</div>
 				<div class="one">
 					<input type="text" autocomplete="off" required onfocus="test3(this)" onblur="test4(this)" name="postNum" class="address_input_post"> 

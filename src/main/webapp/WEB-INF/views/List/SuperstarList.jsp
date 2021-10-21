@@ -21,7 +21,7 @@
 <link rel="preconnect" href="https://fonts.googleapis.com">
 	<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
 	<link href="https://fonts.googleapis.com/css2?family=Gothic+A1&display=swap" rel="stylesheet">
-	<script src="https://code.jquery.com/jquery-3.6.0.min.js"></script> <!--제이쿼리-->
+	<script src="/js/jquery-3.6.0.min.js"></script> <!--제이쿼리-->
 	<script>
 		function dropdown(){
 			$(".searcharea").toggle();
@@ -221,7 +221,7 @@
 					<%
 
 						for(CategoryVO vo : clist){
-							out.print(1);
+							
 							if(vo.getCategoryCode() == 1 && vo.getCategoryGen() == 1){
 								
 					%>
@@ -548,7 +548,7 @@
         
         <form action="get" >
             <p class="content_email">
-                <input type="email" class="email" name="email" onkeyup='agreedown(this)'autocomplete="off" required>
+                <input type="email" class="email" name="email" onkeyup='agreedown(this)' onfocus="test(this)" onblur="test2(this)" autocomplete="off" required>
                 <label for="user_email"><span><em>이메일 주소</em></span></label>
             </p>
         </form>
@@ -618,6 +618,23 @@
                     </div>
             </div>
         </div>
+        <script>
+			function test(item){
+				var $item = $(item);
+				
+				$item.css("border-bottom", "1px solid darkgray");
+				$item.next("label").find("span").css({ "transform":"translateY(-100%)","font-size":"24px","color":"gray"});
+				$item.next("label::after").css({"width":"100%","transform":"translateX(0)"});
+			}
+			function test2(item){
+				var value = item.value;
+				var $item = $(item);
+				if(value == ""){	
+					$item.next("label").find("span").css({ "transform":"inherit","font-size":"inherit","color":"inherit"});
+					$item.next("label::after").css({"width":"inherit","transform":"inherit"});
+				}
+			}
+		</script>
     </footer>
 </body>
 </html>

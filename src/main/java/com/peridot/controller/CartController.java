@@ -14,8 +14,10 @@ import org.springframework.web.bind.annotation.RequestParam;
 import org.springframework.web.bind.annotation.ResponseBody;
 
 import com.peridot.service.CartService;
+import com.peridot.service.CategoryService;
 import com.peridot.vo.CartListVO;
 import com.peridot.vo.CartVO;
+import com.peridot.vo.CategoryVO;
 import com.peridot.vo.MemberVO;
 import com.peridot.vo.OrderDetailVO;
 import com.peridot.vo.OrderListVO;
@@ -27,6 +29,8 @@ public class CartController {
 	
 	@Autowired
 	private CartService cartService;
+	@Autowired
+	private CategoryService categoryService;
 	
 	@RequestMapping(value="/pay", method = RequestMethod.POST)
 	public String payPOST(HttpSession session, Model model) throws Exception{
@@ -76,6 +80,9 @@ public class CartController {
 	 List<CartListVO> cartList = cartService.cartList(userNo);
 	 CartListVO total = cartService.cartTotal(userNo);
 	 
+	//리스트 소 카테고리 타지 말라고 0
+			List<CategoryVO> clist = categoryService.ctg(0);
+			model.addAttribute("clist",clist);
 	 
 	 model.addAttribute("cartList", cartList);
 	 model.addAttribute("cartTotal",total);
@@ -97,6 +104,7 @@ public class CartController {
 		detail.setOrderNo(orderNo);
 		
 		cartService.orderDetail(detail);
+		
 		
 		
 		return "member/mypage";

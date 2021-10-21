@@ -155,6 +155,7 @@
 		position:fixed;
 		width:100%;
 		top:0px;
+		z-index:10;
 	}
 		
 	</style>
@@ -475,6 +476,7 @@
 			<ul>
 			  <c:forEach items="${cartList}" var="cartList">
 			  <li>
+			  <div class="fff">
 			   <div class="thumb">
 			    <img class="inin" src="/img/${cartList.productImg1}" />
 			   </div>
@@ -485,6 +487,7 @@
 			     <span>구입 수량 : </span>${cartList.productCount}<br />
 			     <span>최종 가격 : </span><fmt:formatNumber pattern="###,###,###" value="${cartList.productPrice * cartList.productCount}" />
 			    </p>    
+			   </div>
 			   </div>
 			   
 			   

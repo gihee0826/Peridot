@@ -55,7 +55,7 @@ public class HomeController {
 		//리스트 소 카테고리 타지 말라고 0
 			List<CategoryVO> clist = categoryService.ctg(0);
 			model.addAttribute("clist",clist);
-			System.out.println(clist.size());
+			
 		return "home";
 	}
 	

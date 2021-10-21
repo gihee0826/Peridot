@@ -1,5 +1,7 @@
 package com.peridot.controller;
 
+import java.util.List;
+
 import javax.servlet.http.HttpServletRequest;
 import javax.servlet.http.HttpSession;
 
@@ -13,8 +15,12 @@ import org.springframework.web.bind.annotation.RequestMethod;
 import org.springframework.web.bind.annotation.ResponseBody;
 import org.springframework.web.servlet.mvc.support.RedirectAttributes;
 
+import com.peridot.service.CartService;
+import com.peridot.service.CategoryService;
 import com.peridot.service.MemberService;
 import com.peridot.vo.CardVO;
+import com.peridot.vo.CartListVO;
+import com.peridot.vo.CategoryVO;
 import com.peridot.vo.MemberVO;
 
 @Controller
@@ -26,7 +32,10 @@ public class MemberController {
 	//memberservice가 membercontroller에 자동으로 주입되게 한다.
 	@Autowired
 	private MemberService memberservice;
-	
+	@Autowired
+	private CartService cartService;
+	@Autowired
+	private CategoryService categoryService;
 	
 	//회원가입 페이지 이동
 	@RequestMapping(value = "/join", method = RequestMethod.GET)
@@ -116,8 +125,18 @@ public class MemberController {
 	    /* 회원정보보기 */
 		 @RequestMapping(value = "/mypage")
 		 public String mypage(HttpSession session, Model model) throws Exception{
-	
+			 MemberVO member = (MemberVO)session.getAttribute("member");
+			 int userNo = member.getUserNo();
+			 List<CartListVO> cartList = cartService.cartList(userNo);
+			 CartListVO total = cartService.cartTotal(userNo);
 			 
+			 
+			 model.addAttribute("cartList", cartList);
+			 model.addAttribute("cartTotal",total);
+			 
+			//리스트 소 카테고리 타지 말라고 0
+				List<CategoryVO> clist = categoryService.ctg(0);
+				model.addAttribute("clist",clist);
 
 			return "/member/mypage";
 		 }
