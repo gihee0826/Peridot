@@ -338,57 +338,57 @@
 							if(vo1.getCategoryCode() == 1 && vo1.getCategoryGen() == 1){
 								//out.print(1);
 					%>
-					<img src="/img/슈퍼스타이미지.png"><a href="List/SuperstarList?categoryCode=<%= vo1.getCategoryCode() %>&categoryGen=<%=vo1.getCategoryGen()%>&category=">슈퍼스타<br></a>
+					<img src="/img/슈퍼스타이미지.png"><a href="/List/SuperstarList?categoryCode=<%= vo1.getCategoryCode() %>&categoryGen=<%=vo1.getCategoryGen()%>&category=">슈퍼스타<br></a>
 					<%
 							}else if(vo1.getCategoryCode() == 2 && vo1.getCategoryGen() == 1){
 								
 					%>
-					<img src="/img/볼스타이미지.png" class="shoesimg"><a href="List/SuperstarList?categoryCode=<%= vo1.getCategoryCode() %>&categoryGen=<%=vo1.getCategoryGen()%>">볼스타<br></a>
+					<img src="/img/볼스타이미지.png" class="shoesimg"><a href="/List/SuperstarList?categoryCode=<%= vo1.getCategoryCode() %>&categoryGen=<%=vo1.getCategoryGen()%>">볼스타<br></a>
 					<%
 							}else if(vo1.getCategoryCode() == 3 && vo1.getCategoryGen() == 1){
 								
 					%>
-					<img src="/img/대드스타이미지.png" class="shoesimg"><a href="List/SuperstarList?categoryCode=<%= vo1.getCategoryCode() %>&categoryGen=<%=vo1.getCategoryGen()%>">대드-스타<br></a>
+					<img src="/img/대드스타이미지.png" class="shoesimg"><a href="/List/SuperstarList?categoryCode=<%= vo1.getCategoryCode() %>&categoryGen=<%=vo1.getCategoryGen()%>">대드-스타<br></a>
 					<%
 							}else if(vo1.getCategoryCode() == 4 && vo1.getCategoryGen() == 1){
 					%>
-					<img src="/img/프란시이미지.png" class="shoesimg"><a href="List/SuperstarList?categoryCode=<%= vo1.getCategoryCode() %>&categoryGen=<%=vo1.getCategoryGen()%>">프란시<br></a>
+					<img src="/img/프란시이미지.png" class="shoesimg"><a href="/List/SuperstarList?categoryCode=<%= vo1.getCategoryCode() %>&categoryGen=<%=vo1.getCategoryGen()%>">프란시<br></a>
 					<%
 							}else if(vo1.getCategoryCode() == 5 && vo1.getCategoryGen() == 1){
 					%>
-					<img src="/img/하이스타이미지.png" class="shoesimg"><a href="List/SuperstarList?categoryCode=<%= vo1.getCategoryCode() %>&categoryGen=<%=vo1.getCategoryGen()%>">하이스타<br></a>
+					<img src="/img/하이스타이미지.png" class="shoesimg"><a href="/List/SuperstarList?categoryCode=<%= vo1.getCategoryCode() %>&categoryGen=<%=vo1.getCategoryGen()%>">하이스타<br></a>
 					<%
 							}else if(vo1.getCategoryCode() == 6 && vo1.getCategoryGen() == 1){
 					%>
-					<img src="/img/미드스타이미지.png" class="shoesimg"><a href="List/SuperstarList?categoryCode=<%= vo1.getCategoryCode() %>&categoryGen=<%=vo1.getCategoryGen()%>">미드스타<br></a>
+					<img src="/img/미드스타이미지.png" class="shoesimg"><a href="/List/SuperstarList?categoryCode=<%= vo1.getCategoryCode() %>&categoryGen=<%=vo1.getCategoryGen()%>">미드스타<br></a>
 					<%
 							}else if(vo1.getCategoryCode() == 7 && vo1.getCategoryGen() == 1){
 					%>
-					<img src="/img/퓨어스타이미지.png" class="shoesimg"><a href="List/SuperstarList?categoryCode=<%= vo1.getCategoryCode() %>&categoryGen=<%=vo1.getCategoryGen()%>">퓨어스타<br></a>
+					<img src="/img/퓨어스타이미지.png" class="shoesimg"><a href="/List/SuperstarList?categoryCode=<%= vo1.getCategoryCode() %>&categoryGen=<%=vo1.getCategoryGen()%>">퓨어스타<br></a>
 					<%
 							}else if(vo1.getCategoryCode() == 8 && vo1.getCategoryGen() == 1){
 					%>
-					<img src="/img/런닝솔이미지.png" class="shoesimg"><a href="List/SuperstarList?categoryCode=<%= vo1.getCategoryCode() %>&categoryGen=<%=vo1.getCategoryGen()%>">런닝솔<br></a>
+					<img src="/img/런닝솔이미지.png" class="shoesimg"><a href="/List/SuperstarList?categoryCode=<%= vo1.getCategoryCode() %>&categoryGen=<%=vo1.getCategoryGen()%>">런닝솔<br></a>
 					<%
 							}else if(vo1.getCategoryCode() == 9 && vo1.getCategoryGen() == 1){
 					%>
-					<img src="/img/슬라이드이미지.png" class="shoesimg"><a href="List/SuperstarList?categoryCode=<%= vo1.getCategoryCode() %>&categoryGen=<%=vo1.getCategoryGen()%>">슬라이드<br></a>
+					<img src="/img/슬라이드이미지.png" class="shoesimg"><a href="/List/SuperstarList?categoryCode=<%= vo1.getCategoryCode() %>&categoryGen=<%=vo1.getCategoryGen()%>">슬라이드<br></a>
 					<%
 							}else if(vo1.getCategoryCode() == 10 && vo1.getCategoryGen() == 1){
 					%>
-					<img src="/img/스타단이미지.png" class="shoesimg"><a href="List/SuperstarList?categoryCode=<%= vo1.getCategoryCode() %>&categoryGen=<%=vo1.getCategoryGen()%>">스타단<br></a>
+					<img src="/img/스타단이미지.png" class="shoesimg"><a href="/List/SuperstarList?categoryCode=<%= vo1.getCategoryCode() %>&categoryGen=<%=vo1.getCategoryGen()%>">스타단<br></a>
 					<%
 							}else if(vo1.getCategoryCode() == 111 && vo1.getCategoryGen() == 1){
 					%>
-					<img src="/img/스타터이미지.png" class="shoesimg"><a href="List/SuperstarList?categoryCode=<%= vo1.getCategoryCode() %>&categoryGen=<%=vo1.getCategoryGen()%>">스타터<br></a>
+					<img src="/img/스타터이미지.png" class="shoesimg"><a href="/List/SuperstarList?categoryCode=<%= vo1.getCategoryCode() %>&categoryGen=<%=vo1.getCategoryGen()%>">스타터<br></a>
 					<%
 							}else if(vo1.getCategoryCode() == 12 && vo1.getCategoryGen() == 1){
 					%>
-					<img src="/img/브이스타이미지.png" class="shoesimg"><a href="List/SuperstarList?categoryCode=<%= vo1.getCategoryCode() %>&categoryGen=<%=vo1.getCategoryGen()%>">브이스타<br></a>
+					<img src="/img/브이스타이미지.png" class="shoesimg"><a href="/List/SuperstarList?categoryCode=<%= vo1.getCategoryCode() %>&categoryGen=<%=vo1.getCategoryGen()%>">브이스타<br></a>
 					<%
 							}else if(vo1.getCategoryCode() == 13 && vo1.getCategoryGen() == 1){
 					%>
-					<img src="/img/예이미지.png"><a href="List/SuperstarList?categoryCode=<%= vo1.getCategoryCode() %>&categoryGen=<%=vo1.getCategoryGen()%>">Yeah</a>
+					<img src="/img/예이미지.png"><a href="/List/SuperstarList?categoryCode=<%= vo1.getCategoryCode() %>&categoryGen=<%=vo1.getCategoryGen()%>">Yeah</a>
 					<%
 							}
 							}
@@ -418,55 +418,55 @@
 						for(CategoryVO vo1 : clist){
 							if(vo1.getCategoryCode() == 11 && vo1.getCategoryGen() == 2){
 					%>
-					<img src="/img/슈퍼스타이미지.png"><a href="List/SuperstarList?categoryCode=<%= vo1.getCategoryCode() %>&categoryGen=<%=vo1.getCategoryGen()%>&categoryGen=<%=vo1.getCategoryGen()%>">슈퍼스타<br></a>
+					<img src="/img/슈퍼스타이미지.png"><a href="/List/SuperstarList?categoryCode=<%= vo1.getCategoryCode() %>&categoryGen=<%=vo1.getCategoryGen()%>&categoryGen=<%=vo1.getCategoryGen()%>">슈퍼스타<br></a>
 					<%
 							}else if(vo1.getCategoryCode() == 22 && vo1.getCategoryGen() == 2){
 					%>
-					<img src="/img/볼스타이미지.png" class="shoesimg"><a href="List/SuperstarList?categoryCode=<%= vo1.getCategoryCode() %>&categoryGen=<%=vo1.getCategoryGen()%>">볼스타<br></a>
+					<img src="/img/볼스타이미지.png" class="shoesimg"><a href="/List/SuperstarList?categoryCode=<%= vo1.getCategoryCode() %>&categoryGen=<%=vo1.getCategoryGen()%>">볼스타<br></a>
 					<%
 							}else if(vo1.getCategoryCode() == 33 && vo1.getCategoryGen() == 2){
 					%>
-					<img src="/img/대드스타이미지.png" class="shoesimg"><a href="List/SuperstarList?categoryCode=<%= vo1.getCategoryCode() %>&categoryGen=<%=vo1.getCategoryGen()%>">대드-스타<br></a>
+					<img src="/img/대드스타이미지.png" class="shoesimg"><a href="/List/SuperstarList?categoryCode=<%= vo1.getCategoryCode() %>&categoryGen=<%=vo1.getCategoryGen()%>">대드-스타<br></a>
 					<%
 							}else if(vo1.getCategoryCode() == 44 && vo1.getCategoryGen() == 2){
 					%>
-					<img src="/img/프란시이미지.png" class="shoesimg"><a href="List/SuperstarList?categoryCode=<%= vo1.getCategoryCode() %>&categoryGen=<%=vo1.getCategoryGen()%>">프란시<br></a>
+					<img src="/img/프란시이미지.png" class="shoesimg"><a href="/List/SuperstarList?categoryCode=<%= vo1.getCategoryCode() %>&categoryGen=<%=vo1.getCategoryGen()%>">프란시<br></a>
 					<%
 							}else if(vo1.getCategoryCode() == 55 && vo1.getCategoryGen() == 2){
 					%>
-					<img src="/img/하이스타이미지.png" class="shoesimg"><a href="List/SuperstarList?categoryCode=<%= vo1.getCategoryCode() %>&categoryGen=<%=vo1.getCategoryGen()%>">하이스타<br></a>
+					<img src="/img/하이스타이미지.png" class="shoesimg"><a href="/List/SuperstarList?categoryCode=<%= vo1.getCategoryCode() %>&categoryGen=<%=vo1.getCategoryGen()%>">하이스타<br></a>
 					<%
 							}else if(vo1.getCategoryCode() == 66 && vo1.getCategoryGen() == 2){
 					%>
-					<img src="/img/미드스타이미지.png" class="shoesimg"><a href="List/SuperstarList?categoryCode=<%= vo1.getCategoryCode() %>&categoryGen=<%=vo1.getCategoryGen()%>">미드스타<br></a>
+					<img src="/img/미드스타이미지.png" class="shoesimg"><a href="/List/SuperstarList?categoryCode=<%= vo1.getCategoryCode() %>&categoryGen=<%=vo1.getCategoryGen()%>">미드스타<br></a>
 					<%
 							}else if(vo1.getCategoryCode() == 77 && vo1.getCategoryGen() == 2){
 					%>
-					<img src="/img/퓨어스타이미지.png" class="shoesimg"><a href="List/SuperstarList?categoryCode=<%= vo1.getCategoryCode() %>&categoryGen=<%=vo1.getCategoryGen()%>">퓨어스타<br></a>
+					<img src="/img/퓨어스타이미지.png" class="shoesimg"><a href="/List/SuperstarList?categoryCode=<%= vo1.getCategoryCode() %>&categoryGen=<%=vo1.getCategoryGen()%>">퓨어스타<br></a>
 					<%
 							}else if(vo1.getCategoryCode() == 88 && vo1.getCategoryGen() == 2){
 					%>
-					<img src="/img/런닝솔이미지.png" class="shoesimg"><a href="List/SuperstarList?categoryCode=<%= vo1.getCategoryCode() %>&categoryGen=<%=vo1.getCategoryGen()%>">런닝솔<br></a>
+					<img src="/img/런닝솔이미지.png" class="shoesimg"><a href="/List/SuperstarList?categoryCode=<%= vo1.getCategoryCode() %>&categoryGen=<%=vo1.getCategoryGen()%>">런닝솔<br></a>
 					<%
 							}else if(vo1.getCategoryCode() == 99 && vo1.getCategoryGen() == 2){
 					%>
-					<img src="/img/슬라이드이미지.png" class="shoesimg"><a href="List/SuperstarList?categoryCode=<%= vo1.getCategoryCode() %>&categoryGen=<%=vo1.getCategoryGen()%>">슬라이드<br></a>
+					<img src="/img/슬라이드이미지.png" class="shoesimg"><a href="/List/SuperstarList?categoryCode=<%= vo1.getCategoryCode() %>&categoryGen=<%=vo1.getCategoryGen()%>">슬라이드<br></a>
 					<%
 							}else if(vo1.getCategoryCode() == 1010 && vo1.getCategoryGen() == 2){
 					%>
-					<img src="/img/스타단이미지.png" class="shoesimg"><a href="List/SuperstarList?categoryCode=<%= vo1.getCategoryCode() %>&categoryGen=<%=vo1.getCategoryGen()%>">스타단<br></a>
+					<img src="/img/스타단이미지.png" class="shoesimg"><a href="/List/SuperstarList?categoryCode=<%= vo1.getCategoryCode() %>&categoryGen=<%=vo1.getCategoryGen()%>">스타단<br></a>
 					<%
 							}else if(vo1.getCategoryCode() == 1111 && vo1.getCategoryGen() == 2){
 					%>
-					<img src="/img/스타터이미지.png" class="shoesimg"><a href="List/SuperstarList?categoryCode=<%= vo1.getCategoryCode() %>&categoryGen=<%=vo1.getCategoryGen()%>">스타터<br></a>
+					<img src="/img/스타터이미지.png" class="shoesimg"><a href="/List/SuperstarList?categoryCode=<%= vo1.getCategoryCode() %>&categoryGen=<%=vo1.getCategoryGen()%>">스타터<br></a>
 					<%
 							}else if(vo1.getCategoryCode() == 1212 && vo1.getCategoryGen() == 2){
 					%>
-					<img src="/img/브이스타이미지.png" class="shoesimg"><a href="List/SuperstarList?categoryCode=<%= vo1.getCategoryCode() %>&categoryGen=<%=vo1.getCategoryGen()%>">브이스타<br></a>
+					<img src="/img/브이스타이미지.png" class="shoesimg"><a href="/List/SuperstarList?categoryCode=<%= vo1.getCategoryCode() %>&categoryGen=<%=vo1.getCategoryGen()%>">브이스타<br></a>
 					<%
 							}else if(vo1.getCategoryCode() == 1313 && vo1.getCategoryGen() == 2){
 					%>
-					<img src="/img/예이미지.png"><a href="List/SuperstarList?categoryCode=<%= vo1.getCategoryCode() %>">Yeah</a>
+					<img src="/img/예이미지.png"><a href="/List/SuperstarList?categoryCode=<%= vo1.getCategoryCode() %>">Yeah</a>
 					<%	}
 							}
 							%>

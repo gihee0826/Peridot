@@ -35,7 +35,7 @@ public class ProductController {
 	@RequestMapping(value="/SuperstarList", method = RequestMethod.GET)
 	public String listGET(Locale locale, Model model,int categoryCode)throws Exception {
 		
-		System.out.println("!!!!!!!!!!!!리스트 컨트롤러");
+		
 		
 		//카테고리 제목만
 		CategoryVO cvo = categoryService.ctgn(categoryCode);

@@ -166,7 +166,9 @@
 			<a href="javascript:dropdownBrand();" class="cat"><b>브랜드 스토리</b></a>
 			</span>
 			
+			<!-- 로그인 X -->
 			<!-- 오른쪽 메뉴 -->
+			<c:if test = "${member == null }">
 			<span class="linkarea">
 				<a href="javascript:dropdown();" class="search1" >
 					검색..&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
@@ -183,8 +185,62 @@
 			</span>
 			<!-- 마이페이지 눌렀을 대 부여주는 영역 -->
 			<div class="mypageshow">
-				<div class="lo"><a><b>로그인</b></a></div>
-				<div class="neww"><a><b>새 계정 만들기</b></a></div>
+				<div class="lo"><a href="/member/login"><b>로그인</b></a></div>
+				<div class="neww"><a href="/member/join"><b>새 계정 만들기</b></a></div>
+			</div>
+			<!-- 검색 눌렀을 때 보여주는 영역 -->
+			
+			<div class="searcharea">
+			<form action="List/List" method="post">
+				<div class="inputb sLeft">
+					<input type="search" class="sbox" placeholder="검색..">
+					<button class="sbt" type="submit">검색</button>
+				</div>
+				</form>
+				<div class="inputb sRight">
+					<a href="javascript:dropdownclose();" class="x">
+					<i class="fas fa-times"></i>
+					</a>
+				</div>
+				<div>
+					<h3 class="inputb sLeft good" >인기 검색 항목</h3>
+				</div>
+				<div>
+					<h2 class="inputb sLeft good2" >슈퍼스타</h2>
+					<h2 class="inputb sLeft good2" >대드-스타</h2>
+					<h2 class="inputb sLeft good2" >브이스타</h2>
+				</div>
+			</div>
+			</c:if>
+			
+			<!-- 로그인 O -->
+			<!-- 오른쪽 메뉴 -->
+			<c:if test = "${member != null }">
+				
+			<span class="linkarea">
+				<a href="javascript:dropdown();" class="search1" >
+					검색..&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
+					<img src="/img/검색.png" width="30px" height="30px">
+				</a>
+				
+				<span>
+					<a href="javascript:mypageShow()" class="mypage">
+					<img src="/img/사용자계정.png" width="30px" height="30px">
+					</a>
+			<!-- 여기 사용자정보 넣는곳 -->
+					<span class="userinfo">안녕하세요 ${member.userFirstName}</span>	
+					</span>
+					<a href="javascript:modal()" class="cart">
+					<img src="/img/장바구니.png" width="30px" height="30px">
+					</a>
+					</span>
+			
+			<!-- 마이페이지 눌렀을 대 부여주는 영역 -->
+			<div class="mypageshow">
+				<div class="lo"><a href="/member/mypage"><b>대시보드</b></a></div>
+				<div class="lo"><a href="/member/update"><b>프로필</b></a></div>
+				<div class="lo"><a><b>주문</b></a></div>
+				<div><a href="/member/logout.do"><b>로그아웃</b></a></div>
 			</div>
 			<!-- 검색 눌렀을 때 보여주는 영역 -->
 			<div class="searcharea">
@@ -206,6 +262,7 @@
 					<h2 class="inputb sLeft good2" >브이스타</h2>
 				</div>
 			</div>
+			</c:if>
 			<!-- 여성 카테고리 -->
 			<div class="woman">
 				<div class="warea wparea">
