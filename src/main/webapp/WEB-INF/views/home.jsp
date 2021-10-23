@@ -157,7 +157,9 @@
 		top:0px;
 		z-index:10;
 	}
-		
+	.gdsInfo{
+		margin-left:20px;
+	}	
 	</style>
 </head>
 

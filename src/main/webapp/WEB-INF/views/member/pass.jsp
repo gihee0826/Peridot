@@ -389,7 +389,7 @@
 	</form>
 	<div class="big help9">
 		<div class="help99">
-			<img src="help.PNG" class="img99">
+			<img src="/img/help.PNG" class="img99">
 			<div class="needhelp">도움이 필요하십니까?</div>
 			<div class="ques">질문이 있으십니까?</div>
 			<div class="needhelp1">이메일을 보내주세요</div>

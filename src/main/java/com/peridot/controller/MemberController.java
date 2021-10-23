@@ -144,6 +144,7 @@ public class MemberController {
 		 /* 회원정보수정 */
 		 @RequestMapping(value="/update", method = RequestMethod.GET)
 		 public String updateGet() {
+			 
 			 return "member/update";
 		 }
 		 

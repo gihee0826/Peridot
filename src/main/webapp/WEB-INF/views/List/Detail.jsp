@@ -1,11 +1,13 @@
 <%@ page language="java" contentType="text/html; charset=UTF-8"
     pageEncoding="UTF-8"%>
 <%@ taglib uri="http://java.sun.com/jsp/jstl/core" prefix="c" %>
+<%@ taglib prefix="fmt" uri="http://java.sun.com/jsp/jstl/fmt" %>
 <%@ page import="com.peridot.vo.*" %>  
 <%@ page import="java.util.List" %>  
-<%@ taglib uri="http://java.sun.com/jsp/jstl/core" prefix="c" %>
 <%
 	ProductVO vo = (ProductVO)request.getAttribute("detail");
+	List<CategoryVO> clist = (List<CategoryVO>)request.getAttribute("clist"); 
+	List<CategoryVO> cglist = (List<CategoryVO>)request.getAttribute("cglist"); 
 %>    
 <!DOCTYPE html>
 <html>
@@ -178,7 +180,30 @@
 			position:fixed;
 			width:100%;
 			top:0px;
-		}
+		z-index:10;
+	}
+	.gdsInfo{
+		margin-left:20px;
+	}
+	.num1,.num2{
+		width: 200px;
+	    height: 50px;
+	    border: 1px solid lightgray;
+	    margin: 10px auto;
+	    margin-left: 0px;
+	    background-color: white;
+	}
+	.sel1,.sel2{
+		 width: 200px;
+	    height: 50px;
+	    border: none;
+	    margin: 15px auto;
+	    background-color: white;
+	    position: relative;
+	    bottom: 15px;
+	    padding-left: 5px;
+	}
+	.content img { display: block; margin: 15px auto;}
 	</style>
 </head>
 <body>
@@ -189,7 +214,7 @@
     
     <div class="menu">
         <!-- 왼쪽 메뉴 -->
-        <span class="title"><b>PERIDOT</b> &nbsp; / &nbsp;
+        <span class="title"><a href="/"><b>PERIDOT</b></a> &nbsp; / &nbsp;
         <a href="javascript:dropdownWoman();" class="cat"><b>여성</b></a>
         <a href="javascript:dropdownMan();" class="cat"><b>남성</b></a>
         <a href="javascript:dropdownBrand();" class="cat"><b>브랜드 스토리</b></a>
@@ -306,52 +331,145 @@
             </div>
             <div class="warea">
                 <a>스니커즈<br></a>
-                <img src="./img/슈퍼스타이미지.png"><a>슈퍼-스타<br></a>
-                <img src="./img/볼스타이미지.png" class="shoesimg"><a>볼스타<br></a>
-                <img src="./img/대드스타이미지.png" class="shoesimg"><a>대드-스타<br></a>
-                <img src="./img/프란시이미지.png" class="shoesimg"><a>프란시<br></a>
-                <img src="./img/하이스타이미지.png" class="shoesimg"><a>하이스타<br></a>
-                <img src="./img/미드스타이미지.png" class="shoesimg"><a>미드스타<br></a>
-                <img src="./img/퓨어스타이미지.png" class="shoesimg"><a>퓨어스타<br></a>
-                <img src="./img/런닝솔이미지.png" class="shoesimg"><a>런닝솔<br></a>
-                <img src="./img/슬라이드이미지.png" class="shoesimg"><a>슬라이드<br></a>
-                <img src="./img/스타단이미지.png" class="shoesimg"><a>스타단<br></a>
-                <img src="./img/스타터이미지.png" class="shoesimg"><a>스타터<br></a>
-                <img src="./img/브이스타이미지.png" class="shoesimg"><a>브이스타<br></a>
-                <img src="./img/예이미지.png"><a>Yeah</a>
-            </div>
-            <div class="wareas">
-                <img src="./img/iphoto.jpg" class="ip">
-                <h1>JOURNET COLLECTION</h1>
-                <p>진정한 안식처, 자연을 찾아 떠나는 특별한 여정을 구현한 컬렉션</p>
-                <p class="pde">자세히 보기</p>
-            </div>
-        </div>
-        <!-- 남성-->
-        <div class="man">
-            <div class="warea wparea">
-                <a>신상품<br></a>
-                <a>기프트<br></a>
-                <a>STAR COLLECTION<br></a>
-                <a>JOURNET COLLECTION<br></a>
-                <a>GOLDEN RESORT COLLECTION<br></a>
-                <a>GAME EDT CAPSULE
-            </div>
-            <div class="warea">
-                <a>스니커즈<br></a>
-                <img src="./img/슈퍼스타이미지.png"><a>슈퍼-스타<br></a>
-                <img src="./img/볼스타이미지.png" class="shoesimg"><a>볼스타<br></a>
-                <img src="./img/대드스타이미지.png" class="shoesimg"><a>대드-스타<br></a>
-                <img src="./img/프란시이미지.png" class="shoesimg"><a>프란시<br></a>
-                <img src="./img/미드스타이미지.png" class="shoesimg"><a>미드스타<br></a>
-                <img src="./img/퓨어스타이미지.png" class="shoesimg"><a>퓨어스타<br></a>
-                <img src="./img/런닝이미지.png" class="shoesimg"><a>런닝<br></a>
-                <img src="./img/런닝솔이미지.png" class="shoesimg"><a>런닝솔<br></a>
-                <img src="./img/슬라이드이미지.png" class="shoesimg"><a>슬라이드<br></a>
-                <img src="./img/스타단이미지.png" class="shoesimg"><a>스타단<br></a>
-                <img src="./img/스타터이미지.png" class="shoesimg"><a>스타터<br></a>
-                <img src="./img/브이스타이미지.png" class="shoesimg"><a>브이스타<br></a>
-                <img src="./img/예이미지.png"><a>Yeah</a>
+                <%
+
+                		for(CategoryVO vo1 : clist){
+							
+							if(vo1.getCategoryCode() == 1 && vo1.getCategoryGen() == 1){
+								//out.print(1);
+					%>
+					<img src="/img/슈퍼스타이미지.png"><a href="List/SuperstarList?categoryCode=<%= vo1.getCategoryCode() %>&categoryGen=<%=vo1.getCategoryGen()%>&category=">슈퍼스타<br></a>
+					<%
+							}else if(vo1.getCategoryCode() == 2 && vo1.getCategoryGen() == 1){
+								
+					%>
+					<img src="/img/볼스타이미지.png" class="shoesimg"><a href="List/SuperstarList?categoryCode=<%= vo1.getCategoryCode() %>&categoryGen=<%=vo1.getCategoryGen()%>">볼스타<br></a>
+					<%
+							}else if(vo1.getCategoryCode() == 3 && vo1.getCategoryGen() == 1){
+								
+					%>
+					<img src="/img/대드스타이미지.png" class="shoesimg"><a href="List/SuperstarList?categoryCode=<%= vo1.getCategoryCode() %>&categoryGen=<%=vo1.getCategoryGen()%>">대드-스타<br></a>
+					<%
+							}else if(vo1.getCategoryCode() == 4 && vo1.getCategoryGen() == 1){
+					%>
+					<img src="/img/프란시이미지.png" class="shoesimg"><a href="List/SuperstarList?categoryCode=<%= vo1.getCategoryCode() %>&categoryGen=<%=vo1.getCategoryGen()%>">프란시<br></a>
+					<%
+							}else if(vo1.getCategoryCode() == 5 && vo1.getCategoryGen() == 1){
+					%>
+					<img src="/img/하이스타이미지.png" class="shoesimg"><a href="List/SuperstarList?categoryCode=<%= vo1.getCategoryCode() %>&categoryGen=<%=vo1.getCategoryGen()%>">하이스타<br></a>
+					<%
+							}else if(vo1.getCategoryCode() == 6 && vo1.getCategoryGen() == 1){
+					%>
+					<img src="/img/미드스타이미지.png" class="shoesimg"><a href="List/SuperstarList?categoryCode=<%= vo1.getCategoryCode() %>&categoryGen=<%=vo1.getCategoryGen()%>">미드스타<br></a>
+					<%
+							}else if(vo1.getCategoryCode() == 7 && vo1.getCategoryGen() == 1){
+					%>
+					<img src="/img/퓨어스타이미지.png" class="shoesimg"><a href="List/SuperstarList?categoryCode=<%= vo1.getCategoryCode() %>&categoryGen=<%=vo1.getCategoryGen()%>">퓨어스타<br></a>
+					<%
+							}else if(vo1.getCategoryCode() == 8 && vo1.getCategoryGen() == 1){
+					%>
+					<img src="/img/런닝솔이미지.png" class="shoesimg"><a href="List/SuperstarList?categoryCode=<%= vo1.getCategoryCode() %>&categoryGen=<%=vo1.getCategoryGen()%>">런닝솔<br></a>
+					<%
+							}else if(vo1.getCategoryCode() == 9 && vo1.getCategoryGen() == 1){
+					%>
+					<img src="/img/슬라이드이미지.png" class="shoesimg"><a href="List/SuperstarList?categoryCode=<%= vo1.getCategoryCode() %>&categoryGen=<%=vo1.getCategoryGen()%>">슬라이드<br></a>
+					<%
+							}else if(vo1.getCategoryCode() == 10 && vo1.getCategoryGen() == 1){
+					%>
+					<img src="/img/스타단이미지.png" class="shoesimg"><a href="List/SuperstarList?categoryCode=<%= vo1.getCategoryCode() %>&categoryGen=<%=vo1.getCategoryGen()%>">스타단<br></a>
+					<%
+							}else if(vo1.getCategoryCode() == 111 && vo1.getCategoryGen() == 1){
+					%>
+					<img src="/img/스타터이미지.png" class="shoesimg"><a href="List/SuperstarList?categoryCode=<%= vo1.getCategoryCode() %>&categoryGen=<%=vo1.getCategoryGen()%>">스타터<br></a>
+					<%
+							}else if(vo1.getCategoryCode() == 12 && vo1.getCategoryGen() == 1){
+					%>
+					<img src="/img/브이스타이미지.png" class="shoesimg"><a href="List/SuperstarList?categoryCode=<%= vo1.getCategoryCode() %>&categoryGen=<%=vo1.getCategoryGen()%>">브이스타<br></a>
+					<%
+							}else if(vo1.getCategoryCode() == 13 && vo1.getCategoryGen() == 1){
+					%>
+					<img src="/img/예이미지.png"><a href="List/SuperstarList?categoryCode=<%= vo1.getCategoryCode() %>&categoryGen=<%=vo1.getCategoryGen()%>">Yeah</a>
+					<%
+							}
+							}
+					%>
+				</div>
+				<div class="wareas">
+					<img src="/img/iphoto.jpg" class="ip">
+					<h1>JOURNET COLLECTION</h1>
+					<p>진정한 안식처, 자연을 찾아 떠나는 특별한 여정을 구현한 컬렉션</p>
+					<p class="pde">자세히 보기</p>
+				</div>
+			</div>
+			<!-- 남성-->
+			<div class="man">
+				<div class="warea wparea">
+					<a>신상품<br></a>
+					<a>기프트<br></a>
+					<a>STAR COLLECTION<br></a>
+					<a>JOURNET COLLECTION<br></a>
+					<a>GOLDEN RESORT COLLECTION<br></a>
+					<a>GAME EDT CAPSULE
+				</div>
+				<div class="warea">
+					<a>스니커즈<br></a>
+					<%
+
+						for(CategoryVO vo1 : clist){
+							if(vo1.getCategoryCode() == 11 && vo1.getCategoryGen() == 2){
+					%>
+					<img src="/img/슈퍼스타이미지.png"><a href="List/SuperstarList?categoryCode=<%= vo1.getCategoryCode() %>&categoryGen=<%=vo1.getCategoryGen()%>&categoryGen=<%=vo1.getCategoryGen()%>">슈퍼스타<br></a>
+					<%
+							}else if(vo1.getCategoryCode() == 22 && vo1.getCategoryGen() == 2){
+					%>
+					<img src="/img/볼스타이미지.png" class="shoesimg"><a href="List/SuperstarList?categoryCode=<%= vo1.getCategoryCode() %>&categoryGen=<%=vo1.getCategoryGen()%>">볼스타<br></a>
+					<%
+							}else if(vo1.getCategoryCode() == 33 && vo1.getCategoryGen() == 2){
+					%>
+					<img src="/img/대드스타이미지.png" class="shoesimg"><a href="List/SuperstarList?categoryCode=<%= vo1.getCategoryCode() %>&categoryGen=<%=vo1.getCategoryGen()%>">대드-스타<br></a>
+					<%
+							}else if(vo1.getCategoryCode() == 44 && vo1.getCategoryGen() == 2){
+					%>
+					<img src="/img/프란시이미지.png" class="shoesimg"><a href="List/SuperstarList?categoryCode=<%= vo1.getCategoryCode() %>&categoryGen=<%=vo1.getCategoryGen()%>">프란시<br></a>
+					<%
+							}else if(vo1.getCategoryCode() == 55 && vo1.getCategoryGen() == 2){
+					%>
+					<img src="/img/하이스타이미지.png" class="shoesimg"><a href="List/SuperstarList?categoryCode=<%= vo1.getCategoryCode() %>&categoryGen=<%=vo1.getCategoryGen()%>">하이스타<br></a>
+					<%
+							}else if(vo1.getCategoryCode() == 66 && vo1.getCategoryGen() == 2){
+					%>
+					<img src="/img/미드스타이미지.png" class="shoesimg"><a href="List/SuperstarList?categoryCode=<%= vo1.getCategoryCode() %>&categoryGen=<%=vo1.getCategoryGen()%>">미드스타<br></a>
+					<%
+							}else if(vo1.getCategoryCode() == 77 && vo1.getCategoryGen() == 2){
+					%>
+					<img src="/img/퓨어스타이미지.png" class="shoesimg"><a href="List/SuperstarList?categoryCode=<%= vo1.getCategoryCode() %>&categoryGen=<%=vo1.getCategoryGen()%>">퓨어스타<br></a>
+					<%
+							}else if(vo1.getCategoryCode() == 88 && vo1.getCategoryGen() == 2){
+					%>
+					<img src="/img/런닝솔이미지.png" class="shoesimg"><a href="List/SuperstarList?categoryCode=<%= vo1.getCategoryCode() %>&categoryGen=<%=vo1.getCategoryGen()%>">런닝솔<br></a>
+					<%
+							}else if(vo1.getCategoryCode() == 99 && vo1.getCategoryGen() == 2){
+					%>
+					<img src="/img/슬라이드이미지.png" class="shoesimg"><a href="List/SuperstarList?categoryCode=<%= vo1.getCategoryCode() %>&categoryGen=<%=vo1.getCategoryGen()%>">슬라이드<br></a>
+					<%
+							}else if(vo1.getCategoryCode() == 1010 && vo1.getCategoryGen() == 2){
+					%>
+					<img src="/img/스타단이미지.png" class="shoesimg"><a href="List/SuperstarList?categoryCode=<%= vo1.getCategoryCode() %>&categoryGen=<%=vo1.getCategoryGen()%>">스타단<br></a>
+					<%
+							}else if(vo1.getCategoryCode() == 1111 && vo1.getCategoryGen() == 2){
+					%>
+					<img src="/img/스타터이미지.png" class="shoesimg"><a href="List/SuperstarList?categoryCode=<%= vo1.getCategoryCode() %>&categoryGen=<%=vo1.getCategoryGen()%>">스타터<br></a>
+					<%
+							}else if(vo1.getCategoryCode() == 1212 && vo1.getCategoryGen() == 2){
+					%>
+					<img src="/img/브이스타이미지.png" class="shoesimg"><a href="List/SuperstarList?categoryCode=<%= vo1.getCategoryCode() %>&categoryGen=<%=vo1.getCategoryGen()%>">브이스타<br></a>
+					<%
+							}else if(vo1.getCategoryCode() == 1313 && vo1.getCategoryGen() == 2){
+					%>
+					<img src="/img/예이미지.png"><a href="List/SuperstarList?categoryCode=<%= vo1.getCategoryCode() %>">Yeah</a>
+					<%	}
+							}
+							%>
             </div>
             <div class="wareas">
                 <img src="./img/iphoto.jpg" class="ip">
@@ -384,45 +502,52 @@
 <header class="header2">
 <!-- 장바구니이너 -->
 <div class="modal">
-<div id="inner">
-    <div class="tt">
-        <div class="stitle">
-            <b><i>내</i> 쇼핑백</b>
-        </div>	
-        <div class="x2">
-            <a href="javascript:sideclose();" class="x">
-            <i class="fas fa-times"></i>
-        </a>
-    </div>
-    </div>
-    <div class="scheck">
-        쇼핑백에 있는 항목을 확인하십시오
-    </div>
-    <div class="shopshow">
-        <div class="inin">
-<!-- 장바구니에 넣으면 이미지 뜨게 하기 db에서 가져와 사이즈 정해놓기 오버플로어 오토 -->
-        </div>
-        <div class="carea">
-            <div>
-                <span class="content"><b>어쩌구저저구  페이드인페이드아웃 js</b></span><br>
-                <span class="cprice"><b>￦&nbsp;0</b></span> <br>
-                <span class="csize ccc">사이즈: </span>
-                <span class="csize">수량: </span>
-                <br>
-                <br>
-                <a href="javascript:delgo()" class="cdel" ><b>삭제</b></a>
-            </div>
-        </div>
-    </div>
-    <div class="c_all">
-        <b><span class="c_all1">소계</span>
-        <span class="c_all2">￦&nbsp;0</span></b>
-    </div>
-    <div>
-        <button class="checkout">체크아웃하기</button><br>
-        <a class="shopview"><b><i>→내</i> 쇼핑백 보기</b></a>
-    </div>
-</div>
+	<div id="inner">
+		<div class="tt">
+			<div class="stitle">
+				<b><i>내</i> 쇼핑백</b>
+			</div>	
+			<div class="x2">
+				<a href="javascript:sideclose();" class="x">
+				<i class="fas fa-times"></i>
+			</a>
+		</div>
+		</div>
+		<div class="scheck">
+			쇼핑백에 있는 항목을 확인하십시오
+		</div>
+		<div class="shopshow">
+			<ul>
+			  <c:forEach items="${cartList}" var="cartList">
+			  <li>
+			  <div class="fff">
+			   <div class="thumb">
+			    <img class="inin" src="/img/${cartList.productImg1}" />
+			   </div>
+			   <div class="gdsInfo" >
+			    <p>
+			     <span>상품명 : </span>${cartList.productName}<br />
+			     <span>개당 가격 : </span><fmt:formatNumber pattern="###,###,###" value="${cartList.productPrice}" /><br />
+			     <span>구입 수량 : </span>${cartList.productCount}<br />
+			     <span>최종 가격 : </span><fmt:formatNumber pattern="###,###,###" value="${cartList.productPrice * cartList.productCount}" />
+			    </p>    
+			   </div>
+			   </div>
+			   
+			   
+			  </li>
+			  </c:forEach>
+			 </ul>
+		</div>
+		<div class="c_all">
+			<b><span class="c_all1">소계</span>
+			<span class="c_all2">￦&nbsp;${cartTotal.totalPrice}</span></b>
+		</div>
+		<div>
+			<button class="checkout" onclick="location.href='/cart/pay'">체크아웃하기</button><br>
+			<a class="shopview" href="/cart/cartList"><b><i>→내</i> 쇼핑백 보기</b></a>
+		</div>
+	</div>
 </div>
 <!-- 삭제하시겠습니까?????? -->
 <div class="delgo2">
@@ -474,7 +599,7 @@
             <div class="right_1">
                 <p>사이즈&nbsp;:</p>
                 <div class="num1">
-                   <select name="productSize">
+                   <select name="productSize" class="sel1">
                    		<option name="240" value="240">240</option>
                    		<option name="250" value="250">250</option>
                    		<option name="260" value="260">260</option>
@@ -483,8 +608,9 @@
                    		
                    </select>
                 </div>
+                <p>수량&nbsp;:</p>
                 <div class="num2">
-                   <select name="productCount">
+                   <select name="productCount" class="sel2">
                    		<option name="1" value="1">1</option>
                    		<option name="2" value="2">2</option>
                    		<option name="3" value="3">3</option>
@@ -511,9 +637,9 @@
 				   type : "post",
 				   data : data,
 				   success : function(result){
-				    alert("aaaa")
+				    
 				    if(result == 1) {
-				     alert("카트 담기 성공");
+				     alert("장바구니에 담겼습니다.");
 				    // $("#productCount").val("1");
 				    } else {
 				     alert("회원만 사용할 수 있습니다.")
@@ -521,7 +647,7 @@
 				    }
 				   },
 				   error : function(){
-				    alert("카트 담기 실패");
+				    alert("장바구니에 담지 못했습니다.");
 				   }
 				  });
 				 });

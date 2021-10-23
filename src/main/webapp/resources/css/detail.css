@@ -16,7 +16,7 @@ section .detail{
 }
 section .left{
     width: 240px;
-    height: 2000px;
+    height: 380px;
     background-color: white;
     position: fixed;
     left: 10px;
@@ -74,7 +74,7 @@ section .content{
 }
 section .right{
     width: 240px;
-    height: 2000px;
+    height: 380px;
     background-color: white;
     position: fixed;
     right: 10px;
@@ -85,7 +85,7 @@ section .right_1{
     border-bottom: 1px dashed gray;
     border-top: 1px dashed gray;
     padding-left: 10px;
-    height: 100px;
+    height: 235px;
 }
 section .right_1 p{
     margin-bottom: 20px;

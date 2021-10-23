@@ -136,6 +136,9 @@
 			top:0px;
 			z-index:10;
 		}
+		.gdsInfo{
+		margin-left:20px;
+	}
 	</style>
 </head>
 <body>
@@ -459,14 +462,7 @@
     <section>
         <p class="p"><b>홈&nbsp;&nbsp;/&nbsp;&nbsp;계정</b></p>
         <h1><b><em>환영합니다,</em>${member.userFirstName}</b></h1>
-        <div class="logout">
-            <div class="logout_1">
-                <i class="fas fa-sign-out-alt"></i>
-            </div>
-            <div class="logout_2">
-                <b>로그아웃</b>
-            </div>
-        </div>
+        
         <div class="total">
             <div class="no1">
                 <div class="prof">
@@ -561,7 +557,7 @@
         
     </section>
     
-    <footer>
+   <footer>
         <div class="hr">
         <div class="title">
             <i>PERIDOT</i> NEWSLETTER
@@ -572,7 +568,7 @@
         
         <form action="get" >
             <p class="content_email">
-                <input type="email" class="email" name="email" onkeyup='agreedown(this)'autocomplete="off" required>
+                <input type="email" class="email" name="email" onkeyup='agreedown(this)' onfocus="test(this)" onblur="test2(this)" autocomplete="off" required>
                 <label for="user_email"><span><em>이메일 주소</em></span></label>
             </p>
         </form>
@@ -645,11 +641,7 @@
         <script>
 			function test(item){
 				var $item = $(item);
-				/*
-				$("footer p input:focus + label span,footer p input:valid + label span").css({ "transform":"translateY(-100%)","font-size":"24px","color":"gray"});
-				$("footer p input:focus").css("border-bottom", "1px solid darkgray");
-				$("footer p input:focus + label::after,footer p input:valid + label::after").css({"width":"100%","transform":"translateX(0)"});
-				*/
+				
 				$item.css("border-bottom", "1px solid darkgray");
 				$item.next("label").find("span").css({ "transform":"translateY(-100%)","font-size":"24px","color":"gray"});
 				$item.next("label::after").css({"width":"100%","transform":"translateX(0)"});
