@@ -158,9 +158,7 @@
 			<!-- 여기 사용자정보 넣는곳 -->
 					<span class="userinfo">안녕하세요 ${member.userFirstName}</span>	
 					</span>
-					<a href="javascript:modal()" class="cart">
-					<img src="/img/장바구니.png" width="30px" height="30px">
-					</a>
+					
 					</span>
 			
 			<!-- 마이페이지 눌렀을 대 부여주는 영역 -->

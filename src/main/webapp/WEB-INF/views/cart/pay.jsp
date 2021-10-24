@@ -224,7 +224,7 @@
 				<div class="loww">
 					<div class="last1">
 						<div class="lastp1">
-							<img src="return.png" class="back">
+							<img src="/img/return.png" class="back">
 						</div>
 						<div>
 							<div class="last2">
@@ -237,7 +237,7 @@
 					</div>
 					<div class="last1">
 						<div class="lastp1">
-							<img src="/img/반품.png">
+							<img src="/img/반품.PNG">
 						</div>
 						<div>
 							<div class="last2">

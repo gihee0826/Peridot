@@ -91,8 +91,9 @@ public class CartController {
 	}
 	
 	@RequestMapping(value="/order", method = RequestMethod.POST)
-	public String orderPOST(HttpSession session, OrderVO order, OrderDetailVO detail) throws Exception {
+	public String orderPOST(HttpSession session, OrderVO order, OrderDetailVO detail, Model model) throws Exception {
 		MemberVO member = (MemberVO)session.getAttribute("member");
+		 if(member != null) {
 		int userNo = member.getUserNo();
 		
 		order.setUserNo(userNo);
@@ -105,7 +106,11 @@ public class CartController {
 		
 		cartService.orderDetail(detail);
 		
+		//리스트 소 카테고리 타지 말라고 0
+		List<CategoryVO> clist = categoryService.ctg(0);
+		model.addAttribute("clist",clist);
 		
+		 }
 		
 		return "member/mypage";
 	}
